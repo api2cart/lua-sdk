@@ -19,7 +19,7 @@ local function cast_product_update(t)
 	return setmetatable(t, product_update_mt)
 end
 
-local function new_product_update(id, model, old_price, price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, quantity, available_for_view, weight, weight_unit, dimensions_unit, increase_quantity, reduce_quantity, warehouse_id, reserve_quantity, manage_stock, backorder_status, name, sku, visible, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, description, short_description, meta_title, meta_keywords, meta_description, store_id, lang_id, in_stock, status, seo_url, report_request_id, disable_report_cache, reindex, tags, clear_cache, gtin, upc, mpn, ean, isbn, taxable, product_class, height, length, width, harmonized_system_code, country_of_origin, search_keywords, barcode, is_virtual, is_free_shipping, reserve_price, buyitnow_price, avail_from, tax_class_id, type, avail, delivery_code, check_process_status, package_details, stores_ids, manufacturer_info, production_partner_ids, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew)
+local function new_product_update(id, model, old_price, price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, quantity, available_for_view, weight, weight_unit, dimensions_unit, increase_quantity, reduce_quantity, warehouse_id, reserve_quantity, manage_stock, backorder_status, name, sku, visible, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, description, short_description, meta_title, meta_keywords, meta_description, store_id, lang_id, in_stock, status, seo_url, report_request_id, disable_report_cache, reindex, tags, clear_cache, gtin, upc, mpn, ean, isbn, taxable, product_class, height, length, width, harmonized_system_code, country_of_origin, search_keywords, barcode, is_virtual, is_free_shipping, reserve_price, buyitnow_price, avail_from, tax_class_id, type, avail, delivery_code, check_process_status, package_details, stores_ids, manufacturer_info, production_partner_ids, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale)
 	return cast_product_update({
 		["id"] = id;
 		["model"] = model;
@@ -100,6 +100,7 @@ local function new_product_update(id, model, old_price, price, special_price, sp
 		["downloadable"] = downloadable;
 		["materials"] = materials;
 		["auto_renew"] = auto_renew;
+		["on_sale"] = on_sale;
 	})
 end
 
