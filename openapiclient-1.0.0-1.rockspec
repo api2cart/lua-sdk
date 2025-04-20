@@ -309,6 +309,7 @@ build = {
 		["openapiclient.model.product_add_certifications_inner_images_inner"] = "openapiclient/model/product_add_certifications_inner_images_inner.lua";
 		["openapiclient.model.product_add_files_inner"] = "openapiclient/model/product_add_files_inner.lua";
 		["openapiclient.model.product_add_group_prices_inner"] = "openapiclient/model/product_add_group_prices_inner.lua";
+		["openapiclient.model.product_add_logistic_info_inner"] = "openapiclient/model/product_add_logistic_info_inner.lua";
 		["openapiclient.model.product_add_manufacturer_info"] = "openapiclient/model/product_add_manufacturer_info.lua";
 		["openapiclient.model.product_add_package_details"] = "openapiclient/model/product_add_package_details.lua";
 		["openapiclient.model.product_add_sales_tax"] = "openapiclient/model/product_add_sales_tax.lua";

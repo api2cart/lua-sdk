@@ -19,7 +19,7 @@ local function cast_product_add(t)
 	return setmetatable(t, product_add_mt)
 end
 
-local function new_product_add(name, model, sku, description, price, old_price, special_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_modified, sprice_expire, tier_prices, group_prices, available_for_view, available_for_sale, weight, width, height, length, weight_unit, dimensions_unit, short_description, warehouse_id, backorder_status, quantity, downloadable, wholesale_price, created_at, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tax_class_id, type, meta_title, meta_keywords, meta_description, url, lang_id, stores_ids, category_id, viewed_count, ordered_count, attribute_set_name, attribute_name, shipping_template_id, production_partner_ids, condition, listing_duration, listing_type, payment_methods, return_accepted, shipping_details, paypal_email, seller_profiles, package_details, best_offer, sales_tax, barcode, upc, ean, isbn, specifics, image_url, image_name, reserve_price, buyitnow_price, condition_description, auction_confidentiality_level, avail_from, tags, clear_cache, asin, gtin, mpn, taxable, visible, status, seo_url, product_class, product_type, marketplace_item_properties, manage_stock, harmonized_system_code, country_of_origin, files, search_keywords, store_id, brand_name, is_virtual, is_free_shipping, in_stock, delivery_code, product_reference, delivery_type, delivery_time, size_chart, certifications, delivery_option_ids, manufacturer_info, when_made, is_supply, materials, auto_renew, allow_display_condition, min_order_quantity, max_order_quantity)
+local function new_product_add(name, model, sku, description, price, old_price, special_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_modified, sprice_expire, tier_prices, group_prices, available_for_view, available_for_sale, weight, width, height, length, weight_unit, dimensions_unit, short_description, warehouse_id, backorder_status, quantity, downloadable, wholesale_price, created_at, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tax_class_id, type, meta_title, meta_keywords, meta_description, url, lang_id, stores_ids, category_id, viewed_count, ordered_count, attribute_set_name, attribute_name, shipping_template_id, production_partner_ids, condition, listing_duration, listing_type, payment_methods, return_accepted, shipping_details, paypal_email, seller_profiles, package_details, best_offer, sales_tax, barcode, upc, ean, isbn, specifics, image_url, image_name, additional_image_urls, reserve_price, buyitnow_price, condition_description, auction_confidentiality_level, logistic_info, avail_from, tags, clear_cache, asin, gtin, mpn, taxable, visible, status, seo_url, product_class, product_type, marketplace_item_properties, manage_stock, harmonized_system_code, country_of_origin, files, search_keywords, store_id, brand_name, is_virtual, is_free_shipping, in_stock, delivery_code, product_reference, delivery_type, delivery_time, size_chart, certifications, delivery_option_ids, manufacturer_info, when_made, is_supply, materials, auto_renew, allow_display_condition, min_order_quantity, max_order_quantity)
 	return cast_product_add({
 		["name"] = name;
 		["model"] = model;
@@ -89,10 +89,12 @@ local function new_product_add(name, model, sku, description, price, old_price, 
 		["specifics"] = specifics;
 		["image_url"] = image_url;
 		["image_name"] = image_name;
+		["additional_image_urls"] = additional_image_urls;
 		["reserve_price"] = reserve_price;
 		["buyitnow_price"] = buyitnow_price;
 		["condition_description"] = condition_description;
 		["auction_confidentiality_level"] = auction_confidentiality_level;
+		["logistic_info"] = logistic_info;
 		["avail_from"] = avail_from;
 		["tags"] = tags;
 		["clear_cache"] = clear_cache;

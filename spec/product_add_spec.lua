@@ -492,6 +492,13 @@ describe("product_add", function()
     end)
   end)
 
+  -- unit tests for the property 'additional_image_urls'
+  describe("property additional_image_urls test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'reserve_price'
   describe("property reserve_price test", function()
     it("should work", function()
@@ -515,6 +522,13 @@ describe("product_add", function()
 
   -- unit tests for the property 'auction_confidentiality_level'
   describe("property auction_confidentiality_level test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'logistic_info'
+  describe("property logistic_info test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

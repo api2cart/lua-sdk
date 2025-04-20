@@ -378,13 +378,13 @@ function product_api:product_attribute_value_unset(product_id, attribute_id, sto
 	end
 end
 
-function product_api:product_brand_list(start, count, page_cursor, params, brand_ids, exclude, store_id, lang_id, created_from, created_to, modified_from, modified_to, parent_id, response_fields, find_where, find_value)
+function product_api:product_brand_list(start, count, page_cursor, params, brand_ids, exclude, category_id, store_id, lang_id, created_from, created_to, modified_from, modified_to, parent_id, response_fields, find_where, find_value)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.brand.list.json?start=%s&count=%s&page_cursor=%s&params=%s&brand_ids=%s&exclude=%s&store_id=%s&lang_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&parent_id=%s&response_fields=%s&find_where=%s&find_value=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(params), http_util.encodeURIComponent(brand_ids), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(find_value));
+		path = string.format("%s/product.brand.list.json?start=%s&count=%s&page_cursor=%s&params=%s&brand_ids=%s&exclude=%s&category_id=%s&store_id=%s&lang_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&parent_id=%s&response_fields=%s&find_where=%s&find_value=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(params), http_util.encodeURIComponent(brand_ids), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(find_value));
 	})
 
 	-- set HTTP verb
