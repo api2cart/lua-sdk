@@ -30,8 +30,29 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'old_price'
-  describe("property old_price test", function()
+  -- unit tests for the property 'sku'
+  describe("property sku test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'name'
+  describe("property name test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'description'
+  describe("property description test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'short_description'
+  describe("property short_description test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -39,6 +60,13 @@ describe("product_update", function()
 
   -- unit tests for the property 'price'
   describe("property price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'old_price'
+  describe("property old_price test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -86,8 +114,92 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'quantity'
-  describe("property quantity test", function()
+  -- unit tests for the property 'tier_prices'
+  describe("property tier_prices test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'reserve_price'
+  describe("property reserve_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'buyitnow_price'
+  describe("property buyitnow_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'taxable'
+  describe("property taxable test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'tax_class_id'
+  describe("property tax_class_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'type'
+  describe("property type test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'status'
+  describe("property status test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'condition'
+  describe("property condition test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'visible'
+  describe("property visible test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'in_stock'
+  describe("property in_stock test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'avail'
+  describe("property avail test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'avail_from'
+  describe("property avail_from test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'product_class'
+  describe("property product_class test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -100,43 +212,29 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'weight'
-  describe("property weight test", function()
+  -- unit tests for the property 'stores_ids'
+  describe("property stores_ids test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'weight_unit'
-  describe("property weight_unit test", function()
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'dimensions_unit'
-  describe("property dimensions_unit test", function()
+  -- unit tests for the property 'lang_id'
+  describe("property lang_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'increase_quantity'
-  describe("property increase_quantity test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'reduce_quantity'
-  describe("property reduce_quantity test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'warehouse_id'
-  describe("property warehouse_id test", function()
+  -- unit tests for the property 'quantity'
+  describe("property quantity test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -163,22 +261,120 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'name'
-  describe("property name test", function()
+  -- unit tests for the property 'increase_quantity'
+  describe("property increase_quantity test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'sku'
-  describe("property sku test", function()
+  -- unit tests for the property 'reduce_quantity'
+  describe("property reduce_quantity test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'visible'
-  describe("property visible test", function()
+  -- unit tests for the property 'warehouse_id'
+  describe("property warehouse_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'weight'
+  describe("property weight test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'weight_unit'
+  describe("property weight_unit test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'height'
+  describe("property height test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'length'
+  describe("property length test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'width'
+  describe("property width test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'dimensions_unit'
+  describe("property dimensions_unit test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'is_virtual'
+  describe("property is_virtual test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'is_free_shipping'
+  describe("property is_free_shipping test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'gtin'
+  describe("property gtin test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'upc'
+  describe("property upc test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'mpn'
+  describe("property mpn test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'ean'
+  describe("property ean test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'isbn'
+  describe("property isbn test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'barcode'
+  describe("property barcode test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -226,20 +422,6 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'description'
-  describe("property description test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'short_description'
-  describe("property short_description test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'meta_title'
   describe("property meta_title test", function()
     it("should work", function()
@@ -261,155 +443,8 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'lang_id'
-  describe("property lang_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'in_stock'
-  describe("property in_stock test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'status'
-  describe("property status test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'seo_url'
   describe("property seo_url test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'report_request_id'
-  describe("property report_request_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'disable_report_cache'
-  describe("property disable_report_cache test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'reindex'
-  describe("property reindex test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'tags'
-  describe("property tags test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'clear_cache'
-  describe("property clear_cache test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'gtin'
-  describe("property gtin test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'upc'
-  describe("property upc test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'mpn'
-  describe("property mpn test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'ean'
-  describe("property ean test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'isbn'
-  describe("property isbn test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'taxable'
-  describe("property taxable test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'product_class'
-  describe("property product_class test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'height'
-  describe("property height test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'length'
-  describe("property length test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'width'
-  describe("property width test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'harmonized_system_code'
-  describe("property harmonized_system_code test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'country_of_origin'
-  describe("property country_of_origin test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -422,64 +457,8 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'barcode'
-  describe("property barcode test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'is_virtual'
-  describe("property is_virtual test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'is_free_shipping'
-  describe("property is_free_shipping test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'reserve_price'
-  describe("property reserve_price test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'buyitnow_price'
-  describe("property buyitnow_price test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'avail_from'
-  describe("property avail_from test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'tax_class_id'
-  describe("property tax_class_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'type'
-  describe("property type test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'avail'
-  describe("property avail test", function()
+  -- unit tests for the property 'tags'
+  describe("property tags test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -492,13 +471,6 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'check_process_status'
-  describe("property check_process_status test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'package_details'
   describe("property package_details test", function()
     it("should work", function()
@@ -506,22 +478,15 @@ describe("product_update", function()
     end)
   end)
 
-  -- unit tests for the property 'stores_ids'
-  describe("property stores_ids test", function()
+  -- unit tests for the property 'country_of_origin'
+  describe("property country_of_origin test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'manufacturer_info'
-  describe("property manufacturer_info test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'production_partner_ids'
-  describe("property production_partner_ids test", function()
+  -- unit tests for the property 'harmonized_system_code'
+  describe("property harmonized_system_code test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -571,6 +536,55 @@ describe("product_update", function()
 
   -- unit tests for the property 'on_sale'
   describe("property on_sale test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'production_partner_ids'
+  describe("property production_partner_ids test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'manufacturer_info'
+  describe("property manufacturer_info test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'report_request_id'
+  describe("property report_request_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'disable_report_cache'
+  describe("property disable_report_cache test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'reindex'
+  describe("property reindex test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'clear_cache'
+  describe("property clear_cache test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'check_process_status'
+  describe("property check_process_status test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

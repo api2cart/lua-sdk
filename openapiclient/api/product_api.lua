@@ -216,13 +216,13 @@ function product_api:product_add_batch(product_add_batch)
 	end
 end
 
-function product_api:product_attribute_list(product_id, attribute_id, variant_id, page_cursor, start, count, attribute_group_id, set_name, lang_id, store_id, sort_by, sort_direction, params, response_fields, exclude)
+function product_api:product_attribute_list(product_id, start, count, page_cursor, attribute_id, variant_id, attribute_group_id, lang_id, store_id, set_name, sort_by, sort_direction, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.attribute.list.json?product_id=%s&attribute_id=%s&variant_id=%s&page_cursor=%s&start=%s&count=%s&attribute_group_id=%s&set_name=%s&lang_id=%s&store_id=%s&sort_by=%s&sort_direction=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(variant_id), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(set_name), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/product.attribute.list.json?start=%s&count=%s&page_cursor=%s&product_id=%s&attribute_id=%s&variant_id=%s&attribute_group_id=%s&lang_id=%s&store_id=%s&set_name=%s&sort_by=%s&sort_direction=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(variant_id), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(set_name), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -378,13 +378,13 @@ function product_api:product_attribute_value_unset(product_id, attribute_id, sto
 	end
 end
 
-function product_api:product_brand_list(start, count, page_cursor, params, brand_ids, exclude, category_id, store_id, lang_id, created_from, created_to, modified_from, modified_to, parent_id, response_fields, find_where, find_value)
+function product_api:product_brand_list(start, count, page_cursor, brand_ids, category_id, parent_id, store_id, lang_id, find_where, find_value, created_from, created_to, modified_from, modified_to, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.brand.list.json?start=%s&count=%s&page_cursor=%s&params=%s&brand_ids=%s&exclude=%s&category_id=%s&store_id=%s&lang_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&parent_id=%s&response_fields=%s&find_where=%s&find_value=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(params), http_util.encodeURIComponent(brand_ids), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(find_value));
+		path = string.format("%s/product.brand.list.json?start=%s&count=%s&page_cursor=%s&brand_ids=%s&category_id=%s&parent_id=%s&store_id=%s&lang_id=%s&find_where=%s&find_value=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(brand_ids), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -486,13 +486,13 @@ function product_api:product_child_item_find(find_value, find_where, find_params
 	end
 end
 
-function product_api:product_child_item_info(product_id, id, params, response_fields, exclude, store_id, lang_id, currency_id, use_latest_api_version)
+function product_api:product_child_item_info(product_id, id, store_id, lang_id, currency_id, response_fields, params, exclude, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.child_item.info.json?params=%s&response_fields=%s&exclude=%s&product_id=%s&id=%s&store_id=%s&lang_id=%s&currency_id=%s&use_latest_api_version=%s",
-			self.basePath, http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(use_latest_api_version));
+		path = string.format("%s/product.child_item.info.json?product_id=%s&id=%s&store_id=%s&lang_id=%s&currency_id=%s&response_fields=%s&params=%s&exclude=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
@@ -540,13 +540,13 @@ function product_api:product_child_item_info(product_id, id, params, response_fi
 	end
 end
 
-function product_api:product_child_item_list(page_cursor, start, count, params, response_fields, exclude, created_from, created_to, modified_from, modified_to, product_id, product_ids, sku, store_id, lang_id, currency_id, avail_sale, find_value, find_where, report_request_id, disable_report_cache, use_latest_api_version, return_global)
+function product_api:product_child_item_list(start, count, page_cursor, product_id, product_ids, sku, store_id, lang_id, currency_id, avail_sale, find_value, find_where, created_from, created_to, modified_from, modified_to, return_global, response_fields, params, exclude, report_request_id, disable_report_cache, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.child_item.list.json?page_cursor=%s&start=%s&count=%s&params=%s&response_fields=%s&exclude=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&product_id=%s&product_ids=%s&sku=%s&store_id=%s&lang_id=%s&currency_id=%s&avail_sale=%s&find_value=%s&find_where=%s&report_request_id=%s&disable_report_cache=%s&use_latest_api_version=%s&return_global=%s",
-			self.basePath, http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(product_ids), http_util.encodeURIComponent(sku), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(avail_sale), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(return_global));
+		path = string.format("%s/product.child_item.list.json?start=%s&count=%s&page_cursor=%s&product_id=%s&product_ids=%s&sku=%s&store_id=%s&lang_id=%s&currency_id=%s&avail_sale=%s&find_value=%s&find_where=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&return_global=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(product_ids), http_util.encodeURIComponent(sku), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(avail_sale), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(return_global), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
@@ -594,13 +594,13 @@ function product_api:product_child_item_list(page_cursor, start, count, params, 
 	end
 end
 
-function product_api:product_count(category_id, created_from, created_to, modified_from, modified_to, avail_view, avail_sale, store_id, lang_id, product_ids, since_id, report_request_id, disable_report_cache, brand_name, product_attributes, status, type, find_value, find_where, use_latest_api_version, return_global, categories_ids)
+function product_api:product_count(product_ids, since_id, categories_ids, category_id, store_id, lang_id, avail_view, avail_sale, created_from, created_to, modified_from, modified_to, brand_name, product_attributes, status, type, find_value, find_where, report_request_id, return_global, disable_report_cache, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.count.json?category_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&avail_view=%s&avail_sale=%s&store_id=%s&lang_id=%s&product_ids=%s&since_id=%s&report_request_id=%s&disable_report_cache=%s&brand_name=%s&product_attributes=%s&status=%s&type=%s&find_value=%s&find_where=%s&use_latest_api_version=%s&return_global=%s&categories_ids=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(avail_view), http_util.encodeURIComponent(avail_sale), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(product_ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(brand_name), http_util.encodeURIComponent(product_attributes), http_util.encodeURIComponent(status), http_util.encodeURIComponent(type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(return_global), http_util.encodeURIComponent(categories_ids));
+		path = string.format("%s/product.count.json?product_ids=%s&since_id=%s&categories_ids=%s&category_id=%s&store_id=%s&lang_id=%s&avail_view=%s&avail_sale=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&brand_name=%s&product_attributes=%s&status=%s&type=%s&find_value=%s&find_where=%s&report_request_id=%s&return_global=%s&disable_report_cache=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(product_ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(categories_ids), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(avail_view), http_util.encodeURIComponent(avail_sale), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(brand_name), http_util.encodeURIComponent(product_attributes), http_util.encodeURIComponent(status), http_util.encodeURIComponent(type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(return_global), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
@@ -702,13 +702,13 @@ function product_api:product_currency_add(iso3, rate, name, avail, symbol_left, 
 	end
 end
 
-function product_api:product_currency_list(start, count, params, page_cursor, exclude, response_fields, default, avail)
+function product_api:product_currency_list(start, count, page_cursor, default, avail, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.currency.list.json?start=%s&count=%s&params=%s&page_cursor=%s&exclude=%s&response_fields=%s&default=%s&avail=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(default), http_util.encodeURIComponent(avail));
+		path = string.format("%s/product.currency.list.json?start=%s&count=%s&page_cursor=%s&default=%s&avail=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(default), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1092,13 +1092,13 @@ function product_api:product_image_delete(product_id, id, store_id)
 	end
 end
 
-function product_api:product_image_update(product_id, id, variant_ids, image_name, type, label, position, store_id, lang_id, hidden)
+function product_api:product_image_update(product_id, id, variant_ids, store_id, lang_id, image_name, type, label, position, hidden)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.image.update.json?product_id=%s&variant_ids=%s&image_name=%s&type=%s&label=%s&position=%s&id=%s&store_id=%s&lang_id=%s&hidden=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(variant_ids), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(type), http_util.encodeURIComponent(label), http_util.encodeURIComponent(position), http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(hidden));
+		path = string.format("%s/product.image.update.json?product_id=%s&id=%s&variant_ids=%s&store_id=%s&lang_id=%s&image_name=%s&type=%s&label=%s&position=%s&hidden=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(id), http_util.encodeURIComponent(variant_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(type), http_util.encodeURIComponent(label), http_util.encodeURIComponent(position), http_util.encodeURIComponent(hidden));
 	})
 
 	-- set HTTP verb
@@ -1146,13 +1146,13 @@ function product_api:product_image_update(product_id, id, variant_ids, image_nam
 	end
 end
 
-function product_api:product_info(id, params, response_fields, exclude, store_id, lang_id, currency_id, report_request_id, disable_report_cache, use_latest_api_version)
+function product_api:product_info(id, store_id, lang_id, currency_id, response_fields, params, exclude, report_request_id, disable_report_cache, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.info.json?id=%s&params=%s&response_fields=%s&exclude=%s&store_id=%s&lang_id=%s&currency_id=%s&report_request_id=%s&disable_report_cache=%s&use_latest_api_version=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version));
+		path = string.format("%s/product.info.json?id=%s&store_id=%s&lang_id=%s&currency_id=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
@@ -1200,13 +1200,13 @@ function product_api:product_info(id, params, response_fields, exclude, store_id
 	end
 end
 
-function product_api:product_list(page_cursor, start, count, params, response_fields, exclude, category_id, created_from, created_to, modified_from, modified_to, avail_view, avail_sale, store_id, lang_id, currency_id, product_ids, since_id, report_request_id, disable_report_cache, sort_by, sort_direction, sku, disable_cache, brand_name, product_attributes, status, type, find_value, find_where, use_latest_api_version, return_global, categories_ids)
+function product_api:product_list(start, count, page_cursor, product_ids, since_id, categories_ids, category_id, store_id, lang_id, currency_id, avail_view, avail_sale, created_from, created_to, modified_from, modified_to, sku, brand_name, product_attributes, status, type, find_value, find_where, return_global, params, response_fields, exclude, sort_by, sort_direction, report_request_id, disable_cache, disable_report_cache, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.list.json?page_cursor=%s&start=%s&count=%s&params=%s&response_fields=%s&exclude=%s&category_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&avail_view=%s&avail_sale=%s&store_id=%s&lang_id=%s&currency_id=%s&product_ids=%s&since_id=%s&report_request_id=%s&disable_report_cache=%s&sort_by=%s&sort_direction=%s&sku=%s&disable_cache=%s&brand_name=%s&product_attributes=%s&status=%s&type=%s&find_value=%s&find_where=%s&use_latest_api_version=%s&return_global=%s&categories_ids=%s",
-			self.basePath, http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(avail_view), http_util.encodeURIComponent(avail_sale), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(product_ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(sku), http_util.encodeURIComponent(disable_cache), http_util.encodeURIComponent(brand_name), http_util.encodeURIComponent(product_attributes), http_util.encodeURIComponent(status), http_util.encodeURIComponent(type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(return_global), http_util.encodeURIComponent(categories_ids));
+		path = string.format("%s/product.list.json?start=%s&count=%s&page_cursor=%s&product_ids=%s&since_id=%s&categories_ids=%s&category_id=%s&store_id=%s&lang_id=%s&currency_id=%s&avail_view=%s&avail_sale=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&sku=%s&brand_name=%s&product_attributes=%s&status=%s&type=%s&find_value=%s&find_where=%s&return_global=%s&params=%s&response_fields=%s&exclude=%s&sort_by=%s&sort_direction=%s&report_request_id=%s&disable_cache=%s&disable_report_cache=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(product_ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(categories_ids), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(avail_view), http_util.encodeURIComponent(avail_sale), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(sku), http_util.encodeURIComponent(brand_name), http_util.encodeURIComponent(product_attributes), http_util.encodeURIComponent(status), http_util.encodeURIComponent(type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(return_global), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_cache), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
@@ -1476,13 +1476,13 @@ function product_api:product_option_delete(option_id, product_id, store_id)
 	end
 end
 
-function product_api:product_option_list(start, count, params, exclude, response_fields, product_id, lang_id, store_id)
+function product_api:product_option_list(start, count, product_id, lang_id, store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.option.list.json?start=%s&count=%s&params=%s&exclude=%s&response_fields=%s&product_id=%s&lang_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.option.list.json?start=%s&count=%s&product_id=%s&lang_id=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1920,13 +1920,13 @@ function product_api:product_price_update(product_price_update)
 	end
 end
 
-function product_api:product_review_list(product_id, start, page_cursor, count, ids, store_id, status, params, exclude, response_fields)
+function product_api:product_review_list(product_id, start, count, page_cursor, ids, store_id, status, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.review.list.json?start=%s&page_cursor=%s&count=%s&product_id=%s&ids=%s&store_id=%s&status=%s&params=%s&exclude=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(count), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(status), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/product.review.list.json?start=%s&count=%s&page_cursor=%s&product_id=%s&ids=%s&store_id=%s&status=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(status), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -2328,13 +2328,13 @@ function product_api:product_variant_add_batch(product_variant_add_batch)
 	end
 end
 
-function product_api:product_variant_count(product_id, created_from, created_to, modified_from, modified_to, category_id, store_id)
+function product_api:product_variant_count(product_id, category_id, store_id, created_from, created_to, modified_from, modified_to)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.variant.count.json?created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&category_id=%s&product_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.variant.count.json?product_id=%s&category_id=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to));
 	})
 
 	-- set HTTP verb
@@ -2610,13 +2610,13 @@ function product_api:product_variant_image_delete(product_id, product_variant_id
 	end
 end
 
-function product_api:product_variant_info(id, params, exclude, store_id)
+function product_api:product_variant_info(id, store_id, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.variant.info.json?params=%s&exclude=%s&id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.variant.info.json?id=%s&store_id=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -2664,13 +2664,13 @@ function product_api:product_variant_info(id, params, exclude, store_id)
 	end
 end
 
-function product_api:product_variant_list(start, count, params, exclude, created_from, created_to, modified_from, modified_to, category_id, product_id, store_id)
+function product_api:product_variant_list(start, count, product_id, category_id, store_id, created_from, created_to, modified_from, modified_to, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.variant.list.json?start=%s&count=%s&params=%s&exclude=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&category_id=%s&product_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.variant.list.json?start=%s&count=%s&product_id=%s&category_id=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb

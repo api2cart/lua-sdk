@@ -527,6 +527,13 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'shopline_shared_secret'
+  describe("property shopline_shared_secret test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'shopify_access_token'
   describe("property shopify_access_token test", function()
     it("should work", function()

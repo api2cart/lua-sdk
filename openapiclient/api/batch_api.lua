@@ -45,13 +45,13 @@ local function new_batch_api(authority, basePath, schemes)
 	}, batch_api_mt)
 end
 
-function batch_api:batch_job_list(count, page_cursor, created_from, created_to, processed_from, processed_to, ids, response_fields)
+function batch_api:batch_job_list(count, page_cursor, ids, created_from, created_to, processed_from, processed_to, response_fields)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/batch.job.list.json?count=%s&page_cursor=%s&created_from=%s&created_to=%s&processed_from=%s&processed_to=%s&ids=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(processed_from), http_util.encodeURIComponent(processed_to), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/batch.job.list.json?count=%s&page_cursor=%s&ids=%s&created_from=%s&created_to=%s&processed_from=%s&processed_to=%s&response_fields=%s",
+			self.basePath, http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(processed_from), http_util.encodeURIComponent(processed_to), http_util.encodeURIComponent(response_fields));
 	})
 
 	-- set HTTP verb

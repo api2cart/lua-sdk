@@ -45,13 +45,13 @@ local function new_tax_api(authority, basePath, schemes)
 	}, tax_api_mt)
 end
 
-function tax_api:tax_class_info(tax_class_id, store_id, lang_id, params, response_fields, exclude)
+function tax_api:tax_class_info(tax_class_id, store_id, lang_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/tax.class.info.json?tax_class_id=%s&store_id=%s&lang_id=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(tax_class_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/tax.class.info.json?tax_class_id=%s&store_id=%s&lang_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(tax_class_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -99,13 +99,13 @@ function tax_api:tax_class_info(tax_class_id, store_id, lang_id, params, respons
 	end
 end
 
-function tax_api:tax_class_list(created_to, created_from, modified_to, modified_from, find_value, find_where, store_id, count, page_cursor, response_fields)
+function tax_api:tax_class_list(count, page_cursor, store_id, find_value, find_where, created_to, created_from, modified_to, modified_from, response_fields)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/tax.class.list.json?created_to=%s&created_from=%s&modified_to=%s&modified_from=%s&find_value=%s&find_where=%s&store_id=%s&count=%s&page_cursor=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/tax.class.list.json?count=%s&page_cursor=%s&store_id=%s&find_value=%s&find_where=%s&created_to=%s&created_from=%s&modified_to=%s&modified_from=%s&response_fields=%s",
+			self.basePath, http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(response_fields));
 	})
 
 	-- set HTTP verb

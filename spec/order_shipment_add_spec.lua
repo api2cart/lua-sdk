@@ -23,15 +23,15 @@ describe("order_shipment_add", function()
     end)
   end)
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
+  -- unit tests for the property 'warehouse_id'
+  describe("property warehouse_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'warehouse_id'
-  describe("property warehouse_id test", function()
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -58,29 +58,8 @@ describe("order_shipment_add", function()
     end)
   end)
 
-  -- unit tests for the property 'send_notifications'
-  describe("property send_notifications test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'tracking_numbers'
   describe("property tracking_numbers test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'adjust_stock'
-  describe("property adjust_stock test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'enable_cache'
-  describe("property enable_cache test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -95,6 +74,27 @@ describe("order_shipment_add", function()
 
   -- unit tests for the property 'is_shipped'
   describe("property is_shipped test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'send_notifications'
+  describe("property send_notifications test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'adjust_stock'
+  describe("property adjust_stock test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'enable_cache'
+  describe("property enable_cache test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

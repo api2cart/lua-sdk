@@ -16,8 +16,8 @@ Please update as you see appropriate
 describe("product_image_add", function()
   local openapiclient_product_image_add = require "openapiclient.model.product_image_add"
 
-  -- unit tests for the property 'product_id'
-  describe("property product_id test", function()
+  -- unit tests for the property 'type'
+  describe("property type test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -30,43 +30,8 @@ describe("product_image_add", function()
     end)
   end)
 
-  -- unit tests for the property 'type'
-  describe("property type test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'url'
-  describe("property url test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'label'
-  describe("property label test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'mime'
-  describe("property mime test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'position'
-  describe("property position test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'content'
-  describe("property content test", function()
+  -- unit tests for the property 'product_id'
+  describe("property product_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -102,6 +67,41 @@ describe("product_image_add", function()
 
   -- unit tests for the property 'lang_id'
   describe("property lang_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'url'
+  describe("property url test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'content'
+  describe("property content test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'label'
+  describe("property label test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'mime'
+  describe("property mime test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'position'
+  describe("property position test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

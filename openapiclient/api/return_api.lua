@@ -157,13 +157,13 @@ function return_api:return_count(order_ids, customer_id, store_id, status, retur
 	end
 end
 
-function return_api:return_info(id, order_id, store_id, params, exclude, response_fields)
+function return_api:return_info(id, order_id, store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/return.info.json?id=%s&order_id=%s&store_id=%s&params=%s&exclude=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/return.info.json?id=%s&order_id=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -211,13 +211,13 @@ function return_api:return_info(id, order_id, store_id, params, exclude, respons
 	end
 end
 
-function return_api:return_list(start, count, page_cursor, params, exclude, response_fields, order_id, order_ids, customer_id, store_id, status, return_type, created_from, created_to, modified_from, modified_to, report_request_id, disable_report_cache)
+function return_api:return_list(start, count, page_cursor, order_id, order_ids, customer_id, store_id, status, return_type, created_from, created_to, modified_from, modified_to, response_fields, params, exclude, report_request_id, disable_report_cache)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/return.list.json?start=%s&count=%s&page_cursor=%s&params=%s&exclude=%s&response_fields=%s&order_id=%s&order_ids=%s&customer_id=%s&store_id=%s&status=%s&return_type=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&report_request_id=%s&disable_report_cache=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(order_ids), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(status), http_util.encodeURIComponent(return_type), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
+		path = string.format("%s/return.list.json?start=%s&count=%s&page_cursor=%s&order_id=%s&order_ids=%s&customer_id=%s&store_id=%s&status=%s&return_type=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(order_ids), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(status), http_util.encodeURIComponent(return_type), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
 	})
 
 	-- set HTTP verb

@@ -44,13 +44,13 @@ local function new_marketplace_api(authority, basePath, schemes)
 	}, marketplace_api_mt)
 end
 
-function marketplace_api:marketplace_product_find(store_id, count, page_cursor, categories_ids, keyword, asin, ean, gtin, upc, mpn, isbn, params, exclude, response_fields)
+function marketplace_api:marketplace_product_find(count, page_cursor, keyword, categories_ids, store_id, asin, ean, gtin, upc, mpn, isbn, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/marketplace.product.find.json?store_id=%s&count=%s&page_cursor=%s&categories_ids=%s&keyword=%s&asin=%s&ean=%s&gtin=%s&upc=%s&mpn=%s&isbn=%s&params=%s&exclude=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(categories_ids), http_util.encodeURIComponent(keyword), http_util.encodeURIComponent(asin), http_util.encodeURIComponent(ean), http_util.encodeURIComponent(gtin), http_util.encodeURIComponent(upc), http_util.encodeURIComponent(mpn), http_util.encodeURIComponent(isbn), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/marketplace.product.find.json?count=%s&page_cursor=%s&keyword=%s&categories_ids=%s&store_id=%s&asin=%s&ean=%s&gtin=%s&upc=%s&mpn=%s&isbn=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(keyword), http_util.encodeURIComponent(categories_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(asin), http_util.encodeURIComponent(ean), http_util.encodeURIComponent(gtin), http_util.encodeURIComponent(upc), http_util.encodeURIComponent(mpn), http_util.encodeURIComponent(isbn), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb

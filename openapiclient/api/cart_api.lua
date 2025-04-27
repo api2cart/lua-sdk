@@ -177,13 +177,13 @@ function cart_api:cart_catalog_price_rules_count()
 	end
 end
 
-function cart_api:cart_catalog_price_rules_list(page_cursor, start, count, ids, params, response_fields, exclude)
+function cart_api:cart_catalog_price_rules_list(start, count, page_cursor, ids, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.catalog_price_rules.list.json?page_cursor=%s&start=%s&count=%s&ids=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.catalog_price_rules.list.json?start=%s&count=%s&page_cursor=%s&ids=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -459,13 +459,13 @@ function cart_api:cart_coupon_add(cart_coupon_add)
 	end
 end
 
-function cart_api:cart_coupon_condition_add(coupon_id, entity, key, operator, value, store_id, target, include_tax, include_shipping)
+function cart_api:cart_coupon_condition_add(coupon_id, entity, key, operator, value, target, include_tax, include_shipping, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.coupon.condition.add.json?store_id=%s&coupon_id=%s&target=%s&entity=%s&key=%s&operator=%s&value=%s&include_tax=%s&include_shipping=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(coupon_id), http_util.encodeURIComponent(target), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(key), http_util.encodeURIComponent(operator), http_util.encodeURIComponent(value), http_util.encodeURIComponent(include_tax), http_util.encodeURIComponent(include_shipping));
+		path = string.format("%s/cart.coupon.condition.add.json?coupon_id=%s&entity=%s&key=%s&operator=%s&value=%s&target=%s&include_tax=%s&include_shipping=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(coupon_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(key), http_util.encodeURIComponent(operator), http_util.encodeURIComponent(value), http_util.encodeURIComponent(target), http_util.encodeURIComponent(include_tax), http_util.encodeURIComponent(include_shipping), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -513,13 +513,13 @@ function cart_api:cart_coupon_condition_add(coupon_id, entity, key, operator, va
 	end
 end
 
-function cart_api:cart_coupon_count(store_id, date_start_from, date_start_to, date_end_from, date_end_to, avail)
+function cart_api:cart_coupon_count(store_id, avail, date_start_from, date_start_to, date_end_from, date_end_to)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.coupon.count.json?store_id=%s&date_start_from=%s&date_start_to=%s&date_end_from=%s&date_end_to=%s&avail=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(date_start_from), http_util.encodeURIComponent(date_start_to), http_util.encodeURIComponent(date_end_from), http_util.encodeURIComponent(date_end_to), http_util.encodeURIComponent(avail));
+		path = string.format("%s/cart.coupon.count.json?store_id=%s&avail=%s&date_start_from=%s&date_start_to=%s&date_end_from=%s&date_end_to=%s",
+			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(date_start_from), http_util.encodeURIComponent(date_start_to), http_util.encodeURIComponent(date_end_from), http_util.encodeURIComponent(date_end_to));
 	})
 
 	-- set HTTP verb
@@ -621,13 +621,13 @@ function cart_api:cart_coupon_delete(id, store_id)
 	end
 end
 
-function cart_api:cart_coupon_list(page_cursor, start, count, coupons_ids, store_id, date_start_from, date_start_to, date_end_from, date_end_to, avail, lang_id, params, response_fields, exclude)
+function cart_api:cart_coupon_list(start, count, page_cursor, coupons_ids, store_id, lang_id, avail, date_start_from, date_start_to, date_end_from, date_end_to, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.coupon.list.json?page_cursor=%s&start=%s&count=%s&coupons_ids=%s&store_id=%s&date_start_from=%s&date_start_to=%s&date_end_from=%s&date_end_to=%s&avail=%s&lang_id=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(coupons_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(date_start_from), http_util.encodeURIComponent(date_start_to), http_util.encodeURIComponent(date_end_from), http_util.encodeURIComponent(date_end_to), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.coupon.list.json?start=%s&count=%s&page_cursor=%s&coupons_ids=%s&store_id=%s&lang_id=%s&avail=%s&date_start_from=%s&date_start_to=%s&date_end_from=%s&date_end_to=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(coupons_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(date_start_from), http_util.encodeURIComponent(date_start_to), http_util.encodeURIComponent(date_end_from), http_util.encodeURIComponent(date_end_to), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1001,13 +1001,13 @@ function cart_api:cart_giftcard_delete(id)
 	end
 end
 
-function cart_api:cart_giftcard_list(page_cursor, start, count, store_id, params, response_fields, exclude)
+function cart_api:cart_giftcard_list(start, count, page_cursor, store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.giftcard.list.json?page_cursor=%s&start=%s&count=%s&store_id=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.giftcard.list.json?start=%s&count=%s&page_cursor=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1055,13 +1055,13 @@ function cart_api:cart_giftcard_list(page_cursor, start, count, store_id, params
 	end
 end
 
-function cart_api:cart_info(params, response_fields, exclude, store_id)
+function cart_api:cart_info(store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.info.json?params=%s&response_fields=%s&exclude=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/cart.info.json?store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1159,13 +1159,13 @@ function cart_api:cart_list()
 	end
 end
 
-function cart_api:cart_meta_data_list(entity_id, entity, store_id, lang_id, key, count, page_cursor, params, response_fields, exclude)
+function cart_api:cart_meta_data_list(entity_id, count, page_cursor, entity, store_id, lang_id, key, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.meta_data.list.json?entity_id=%s&entity=%s&store_id=%s&lang_id=%s&key=%s&count=%s&page_cursor=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.meta_data.list.json?count=%s&page_cursor=%s&entity_id=%s&entity=%s&store_id=%s&lang_id=%s&key=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1218,8 +1218,8 @@ function cart_api:cart_meta_data_set(entity_id, key, value, namespace, entity, s
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.meta_data.set.json?entity_id=%s&entity=%s&store_id=%s&lang_id=%s&key=%s&value=%s&namespace=%s",
-			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(value), http_util.encodeURIComponent(namespace));
+		path = string.format("%s/cart.meta_data.set.json?entity_id=%s&key=%s&value=%s&namespace=%s&entity=%s&store_id=%s&lang_id=%s",
+			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(value), http_util.encodeURIComponent(namespace), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id));
 	})
 
 	-- set HTTP verb
@@ -1272,8 +1272,8 @@ function cart_api:cart_meta_data_unset(entity_id, key, id, entity, store_id)
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.meta_data.unset.json?entity_id=%s&entity=%s&store_id=%s&key=%s&id=%s",
-			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(id));
+		path = string.format("%s/cart.meta_data.unset.json?entity_id=%s&key=%s&id=%s&entity=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -1375,13 +1375,13 @@ function cart_api:cart_methods()
 	end
 end
 
-function cart_api:cart_plugin_list(store_id, start, count)
+function cart_api:cart_plugin_list(start, count, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.plugin.list.json?store_id=%s&start=%s&count=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count));
+		path = string.format("%s/cart.plugin.list.json?start=%s&count=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -1537,13 +1537,13 @@ function cart_api:cart_script_delete(id, store_id)
 	end
 end
 
-function cart_api:cart_script_list(page_cursor, start, count, created_from, created_to, modified_from, modified_to, script_ids, store_id, params, response_fields, exclude)
+function cart_api:cart_script_list(start, count, page_cursor, script_ids, store_id, created_from, created_to, modified_from, modified_to, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.script.list.json?page_cursor=%s&start=%s&count=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&script_ids=%s&store_id=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(script_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.script.list.json?start=%s&count=%s&page_cursor=%s&script_ids=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(script_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -1591,13 +1591,13 @@ function cart_api:cart_script_list(page_cursor, start, count, created_from, crea
 	end
 end
 
-function cart_api:cart_shipping_zones_list(store_id, start, count, params, response_fields, exclude)
+function cart_api:cart_shipping_zones_list(start, count, store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.shipping_zones.list.json?store_id=%s&start=%s&count=%s&params=%s&response_fields=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.shipping_zones.list.json?start=%s&count=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb

@@ -19,20 +19,20 @@ local function cast_order_shipment_add(t)
 	return setmetatable(t, order_shipment_add_mt)
 end
 
-local function new_order_shipment_add(order_id, store_id, warehouse_id, shipment_provider, shipping_method, items, send_notifications, tracking_numbers, adjust_stock, enable_cache, tracking_link, is_shipped, check_process_status, use_latest_api_version)
+local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, use_latest_api_version)
 	return cast_order_shipment_add({
 		["order_id"] = order_id;
-		["store_id"] = store_id;
 		["warehouse_id"] = warehouse_id;
+		["store_id"] = store_id;
 		["shipment_provider"] = shipment_provider;
 		["shipping_method"] = shipping_method;
 		["items"] = items;
-		["send_notifications"] = send_notifications;
 		["tracking_numbers"] = tracking_numbers;
-		["adjust_stock"] = adjust_stock;
-		["enable_cache"] = enable_cache;
 		["tracking_link"] = tracking_link;
 		["is_shipped"] = is_shipped;
+		["send_notifications"] = send_notifications;
+		["adjust_stock"] = adjust_stock;
+		["enable_cache"] = enable_cache;
 		["check_process_status"] = check_process_status;
 		["use_latest_api_version"] = use_latest_api_version;
 	})

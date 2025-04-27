@@ -16,29 +16,8 @@ Please update as you see appropriate
 describe("cart_coupon_add", function()
   local openapiclient_cart_coupon_add = require "openapiclient.model.cart_coupon_add"
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'code'
   describe("property code test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'name'
-  describe("property name test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'codes'
-  describe("property codes test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -67,6 +46,20 @@ describe("cart_coupon_add", function()
 
   -- unit tests for the property 'action_amount'
   describe("property action_amount test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'codes'
+  describe("property codes test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'name'
+  describe("property name test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -130,6 +123,13 @@ describe("cart_coupon_add", function()
 
   -- unit tests for the property 'include_tax'
   describe("property include_tax test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

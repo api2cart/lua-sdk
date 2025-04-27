@@ -19,12 +19,12 @@ local function cast_order_shipment_tracking_add(t)
 	return setmetatable(t, order_shipment_tracking_add_mt)
 end
 
-local function new_order_shipment_tracking_add(store_id, order_id, shipment_id, carrier_id, tracking_provider, tracking_number, tracking_link, send_notifications)
+local function new_order_shipment_tracking_add(order_id, shipment_id, carrier_id, store_id, tracking_provider, tracking_number, tracking_link, send_notifications)
 	return cast_order_shipment_tracking_add({
-		["store_id"] = store_id;
 		["order_id"] = order_id;
 		["shipment_id"] = shipment_id;
 		["carrier_id"] = carrier_id;
+		["store_id"] = store_id;
 		["tracking_provider"] = tracking_provider;
 		["tracking_number"] = tracking_number;
 		["tracking_link"] = tracking_link;

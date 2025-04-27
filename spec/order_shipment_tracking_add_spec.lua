@@ -16,13 +16,6 @@ Please update as you see appropriate
 describe("order_shipment_tracking_add", function()
   local openapiclient_order_shipment_tracking_add = require "openapiclient.model.order_shipment_tracking_add"
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'order_id'
   describe("property order_id test", function()
     it("should work", function()
@@ -39,6 +32,13 @@ describe("order_shipment_tracking_add", function()
 
   -- unit tests for the property 'carrier_id'
   describe("property carrier_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

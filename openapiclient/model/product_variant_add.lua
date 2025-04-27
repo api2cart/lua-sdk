@@ -19,60 +19,60 @@ local function cast_product_variant_add(t)
 	return setmetatable(t, product_variant_add_mt)
 end
 
-local function new_product_variant_add(product_id, name, model, sku, barcode, gtin, price, old_price, cost_price, fixed_cost_shipping_price, attributes, description, special_price, sprice_create, sprice_modified, sprice_expire, available_for_view, available_for_sale, weight, width, height, length, weight_unit, short_description, warehouse_id, quantity, created_at, manufacturer, tax_class_id, meta_title, meta_keywords, meta_description, url, store_id, lang_id, clear_cache, taxable, harmonized_system_code, country_of_origin, manage_stock, upc, mpn, ean, isbn, stores_ids, is_default, is_free_shipping, marketplace_item_properties, in_stock, backorder_status, tier_prices, is_virtual)
+local function new_product_variant_add(product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, quantity, warehouse_id, in_stock, backorder_status, manage_stock, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, marketplace_item_properties, clear_cache)
 	return cast_product_variant_add({
 		["product_id"] = product_id;
+		["attributes"] = attributes;
 		["name"] = name;
 		["model"] = model;
-		["sku"] = sku;
-		["barcode"] = barcode;
-		["gtin"] = gtin;
+		["description"] = description;
+		["short_description"] = short_description;
+		["available_for_view"] = available_for_view;
+		["available_for_sale"] = available_for_sale;
+		["is_virtual"] = is_virtual;
+		["is_default"] = is_default;
+		["store_id"] = store_id;
+		["stores_ids"] = stores_ids;
+		["lang_id"] = lang_id;
 		["price"] = price;
 		["old_price"] = old_price;
 		["cost_price"] = cost_price;
-		["fixed_cost_shipping_price"] = fixed_cost_shipping_price;
-		["attributes"] = attributes;
-		["description"] = description;
 		["special_price"] = special_price;
 		["sprice_create"] = sprice_create;
 		["sprice_modified"] = sprice_modified;
 		["sprice_expire"] = sprice_expire;
-		["available_for_view"] = available_for_view;
-		["available_for_sale"] = available_for_sale;
+		["tier_prices"] = tier_prices;
+		["quantity"] = quantity;
+		["warehouse_id"] = warehouse_id;
+		["in_stock"] = in_stock;
+		["backorder_status"] = backorder_status;
+		["manage_stock"] = manage_stock;
 		["weight"] = weight;
 		["width"] = width;
 		["height"] = height;
 		["length"] = length;
 		["weight_unit"] = weight_unit;
-		["short_description"] = short_description;
-		["warehouse_id"] = warehouse_id;
-		["quantity"] = quantity;
-		["created_at"] = created_at;
+		["sku"] = sku;
+		["barcode"] = barcode;
+		["gtin"] = gtin;
+		["upc"] = upc;
+		["ean"] = ean;
+		["mpn"] = mpn;
+		["isbn"] = isbn;
 		["manufacturer"] = manufacturer;
-		["tax_class_id"] = tax_class_id;
+		["created_at"] = created_at;
 		["meta_title"] = meta_title;
 		["meta_keywords"] = meta_keywords;
 		["meta_description"] = meta_description;
 		["url"] = url;
-		["store_id"] = store_id;
-		["lang_id"] = lang_id;
-		["clear_cache"] = clear_cache;
+		["tax_class_id"] = tax_class_id;
 		["taxable"] = taxable;
-		["harmonized_system_code"] = harmonized_system_code;
-		["country_of_origin"] = country_of_origin;
-		["manage_stock"] = manage_stock;
-		["upc"] = upc;
-		["mpn"] = mpn;
-		["ean"] = ean;
-		["isbn"] = isbn;
-		["stores_ids"] = stores_ids;
-		["is_default"] = is_default;
+		["fixed_cost_shipping_price"] = fixed_cost_shipping_price;
 		["is_free_shipping"] = is_free_shipping;
+		["country_of_origin"] = country_of_origin;
+		["harmonized_system_code"] = harmonized_system_code;
 		["marketplace_item_properties"] = marketplace_item_properties;
-		["in_stock"] = in_stock;
-		["backorder_status"] = backorder_status;
-		["tier_prices"] = tier_prices;
-		["is_virtual"] = is_virtual;
+		["clear_cache"] = clear_cache;
 	})
 end
 

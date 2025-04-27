@@ -107,13 +107,6 @@ describe("customer_update", function()
     end)
   end)
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'note'
   describe("property note test", function()
     it("should work", function()
@@ -123,6 +116,13 @@ describe("customer_update", function()
 
   -- unit tests for the property 'status'
   describe("property status test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

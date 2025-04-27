@@ -72,6 +72,13 @@ describe("order_add_order_item_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'order_item_price_includes_tax'
+  describe("property order_item_price_includes_tax test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'order_item_parent'
   describe("property order_item_parent test", function()
     it("should work", function()
@@ -95,13 +102,6 @@ describe("order_add_order_item_inner", function()
 
   -- unit tests for the property 'order_item_allow_ship_items_separately'
   describe("property order_item_allow_ship_items_separately test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'order_item_price_includes_tax'
-  describe("property order_item_price_includes_tax test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

@@ -48,13 +48,13 @@ local function new_basket_api(authority, basePath, schemes)
 	}, basket_api_mt)
 end
 
-function basket_api:basket_info(id, store_id, params, exclude, response_fields)
+function basket_api:basket_info(id, store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/basket.info.json?id=%s&store_id=%s&params=%s&exclude=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/basket.info.json?id=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -161,8 +161,8 @@ function basket_api:basket_live_shipping_service_create(name, callback, store_id
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/basket.live_shipping_service.create.json?store_id=%s&name=%s&callback=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(callback));
+		path = string.format("%s/basket.live_shipping_service.create.json?name=%s&callback=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -264,13 +264,13 @@ function basket_api:basket_live_shipping_service_delete(id)
 	end
 end
 
-function basket_api:basket_live_shipping_service_list(store_id, start, count)
+function basket_api:basket_live_shipping_service_list(start, count, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/basket.live_shipping_service.list.json?store_id=%s&start=%s&count=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count));
+		path = string.format("%s/basket.live_shipping_service.list.json?start=%s&count=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb

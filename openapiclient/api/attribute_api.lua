@@ -60,8 +60,8 @@ function attribute_api:attribute_add(type, name, code, store_id, lang_id, visibl
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.add.json?type=%s&code=%s&name=%s&store_id=%s&lang_id=%s&visible=%s&required=%s&position=%s&attribute_group_id=%s&is_global=%s&is_searchable=%s&is_filterable=%s&is_comparable=%s&is_html_allowed_on_front=%s&is_filterable_in_search=%s&is_configurable=%s&is_visible_in_advanced_search=%s&is_used_for_promo_rules=%s&used_in_product_listing=%s&used_for_sort_by=%s&apply_to=%s",
-			self.basePath, http_util.encodeURIComponent(type), http_util.encodeURIComponent(code), http_util.encodeURIComponent(name), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(position), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(is_global), http_util.encodeURIComponent(is_searchable), http_util.encodeURIComponent(is_filterable), http_util.encodeURIComponent(is_comparable), http_util.encodeURIComponent(is_html_allowed_on_front), http_util.encodeURIComponent(is_filterable_in_search), http_util.encodeURIComponent(is_configurable), http_util.encodeURIComponent(is_visible_in_advanced_search), http_util.encodeURIComponent(is_used_for_promo_rules), http_util.encodeURIComponent(used_in_product_listing), http_util.encodeURIComponent(used_for_sort_by), http_util.encodeURIComponent(apply_to));
+		path = string.format("%s/attribute.add.json?type=%s&name=%s&code=%s&store_id=%s&lang_id=%s&visible=%s&required=%s&position=%s&attribute_group_id=%s&is_global=%s&is_searchable=%s&is_filterable=%s&is_comparable=%s&is_html_allowed_on_front=%s&is_filterable_in_search=%s&is_configurable=%s&is_visible_in_advanced_search=%s&is_used_for_promo_rules=%s&used_in_product_listing=%s&used_for_sort_by=%s&apply_to=%s",
+			self.basePath, http_util.encodeURIComponent(type), http_util.encodeURIComponent(name), http_util.encodeURIComponent(code), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(position), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(is_global), http_util.encodeURIComponent(is_searchable), http_util.encodeURIComponent(is_filterable), http_util.encodeURIComponent(is_comparable), http_util.encodeURIComponent(is_html_allowed_on_front), http_util.encodeURIComponent(is_filterable_in_search), http_util.encodeURIComponent(is_configurable), http_util.encodeURIComponent(is_visible_in_advanced_search), http_util.encodeURIComponent(is_used_for_promo_rules), http_util.encodeURIComponent(used_in_product_listing), http_util.encodeURIComponent(used_for_sort_by), http_util.encodeURIComponent(apply_to));
 	})
 
 	-- set HTTP verb
@@ -217,13 +217,13 @@ function attribute_api:attribute_assign_set(id, attribute_set_id, group_id)
 	end
 end
 
-function attribute_api:attribute_attributeset_list(start, count, params, exclude, response_fields)
+function attribute_api:attribute_attributeset_list(start, count, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.attributeset.list.json?start=%s&count=%s&params=%s&exclude=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/attribute.attributeset.list.json?start=%s&count=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -330,8 +330,8 @@ function attribute_api:attribute_delete(id, store_id)
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.delete.json?store_id=%s&id=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(id));
+		path = string.format("%s/attribute.delete.json?id=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -379,13 +379,13 @@ function attribute_api:attribute_delete(id, store_id)
 	end
 end
 
-function attribute_api:attribute_group_list(start, count, lang_id, params, exclude, response_fields, attribute_set_id)
+function attribute_api:attribute_group_list(start, count, attribute_set_id, lang_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.group.list.json?start=%s&count=%s&lang_id=%s&params=%s&exclude=%s&response_fields=%s&attribute_set_id=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(attribute_set_id));
+		path = string.format("%s/attribute.group.list.json?start=%s&count=%s&attribute_set_id=%s&lang_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -433,13 +433,13 @@ function attribute_api:attribute_group_list(start, count, lang_id, params, exclu
 	end
 end
 
-function attribute_api:attribute_info(id, attribute_set_id, store_id, lang_id, params, exclude, response_fields)
+function attribute_api:attribute_info(id, attribute_set_id, store_id, lang_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.info.json?id=%s&attribute_set_id=%s&store_id=%s&lang_id=%s&params=%s&exclude=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/attribute.info.json?id=%s&attribute_set_id=%s&store_id=%s&lang_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -487,13 +487,13 @@ function attribute_api:attribute_info(id, attribute_set_id, store_id, lang_id, p
 	end
 end
 
-function attribute_api:attribute_list(start, count, type, attribute_ids, attribute_set_id, store_id, lang_id, params, exclude, response_fields, visible, required, system)
+function attribute_api:attribute_list(start, count, attribute_ids, attribute_set_id, store_id, lang_id, type, visible, required, system, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.list.json?start=%s&count=%s&type=%s&attribute_ids=%s&attribute_set_id=%s&store_id=%s&lang_id=%s&params=%s&exclude=%s&response_fields=%s&visible=%s&required=%s&system=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(type), http_util.encodeURIComponent(attribute_ids), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(system));
+		path = string.format("%s/attribute.list.json?start=%s&count=%s&attribute_ids=%s&attribute_set_id=%s&store_id=%s&lang_id=%s&type=%s&visible=%s&required=%s&system=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(attribute_ids), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(type), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(system), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb

@@ -19,11 +19,30 @@ local function cast_product_variant_update(t)
 	return setmetatable(t, product_variant_update_mt)
 end
 
-local function new_product_variant_update(store_id, id, product_id, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, manage_stock, in_stock, name, description, sku, meta_title, meta_description, meta_keywords, short_description, visible, status, backorder_status, weight, barcode, reindex, taxable, options, harmonized_system_code, country_of_origin, width, weight_unit, height, length, gtin, clear_cache, lang_id, model, available_for_sale, upc, mpn, ean, isbn, avail, is_default, is_free_shipping, tax_class_id, is_virtual)
+local function new_product_variant_update(id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache)
 	return cast_product_variant_update({
-		["store_id"] = store_id;
 		["id"] = id;
 		["product_id"] = product_id;
+		["store_id"] = store_id;
+		["lang_id"] = lang_id;
+		["options"] = options;
+		["name"] = name;
+		["description"] = description;
+		["short_description"] = short_description;
+		["model"] = model;
+		["sku"] = sku;
+		["visible"] = visible;
+		["status"] = status;
+		["backorder_status"] = backorder_status;
+		["available_for_sale"] = available_for_sale;
+		["avail"] = avail;
+		["is_default"] = is_default;
+		["is_free_shipping"] = is_free_shipping;
+		["taxable"] = taxable;
+		["tax_class_id"] = tax_class_id;
+		["is_virtual"] = is_virtual;
+		["manage_stock"] = manage_stock;
+		["in_stock"] = in_stock;
 		["warehouse_id"] = warehouse_id;
 		["reserve_quantity"] = reserve_quantity;
 		["quantity"] = quantity;
@@ -37,43 +56,24 @@ local function new_product_variant_update(store_id, id, product_id, warehouse_id
 		["fixed_cost_shipping_price"] = fixed_cost_shipping_price;
 		["sprice_create"] = sprice_create;
 		["sprice_expire"] = sprice_expire;
-		["manage_stock"] = manage_stock;
-		["in_stock"] = in_stock;
-		["name"] = name;
-		["description"] = description;
-		["sku"] = sku;
-		["meta_title"] = meta_title;
-		["meta_description"] = meta_description;
-		["meta_keywords"] = meta_keywords;
-		["short_description"] = short_description;
-		["visible"] = visible;
-		["status"] = status;
-		["backorder_status"] = backorder_status;
 		["weight"] = weight;
 		["barcode"] = barcode;
-		["reindex"] = reindex;
-		["taxable"] = taxable;
-		["options"] = options;
-		["harmonized_system_code"] = harmonized_system_code;
-		["country_of_origin"] = country_of_origin;
 		["width"] = width;
 		["weight_unit"] = weight_unit;
 		["height"] = height;
 		["length"] = length;
 		["gtin"] = gtin;
-		["clear_cache"] = clear_cache;
-		["lang_id"] = lang_id;
-		["model"] = model;
-		["available_for_sale"] = available_for_sale;
 		["upc"] = upc;
 		["mpn"] = mpn;
 		["ean"] = ean;
 		["isbn"] = isbn;
-		["avail"] = avail;
-		["is_default"] = is_default;
-		["is_free_shipping"] = is_free_shipping;
-		["tax_class_id"] = tax_class_id;
-		["is_virtual"] = is_virtual;
+		["harmonized_system_code"] = harmonized_system_code;
+		["country_of_origin"] = country_of_origin;
+		["meta_title"] = meta_title;
+		["meta_description"] = meta_description;
+		["meta_keywords"] = meta_keywords;
+		["reindex"] = reindex;
+		["clear_cache"] = clear_cache;
 	})
 end
 

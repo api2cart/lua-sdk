@@ -265,13 +265,13 @@ function webhook_api:webhook_events()
 	end
 end
 
-function webhook_api:webhook_list(params, start, count, entity, action, active, ids)
+function webhook_api:webhook_list(start, count, entity, action, active, ids, params)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/webhook.list.json?params=%s&start=%s&count=%s&entity=%s&action=%s&active=%s&ids=%s",
-			self.basePath, http_util.encodeURIComponent(params), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(action), http_util.encodeURIComponent(active), http_util.encodeURIComponent(ids));
+		path = string.format("%s/webhook.list.json?start=%s&count=%s&entity=%s&action=%s&active=%s&ids=%s&params=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(action), http_util.encodeURIComponent(active), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(params));
 	})
 
 	-- set HTTP verb

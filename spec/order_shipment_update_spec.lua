@@ -16,13 +16,6 @@ Please update as you see appropriate
 describe("order_shipment_update", function()
   local openapiclient_order_shipment_update = require "openapiclient.model.order_shipment_update"
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'shipment_id'
   describe("property shipment_id test", function()
     it("should work", function()
@@ -37,22 +30,22 @@ describe("order_shipment_update", function()
     end)
   end)
 
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shipment_provider'
+  describe("property shipment_provider test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'tracking_numbers'
   describe("property tracking_numbers test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'replace'
-  describe("property replace test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'is_shipped'
-  describe("property is_shipped test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -65,6 +58,13 @@ describe("order_shipment_update", function()
     end)
   end)
 
+  -- unit tests for the property 'is_shipped'
+  describe("property is_shipped test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'delivered_at'
   describe("property delivered_at test", function()
     it("should work", function()
@@ -72,8 +72,8 @@ describe("order_shipment_update", function()
     end)
   end)
 
-  -- unit tests for the property 'shipment_provider'
-  describe("property shipment_provider test", function()
+  -- unit tests for the property 'replace'
+  describe("property replace test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

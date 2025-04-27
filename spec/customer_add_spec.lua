@@ -58,6 +58,13 @@ describe("customer_add", function()
     end)
   end)
 
+  -- unit tests for the property 'status'
+  describe("property status test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'created_time'
   describe("property created_time test", function()
     it("should work", function()
@@ -93,13 +100,6 @@ describe("customer_add", function()
     end)
   end)
 
-  -- unit tests for the property 'status'
-  describe("property status test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for the property 'news_letter_subscription'
   describe("property news_letter_subscription test", function()
     it("should work", function()
@@ -123,13 +123,6 @@ describe("customer_add", function()
 
   -- unit tests for the property 'website'
   describe("property website test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -165,6 +158,13 @@ describe("customer_add", function()
 
   -- unit tests for the property 'country'
   describe("property country test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

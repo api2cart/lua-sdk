@@ -16,15 +16,15 @@ Please update as you see appropriate
 describe("order_preestimate_shipping_list", function()
   local openapiclient_order_preestimate_shipping_list = require "openapiclient.model.order_preestimate_shipping_list"
 
-  -- unit tests for the property 'store_id'
-  describe("property store_id test", function()
+  -- unit tests for the property 'warehouse_id'
+  describe("property warehouse_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for the property 'warehouse_id'
-  describe("property warehouse_id test", function()
+  -- unit tests for the property 'customer_id'
+  describe("property customer_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -37,8 +37,8 @@ describe("order_preestimate_shipping_list", function()
     end)
   end)
 
-  -- unit tests for the property 'customer_id'
-  describe("property customer_id test", function()
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

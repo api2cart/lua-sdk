@@ -55,13 +55,13 @@ local function new_category_api(authority, basePath, schemes)
 	}, category_api_mt)
 end
 
-function category_api:category_add(name, parent_id, stores_ids, store_id, lang_id, avail, sort_order, created_time, modified_time, description, short_description, meta_title, meta_description, meta_keywords, seo_url)
+function category_api:category_add(name, description, short_description, parent_id, avail, created_time, modified_time, sort_order, meta_title, meta_description, meta_keywords, seo_url, store_id, stores_ids, lang_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.add.json?name=%s&parent_id=%s&stores_ids=%s&store_id=%s&lang_id=%s&avail=%s&sort_order=%s&created_time=%s&modified_time=%s&description=%s&short_description=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s",
-			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(created_time), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url));
+		path = string.format("%s/category.add.json?name=%s&description=%s&short_description=%s&parent_id=%s&avail=%s&created_time=%s&modified_time=%s&sort_order=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&store_id=%s&stores_ids=%s&lang_id=%s",
+			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(created_time), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(lang_id));
 	})
 
 	-- set HTTP verb
@@ -169,13 +169,13 @@ function category_api:category_add_batch(category_add_batch)
 	end
 end
 
-function category_api:category_assign(product_id, category_id, store_id)
+function category_api:category_assign(category_id, product_id, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.assign.json?product_id=%s&category_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/category.assign.json?category_id=%s&product_id=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -223,13 +223,13 @@ function category_api:category_assign(product_id, category_id, store_id)
 	end
 end
 
-function category_api:category_count(parent_id, store_id, lang_id, created_from, created_to, modified_from, modified_to, avail, product_type, find_value, find_where, report_request_id, disable_report_cache)
+function category_api:category_count(parent_id, store_id, lang_id, avail, created_from, created_to, modified_from, modified_to, product_type, find_value, find_where, report_request_id, disable_report_cache)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.count.json?parent_id=%s&store_id=%s&lang_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&avail=%s&product_type=%s&find_value=%s&find_where=%s&report_request_id=%s&disable_report_cache=%s",
-			self.basePath, http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(product_type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
+		path = string.format("%s/category.count.json?parent_id=%s&store_id=%s&lang_id=%s&avail=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&product_type=%s&find_value=%s&find_where=%s&report_request_id=%s&disable_report_cache=%s",
+			self.basePath, http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(product_type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
 	})
 
 	-- set HTTP verb
@@ -385,13 +385,13 @@ function category_api:category_find(find_value, find_where, find_params, store_i
 	end
 end
 
-function category_api:category_image_add(category_id, image_name, url, type, label, mime, position, store_id)
+function category_api:category_image_add(category_id, image_name, url, type, store_id, label, mime, position)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.image.add.json?category_id=%s&image_name=%s&url=%s&label=%s&mime=%s&type=%s&position=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(url), http_util.encodeURIComponent(label), http_util.encodeURIComponent(mime), http_util.encodeURIComponent(type), http_util.encodeURIComponent(position), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/category.image.add.json?category_id=%s&image_name=%s&url=%s&type=%s&store_id=%s&label=%s&mime=%s&position=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(url), http_util.encodeURIComponent(type), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(label), http_util.encodeURIComponent(mime), http_util.encodeURIComponent(position));
 	})
 
 	-- set HTTP verb
@@ -493,13 +493,13 @@ function category_api:category_image_delete(category_id, image_id, store_id)
 	end
 end
 
-function category_api:category_info(id, params, response_fields, exclude, store_id, lang_id, schema_type, report_request_id, disable_report_cache)
+function category_api:category_info(id, store_id, lang_id, schema_type, response_fields, params, exclude, report_request_id, disable_report_cache)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.info.json?id=%s&params=%s&response_fields=%s&exclude=%s&store_id=%s&lang_id=%s&schema_type=%s&report_request_id=%s&disable_report_cache=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(schema_type), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
+		path = string.format("%s/category.info.json?id=%s&store_id=%s&lang_id=%s&schema_type=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(schema_type), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
 	})
 
 	-- set HTTP verb
@@ -547,13 +547,13 @@ function category_api:category_info(id, params, response_fields, exclude, store_
 	end
 end
 
-function category_api:category_list(start, count, page_cursor, parent_id, params, response_fields, exclude, store_id, lang_id, created_from, created_to, modified_from, modified_to, avail, product_type, find_value, find_where, report_request_id, disable_report_cache, disable_cache)
+function category_api:category_list(start, count, page_cursor, store_id, lang_id, parent_id, avail, product_type, created_from, created_to, modified_from, modified_to, find_value, find_where, response_fields, params, exclude, report_request_id, disable_report_cache, disable_cache)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.list.json?start=%s&count=%s&page_cursor=%s&parent_id=%s&params=%s&response_fields=%s&exclude=%s&store_id=%s&lang_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&avail=%s&product_type=%s&find_value=%s&find_where=%s&report_request_id=%s&disable_report_cache=%s&disable_cache=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(product_type), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(disable_cache));
+		path = string.format("%s/category.list.json?start=%s&count=%s&page_cursor=%s&store_id=%s&lang_id=%s&parent_id=%s&avail=%s&product_type=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&find_value=%s&find_where=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s&disable_cache=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(product_type), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(disable_cache));
 	})
 
 	-- set HTTP verb
@@ -655,13 +655,13 @@ function category_api:category_unassign(category_id, product_id, store_id)
 	end
 end
 
-function category_api:category_update(id, name, parent_id, stores_ids, avail, sort_order, modified_time, description, short_description, meta_title, meta_description, meta_keywords, seo_url, lang_id, store_id)
+function category_api:category_update(id, name, description, short_description, parent_id, avail, sort_order, modified_time, meta_title, meta_description, meta_keywords, seo_url, store_id, stores_ids, lang_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.update.json?id=%s&name=%s&parent_id=%s&stores_ids=%s&avail=%s&sort_order=%s&modified_time=%s&description=%s&short_description=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&lang_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/category.update.json?id=%s&name=%s&description=%s&short_description=%s&parent_id=%s&avail=%s&sort_order=%s&modified_time=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&store_id=%s&stores_ids=%s&lang_id=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(lang_id));
 	})
 
 	-- set HTTP verb

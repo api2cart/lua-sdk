@@ -19,17 +19,17 @@ local function cast_order_shipment_update(t)
 	return setmetatable(t, order_shipment_update_mt)
 end
 
-local function new_order_shipment_update(store_id, shipment_id, order_id, tracking_numbers, replace, is_shipped, tracking_link, delivered_at, shipment_provider)
+local function new_order_shipment_update(shipment_id, order_id, store_id, shipment_provider, tracking_numbers, tracking_link, is_shipped, delivered_at, replace)
 	return cast_order_shipment_update({
-		["store_id"] = store_id;
 		["shipment_id"] = shipment_id;
 		["order_id"] = order_id;
-		["tracking_numbers"] = tracking_numbers;
-		["replace"] = replace;
-		["is_shipped"] = is_shipped;
-		["tracking_link"] = tracking_link;
-		["delivered_at"] = delivered_at;
+		["store_id"] = store_id;
 		["shipment_provider"] = shipment_provider;
+		["tracking_numbers"] = tracking_numbers;
+		["tracking_link"] = tracking_link;
+		["is_shipped"] = is_shipped;
+		["delivered_at"] = delivered_at;
+		["replace"] = replace;
 	})
 end
 
