@@ -107,6 +107,13 @@ describe("order_shipment_add", function()
     end)
   end)
 
+  -- unit tests for the property 'tracking_provider'
+  describe("property tracking_provider test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'use_latest_api_version'
   describe("property use_latest_api_version test", function()
     it("should work", function()

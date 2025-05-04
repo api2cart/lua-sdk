@@ -254,6 +254,20 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'bigcartel_user_name'
+  describe("property bigcartel_user_name test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'bigcartel_password'
+  describe("property bigcartel_password test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'demandware_client_id'
   describe("property demandware_client_id test", function()
     it("should work", function()
