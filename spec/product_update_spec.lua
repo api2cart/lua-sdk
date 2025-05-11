@@ -590,4 +590,25 @@ describe("product_update", function()
     end)
   end)
 
+  -- unit tests for the property 'specifics'
+  describe("property specifics test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shop_section_id'
+  describe("property shop_section_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'personalization_details'
+  describe("property personalization_details test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)

@@ -291,6 +291,7 @@ openapiclient/model/product_add_group_prices_inner.lua
 openapiclient/model/product_add_logistic_info_inner.lua
 openapiclient/model/product_add_manufacturer_info.lua
 openapiclient/model/product_add_package_details.lua
+openapiclient/model/product_add_personalization_details.lua
 openapiclient/model/product_add_sales_tax.lua
 openapiclient/model/product_add_seller_profiles.lua
 openapiclient/model/product_add_shipping_details_inner.lua
@@ -736,6 +737,7 @@ spec/product_add_group_prices_inner_spec.lua
 spec/product_add_logistic_info_inner_spec.lua
 spec/product_add_manufacturer_info_spec.lua
 spec/product_add_package_details_spec.lua
+spec/product_add_personalization_details_spec.lua
 spec/product_add_sales_tax_spec.lua
 spec/product_add_seller_profiles_spec.lua
 spec/product_add_shipping_details_inner_spec.lua
