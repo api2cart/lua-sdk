@@ -1315,13 +1315,13 @@ function order_api:order_transaction_list(order_ids, count, page_cursor, store_i
 	end
 end
 
-function order_api:order_update(order_id, store_id, order_status, financial_status, fulfillment_status, cancellation_reason, order_payment_method, comment, admin_comment, admin_private_comment, invoice_admin_comment, date_modified, date_finished, send_notifications, create_invoice, origin)
+function order_api:order_update(order_id, store_id, order_status, financial_status, fulfillment_status, cancellation_reason, order_payment_method, comment, admin_comment, admin_private_comment, invoice_admin_comment, date_modified, date_finished, send_notifications, create_invoice, origin, tags)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/order.update.json?order_id=%s&store_id=%s&order_status=%s&financial_status=%s&fulfillment_status=%s&cancellation_reason=%s&order_payment_method=%s&comment=%s&admin_comment=%s&admin_private_comment=%s&invoice_admin_comment=%s&date_modified=%s&date_finished=%s&send_notifications=%s&create_invoice=%s&origin=%s",
-			self.basePath, http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(order_status), http_util.encodeURIComponent(financial_status), http_util.encodeURIComponent(fulfillment_status), http_util.encodeURIComponent(cancellation_reason), http_util.encodeURIComponent(order_payment_method), http_util.encodeURIComponent(comment), http_util.encodeURIComponent(admin_comment), http_util.encodeURIComponent(admin_private_comment), http_util.encodeURIComponent(invoice_admin_comment), http_util.encodeURIComponent(date_modified), http_util.encodeURIComponent(date_finished), http_util.encodeURIComponent(send_notifications), http_util.encodeURIComponent(create_invoice), http_util.encodeURIComponent(origin));
+		path = string.format("%s/order.update.json?order_id=%s&store_id=%s&order_status=%s&financial_status=%s&fulfillment_status=%s&cancellation_reason=%s&order_payment_method=%s&comment=%s&admin_comment=%s&admin_private_comment=%s&invoice_admin_comment=%s&date_modified=%s&date_finished=%s&send_notifications=%s&create_invoice=%s&origin=%s&tags=%s",
+			self.basePath, http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(order_status), http_util.encodeURIComponent(financial_status), http_util.encodeURIComponent(fulfillment_status), http_util.encodeURIComponent(cancellation_reason), http_util.encodeURIComponent(order_payment_method), http_util.encodeURIComponent(comment), http_util.encodeURIComponent(admin_comment), http_util.encodeURIComponent(admin_private_comment), http_util.encodeURIComponent(invoice_admin_comment), http_util.encodeURIComponent(date_modified), http_util.encodeURIComponent(date_finished), http_util.encodeURIComponent(send_notifications), http_util.encodeURIComponent(create_invoice), http_util.encodeURIComponent(origin), http_util.encodeURIComponent(tags));
 	})
 
 	-- set HTTP verb
