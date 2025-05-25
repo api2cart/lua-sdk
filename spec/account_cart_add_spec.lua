@@ -576,6 +576,48 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'shopee_partner_id'
+  describe("property shopee_partner_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shopee_partner_key'
+  describe("property shopee_partner_key test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shopee_shop_id'
+  describe("property shopee_shop_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shopee_refresh_token'
+  describe("property shopee_refresh_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shopee_region'
+  describe("property shopee_region test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shopee_environment'
+  describe("property shopee_environment test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'shoplazza_access_token'
   describe("property shoplazza_access_token test", function()
     it("should work", function()
@@ -1068,6 +1110,34 @@ describe("account_cart_add", function()
 
   -- unit tests for the property 'salla_access_token'
   describe("property salla_access_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'temu_app_key'
+  describe("property temu_app_key test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'temu_app_secret'
+  describe("property temu_app_secret test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'temu_access_token'
+  describe("property temu_access_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'temu_region'
+  describe("property temu_region test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
