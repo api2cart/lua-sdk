@@ -37,6 +37,13 @@ describe("webhook", function()
     end)
   end)
 
+  -- unit tests for the property 'lang_id'
+  describe("property lang_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'active'
   describe("property active test", function()
     it("should work", function()

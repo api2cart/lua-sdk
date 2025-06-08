@@ -103,13 +103,13 @@ function webhook_api:webhook_count(entity, action, active)
 	end
 end
 
-function webhook_api:webhook_create(entity, action, callback, label, fields, active, store_id)
+function webhook_api:webhook_create(entity, action, callback, label, fields, active, lang_id, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/webhook.create.json?entity=%s&action=%s&callback=%s&label=%s&fields=%s&active=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(entity), http_util.encodeURIComponent(action), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(label), http_util.encodeURIComponent(fields), http_util.encodeURIComponent(active), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/webhook.create.json?entity=%s&action=%s&callback=%s&label=%s&fields=%s&active=%s&lang_id=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(entity), http_util.encodeURIComponent(action), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(label), http_util.encodeURIComponent(fields), http_util.encodeURIComponent(active), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -319,13 +319,13 @@ function webhook_api:webhook_list(start, count, entity, action, active, ids, par
 	end
 end
 
-function webhook_api:webhook_update(id, callback, label, fields, active)
+function webhook_api:webhook_update(id, callback, label, fields, active, lang_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/webhook.update.json?id=%s&callback=%s&label=%s&fields=%s&active=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(label), http_util.encodeURIComponent(fields), http_util.encodeURIComponent(active));
+		path = string.format("%s/webhook.update.json?id=%s&callback=%s&label=%s&fields=%s&active=%s&lang_id=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(label), http_util.encodeURIComponent(fields), http_util.encodeURIComponent(active), http_util.encodeURIComponent(lang_id));
 	})
 
 	-- set HTTP verb
