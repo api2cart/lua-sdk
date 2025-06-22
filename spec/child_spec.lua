@@ -205,6 +205,13 @@ describe("child", function()
     end)
   end)
 
+  -- unit tests for the property 'on_sale'
+  describe("property on_sale test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'manage_stock'
   describe("property manage_stock test", function()
     it("should work", function()

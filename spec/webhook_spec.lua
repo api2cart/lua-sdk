@@ -65,6 +65,13 @@ describe("webhook", function()
     end)
   end)
 
+  -- unit tests for the property 'response_fields'
+  describe("property response_fields test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'created_at'
   describe("property created_at test", function()
     it("should work", function()

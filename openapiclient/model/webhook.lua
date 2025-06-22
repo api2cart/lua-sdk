@@ -19,7 +19,7 @@ local function cast_webhook(t)
 	return setmetatable(t, webhook_mt)
 end
 
-local function new_webhook(id, label, store_id, lang_id, active, callback, fields, created_at, updated_at, entity, action, additional_fields, custom_fields)
+local function new_webhook(id, label, store_id, lang_id, active, callback, fields, response_fields, created_at, updated_at, entity, action, additional_fields, custom_fields)
 	return cast_webhook({
 		["id"] = id;
 		["label"] = label;
@@ -28,6 +28,7 @@ local function new_webhook(id, label, store_id, lang_id, active, callback, field
 		["active"] = active;
 		["callback"] = callback;
 		["fields"] = fields;
+		["response_fields"] = response_fields;
 		["created_at"] = created_at;
 		["updated_at"] = updated_at;
 		["entity"] = entity;
