@@ -51,6 +51,13 @@ describe("product_add_specifics_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'input_value'
+  describe("property input_value test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'food_details'
   describe("property food_details test", function()
     it("should work", function()

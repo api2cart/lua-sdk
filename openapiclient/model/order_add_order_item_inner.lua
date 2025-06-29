@@ -19,7 +19,7 @@ local function cast_order_add_order_item_inner(t)
 	return setmetatable(t, order_add_order_item_inner_mt)
 end
 
-local function new_order_add_order_item_inner(order_item_id, order_item_name, order_item_model, order_item_price, order_item_quantity, order_item_weight, order_item_variant_id, order_item_tax, order_item_price_includes_tax, order_item_parent, order_item_parent_option_name, order_item_allow_refund_items_separately, order_item_allow_ship_items_separately, order_item_option, order_item_property)
+local function new_order_add_order_item_inner(order_item_id, order_item_name, order_item_model, order_item_price, order_item_quantity, order_item_weight, order_item_variant_id, order_item_tax, order_item_tax_class, order_item_price_includes_tax, order_item_parent, order_item_parent_option_name, order_item_allow_refund_items_separately, order_item_allow_ship_items_separately, order_item_option, order_item_property)
 	return cast_order_add_order_item_inner({
 		["order_item_id"] = order_item_id;
 		["order_item_name"] = order_item_name;
@@ -29,6 +29,7 @@ local function new_order_add_order_item_inner(order_item_id, order_item_name, or
 		["order_item_weight"] = order_item_weight;
 		["order_item_variant_id"] = order_item_variant_id;
 		["order_item_tax"] = order_item_tax;
+		["order_item_tax_class"] = order_item_tax_class;
 		["order_item_price_includes_tax"] = order_item_price_includes_tax;
 		["order_item_parent"] = order_item_parent;
 		["order_item_parent_option_name"] = order_item_parent_option_name;

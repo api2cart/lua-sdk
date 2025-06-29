@@ -72,6 +72,13 @@ describe("order_add_order_item_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'order_item_tax_class'
+  describe("property order_item_tax_class test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'order_item_price_includes_tax'
   describe("property order_item_price_includes_tax test", function()
     it("should work", function()

@@ -737,6 +737,13 @@ describe("product_add", function()
     end)
   end)
 
+  -- unit tests for the property 'category_type'
+  describe("property category_type test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'return_accepted'
   describe("property return_accepted test", function()
     it("should work", function()

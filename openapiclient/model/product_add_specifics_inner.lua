@@ -19,13 +19,14 @@ local function cast_product_add_specifics_inner(t)
 	return setmetatable(t, product_add_specifics_inner_mt)
 end
 
-local function new_product_add_specifics_inner(name, value, values, used_for_variations, scale_id, food_details, group_products_details, booking_details)
+local function new_product_add_specifics_inner(name, value, values, used_for_variations, scale_id, input_value, food_details, group_products_details, booking_details)
 	return cast_product_add_specifics_inner({
 		["name"] = name;
 		["value"] = value;
 		["values"] = values;
 		["used_for_variations"] = used_for_variations;
 		["scale_id"] = scale_id;
+		["input_value"] = input_value;
 		["food_details"] = food_details;
 		["group_products_details"] = group_products_details;
 		["booking_details"] = booking_details;
