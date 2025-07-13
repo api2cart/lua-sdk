@@ -19,7 +19,7 @@ local function cast_customer(t)
 	return setmetatable(t, customer_mt)
 end
 
-local function new_customer(id, email, first_name, last_name, phone, created_time, modified_time, group, login, last_login, birth_day, status, news_letter_subscription, consents, gender, stores_ids, website, fax, company, ip_address, address_book, lang_id, orders_count, last_order_id, additional_fields, custom_fields)
+local function new_customer(id, email, first_name, last_name, phone, created_time, modified_time, group, login, last_login, birth_day, status, is_guest, news_letter_subscription, consents, gender, stores_ids, website, fax, company, ip_address, address_book, lang_id, orders_count, last_order_id, additional_fields, custom_fields)
 	return cast_customer({
 		["id"] = id;
 		["email"] = email;
@@ -33,6 +33,7 @@ local function new_customer(id, email, first_name, last_name, phone, created_tim
 		["last_login"] = last_login;
 		["birth_day"] = birth_day;
 		["status"] = status;
+		["is_guest"] = is_guest;
 		["news_letter_subscription"] = news_letter_subscription;
 		["consents"] = consents;
 		["gender"] = gender;

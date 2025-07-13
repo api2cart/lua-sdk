@@ -232,13 +232,13 @@ function customer_api:customer_attribute_list(customer_id, count, page_cursor, s
 	end
 end
 
-function customer_api:customer_count(ids, since_id, customer_list_id, group_id, store_id, avail, find_value, find_where, created_from, created_to, modified_from, modified_to)
+function customer_api:customer_count(ids, since_id, customer_list_id, group_id, store_id, avail, include_guests, find_value, find_where, created_from, created_to, modified_from, modified_to)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/customer.count.json?ids=%s&since_id=%s&customer_list_id=%s&group_id=%s&store_id=%s&avail=%s&find_value=%s&find_where=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s",
-			self.basePath, http_util.encodeURIComponent(ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(customer_list_id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to));
+		path = string.format("%s/customer.count.json?ids=%s&since_id=%s&customer_list_id=%s&group_id=%s&store_id=%s&avail=%s&include_guests=%s&find_value=%s&find_where=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s",
+			self.basePath, http_util.encodeURIComponent(ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(customer_list_id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(include_guests), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to));
 	})
 
 	-- set HTTP verb
@@ -340,13 +340,13 @@ function customer_api:customer_delete(id)
 	end
 end
 
-function customer_api:customer_find(find_value, find_where, find_params, store_id)
+function customer_api:customer_find(find_value, find_where, find_params, store_id, include_guests)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/customer.find.json?find_value=%s&find_where=%s&find_params=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(find_params), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/customer.find.json?find_value=%s&find_where=%s&find_params=%s&store_id=%s&include_guests=%s",
+			self.basePath, http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(find_params), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(include_guests));
 	})
 
 	-- set HTTP verb
@@ -556,13 +556,13 @@ function customer_api:customer_info(id, store_id, response_fields, params, exclu
 	end
 end
 
-function customer_api:customer_list(start, count, page_cursor, ids, since_id, customer_list_id, group_id, store_id, avail, find_value, find_where, created_from, created_to, modified_from, modified_to, sort_by, sort_direction, response_fields, params, exclude)
+function customer_api:customer_list(start, count, page_cursor, ids, since_id, customer_list_id, group_id, store_id, avail, include_guests, find_value, find_where, created_from, created_to, modified_from, modified_to, sort_by, sort_direction, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/customer.list.json?start=%s&count=%s&page_cursor=%s&ids=%s&since_id=%s&customer_list_id=%s&group_id=%s&store_id=%s&avail=%s&find_value=%s&find_where=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&sort_by=%s&sort_direction=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(customer_list_id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/customer.list.json?start=%s&count=%s&page_cursor=%s&ids=%s&since_id=%s&customer_list_id=%s&group_id=%s&store_id=%s&avail=%s&include_guests=%s&find_value=%s&find_where=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&sort_by=%s&sort_direction=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(customer_list_id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(include_guests), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb

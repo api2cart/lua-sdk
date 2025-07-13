@@ -100,6 +100,13 @@ describe("customer", function()
     end)
   end)
 
+  -- unit tests for the property 'is_guest'
+  describe("property is_guest test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'news_letter_subscription'
   describe("property news_letter_subscription test", function()
     it("should work", function()
