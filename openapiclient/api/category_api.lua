@@ -18,9 +18,9 @@ local basexx = require "basexx"
 -- model import
 local openapiclient_account_config_update_200_response = require "openapiclient.model.account_config_update_200_response"
 local openapiclient_attribute_delete_200_response = require "openapiclient.model.attribute_delete_200_response"
-local openapiclient_cart_config_update_200_response = require "openapiclient.model.cart_config_update_200_response"
 local openapiclient_category_add_batch_200_response = require "openapiclient.model.category_add_batch_200_response"
 local openapiclient_category_add_200_response = require "openapiclient.model.category_add_200_response"
+local openapiclient_category_assign_200_response = require "openapiclient.model.category_assign_200_response"
 local openapiclient_category_count_200_response = require "openapiclient.model.category_count_200_response"
 local openapiclient_category_delete_200_response = require "openapiclient.model.category_delete_200_response"
 local openapiclient_category_find_200_response = require "openapiclient.model.category_find_200_response"
@@ -45,7 +45,7 @@ local function new_category_api(authority, basePath, schemes)
 	return setmetatable({
 		host = host;
 		port = port;
-		basePath = basePath or "https://api.api2cart.com/v1.1";
+		basePath = basePath or "https://api.api2cart.local.com/v1.1";
 		schemes = schemes_map;
 		default_scheme = default_scheme;
 		http_username = nil;
@@ -211,7 +211,7 @@ function category_api:category_assign(category_id, product_id, store_id)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_cart_config_update_200_response.cast(result), headers
+		return openapiclient_category_assign_200_response.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -643,7 +643,7 @@ function category_api:category_unassign(category_id, product_id, store_id)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_cart_config_update_200_response.cast(result), headers
+		return openapiclient_category_assign_200_response.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

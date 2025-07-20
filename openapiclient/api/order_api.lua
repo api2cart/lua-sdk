@@ -28,7 +28,6 @@ local openapiclient_model_response_order_transaction_list = require "openapiclie
 local openapiclient_order_add_200_response = require "openapiclient.model.order_add_200_response"
 local openapiclient_order_count_200_response = require "openapiclient.model.order_count_200_response"
 local openapiclient_order_financial_status_list_200_response = require "openapiclient.model.order_financial_status_list_200_response"
-local openapiclient_order_find_200_response = require "openapiclient.model.order_find_200_response"
 local openapiclient_order_fulfillment_status_list_200_response = require "openapiclient.model.order_fulfillment_status_list_200_response"
 local openapiclient_order_info_200_response = require "openapiclient.model.order_info_200_response"
 local openapiclient_order_refund_add_200_response = require "openapiclient.model.order_refund_add_200_response"
@@ -63,7 +62,7 @@ local function new_order_api(authority, basePath, schemes)
 	return setmetatable({
 		host = host;
 		port = port;
-		basePath = basePath or "https://api.api2cart.com/v1.1";
+		basePath = basePath or "https://api.api2cart.local.com/v1.1";
 		schemes = schemes_map;
 		default_scheme = default_scheme;
 		http_username = nil;
@@ -284,60 +283,6 @@ function order_api:order_financial_status_list()
 			return nil, err3
 		end
 		return openapiclient_order_financial_status_list_200_response.cast(result), headers
-	else
-		local body, err, errno2 = stream:get_body_as_string()
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		-- return the error message (http body)
-		return nil, http_status, body
-	end
-end
-
-function order_api:order_find(start, count, customer_id, customer_email, order_status, financial_status, created_to, created_from, modified_to, modified_from, params, exclude)
-	local req = http_request.new_from_uri({
-		scheme = self.default_scheme;
-		host = self.host;
-		port = self.port;
-		path = string.format("%s/order.find.json?start=%s&count=%s&customer_id=%s&customer_email=%s&order_status=%s&financial_status=%s&created_to=%s&created_from=%s&modified_to=%s&modified_from=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(customer_email), http_util.encodeURIComponent(order_status), http_util.encodeURIComponent(financial_status), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
-	})
-
-	-- set HTTP verb
-	req.headers:upsert(":method", "GET")
-	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json" }
-	req.headers:upsert("content-type", "application/json")
-
-	-- api key in headers 'x-store-key'
-	if self.api_key['x-store-key'] then
-		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
-	end
-	-- api key in headers 'x-api-key'
-	if self.api_key['x-api-key'] then
-		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
-	end
-
-	-- make the HTTP call
-	local headers, stream, errno = req:go()
-	if not headers then
-		return nil, stream, errno
-	end
-	local http_status = headers:get(":status")
-	if http_status:sub(1,1) == "2" then
-		local body, err, errno2 = stream:get_body_as_string()
-		-- exception when getting the HTTP body
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		local result, _, err3 = dkjson.decode(body)
-		-- exception when decoding the HTTP body
-		if result == nil then
-			return nil, err3
-		end
-		return openapiclient_order_find_200_response.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

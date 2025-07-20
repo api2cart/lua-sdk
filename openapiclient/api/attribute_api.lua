@@ -45,7 +45,7 @@ local function new_attribute_api(authority, basePath, schemes)
 	return setmetatable({
 		host = host;
 		port = port;
-		basePath = basePath or "https://api.api2cart.com/v1.1";
+		basePath = basePath or "https://api.api2cart.local.com/v1.1";
 		schemes = schemes_map;
 		default_scheme = default_scheme;
 		http_username = nil;

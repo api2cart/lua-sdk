@@ -15,13 +15,6 @@ Please update as you see appropriate
 ]]
 describe("cart_api", function()
   local openapiclient_cart_api = require "openapiclient.api.cart_api"
-  -- unit tests for cart_bridge
-  describe("cart_bridge test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for cart_catalog_price_rules_count
   describe("cart_catalog_price_rules_count test", function()
     it("should work", function()
@@ -31,27 +24,6 @@ describe("cart_api", function()
 
   -- unit tests for cart_catalog_price_rules_list
   describe("cart_catalog_price_rules_list test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for cart_clear_cache
-  describe("cart_clear_cache test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for cart_config
-  describe("cart_config test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for cart_config_update
-  describe("cart_config_update test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -92,22 +64,8 @@ describe("cart_api", function()
     end)
   end)
 
-  -- unit tests for cart_create
-  describe("cart_create test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for cart_delete
   describe("cart_delete test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for cart_disconnect
-  describe("cart_disconnect test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -143,13 +101,6 @@ describe("cart_api", function()
 
   -- unit tests for cart_info
   describe("cart_info test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for cart_list
-  describe("cart_list test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

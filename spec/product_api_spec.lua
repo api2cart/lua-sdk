@@ -113,13 +113,6 @@ describe("product_api", function()
     end)
   end)
 
-  -- unit tests for product_fields
-  describe("product_fields test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for product_find
   describe("product_find test", function()
     it("should work", function()
@@ -295,13 +288,6 @@ describe("product_api", function()
     end)
   end)
 
-  -- unit tests for product_variant_count
-  describe("product_variant_count test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for product_variant_delete
   describe("product_variant_delete test", function()
     it("should work", function()
@@ -325,20 +311,6 @@ describe("product_api", function()
 
   -- unit tests for product_variant_image_delete
   describe("product_variant_image_delete test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for product_variant_info
-  describe("product_variant_info test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for product_variant_list
-  describe("product_variant_list test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

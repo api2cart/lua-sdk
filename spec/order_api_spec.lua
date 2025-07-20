@@ -43,13 +43,6 @@ describe("order_api", function()
     end)
   end)
 
-  -- unit tests for order_find
-  describe("order_find test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for order_fulfillment_status_list
   describe("order_fulfillment_status_list test", function()
     it("should work", function()

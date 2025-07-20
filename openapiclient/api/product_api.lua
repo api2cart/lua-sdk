@@ -19,7 +19,6 @@ local basexx = require "basexx"
 local openapiclient_account_config_update_200_response = require "openapiclient.model.account_config_update_200_response"
 local openapiclient_attribute_delete_200_response = require "openapiclient.model.attribute_delete_200_response"
 local openapiclient_attribute_value_delete_200_response = require "openapiclient.model.attribute_value_delete_200_response"
-local openapiclient_cart_config_update_200_response = require "openapiclient.model.cart_config_update_200_response"
 local openapiclient_cart_validate_200_response = require "openapiclient.model.cart_validate_200_response"
 local openapiclient_category_add_batch_200_response = require "openapiclient.model.category_add_batch_200_response"
 local openapiclient_customer_delete_200_response = require "openapiclient.model.customer_delete_200_response"
@@ -48,9 +47,7 @@ local openapiclient_product_option_value_add_200_response = require "openapiclie
 local openapiclient_product_option_value_assign_200_response = require "openapiclient.model.product_option_value_assign_200_response"
 local openapiclient_product_tax_add_200_response = require "openapiclient.model.product_tax_add_200_response"
 local openapiclient_product_variant_add_200_response = require "openapiclient.model.product_variant_add_200_response"
-local openapiclient_product_variant_count_200_response = require "openapiclient.model.product_variant_count_200_response"
 local openapiclient_product_variant_image_add_200_response = require "openapiclient.model.product_variant_image_add_200_response"
-local openapiclient_product_variant_list_200_response = require "openapiclient.model.product_variant_list_200_response"
 local openapiclient_product_add = require "openapiclient.model.product_add"
 local openapiclient_product_add_batch = require "openapiclient.model.product_add_batch"
 local openapiclient_product_delete_batch = require "openapiclient.model.product_delete_batch"
@@ -86,7 +83,7 @@ local function new_product_api(authority, basePath, schemes)
 	return setmetatable({
 		host = host;
 		port = port;
-		basePath = basePath or "https://api.api2cart.com/v1.1";
+		basePath = basePath or "https://api.api2cart.local.com/v1.1";
 		schemes = schemes_map;
 		default_scheme = default_scheme;
 		http_username = nil;
@@ -859,60 +856,6 @@ function product_api:product_delete_batch(product_delete_batch)
 			return nil, err3
 		end
 		return openapiclient_category_add_batch_200_response.cast(result), headers
-	else
-		local body, err, errno2 = stream:get_body_as_string()
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		-- return the error message (http body)
-		return nil, http_status, body
-	end
-end
-
-function product_api:product_fields()
-	local req = http_request.new_from_uri({
-		scheme = self.default_scheme;
-		host = self.host;
-		port = self.port;
-		path = string.format("%s/product.fields.json",
-			self.basePath);
-	})
-
-	-- set HTTP verb
-	req.headers:upsert(":method", "GET")
-	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json" }
-	req.headers:upsert("content-type", "application/json")
-
-	-- api key in headers 'x-store-key'
-	if self.api_key['x-store-key'] then
-		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
-	end
-	-- api key in headers 'x-api-key'
-	if self.api_key['x-api-key'] then
-		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
-	end
-
-	-- make the HTTP call
-	local headers, stream, errno = req:go()
-	if not headers then
-		return nil, stream, errno
-	end
-	local http_status = headers:get(":status")
-	if http_status:sub(1,1) == "2" then
-		local body, err, errno2 = stream:get_body_as_string()
-		-- exception when getting the HTTP body
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		local result, _, err3 = dkjson.decode(body)
-		-- exception when decoding the HTTP body
-		if result == nil then
-			return nil, err3
-		end
-		return openapiclient_cart_config_update_200_response.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -2328,60 +2271,6 @@ function product_api:product_variant_add_batch(product_variant_add_batch)
 	end
 end
 
-function product_api:product_variant_count(product_id, category_id, store_id, created_from, created_to, modified_from, modified_to)
-	local req = http_request.new_from_uri({
-		scheme = self.default_scheme;
-		host = self.host;
-		port = self.port;
-		path = string.format("%s/product.variant.count.json?product_id=%s&category_id=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to));
-	})
-
-	-- set HTTP verb
-	req.headers:upsert(":method", "GET")
-	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json" }
-	req.headers:upsert("content-type", "application/json")
-
-	-- api key in headers 'x-store-key'
-	if self.api_key['x-store-key'] then
-		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
-	end
-	-- api key in headers 'x-api-key'
-	if self.api_key['x-api-key'] then
-		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
-	end
-
-	-- make the HTTP call
-	local headers, stream, errno = req:go()
-	if not headers then
-		return nil, stream, errno
-	end
-	local http_status = headers:get(":status")
-	if http_status:sub(1,1) == "2" then
-		local body, err, errno2 = stream:get_body_as_string()
-		-- exception when getting the HTTP body
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		local result, _, err3 = dkjson.decode(body)
-		-- exception when decoding the HTTP body
-		if result == nil then
-			return nil, err3
-		end
-		return openapiclient_product_variant_count_200_response.cast(result), headers
-	else
-		local body, err, errno2 = stream:get_body_as_string()
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		-- return the error message (http body)
-		return nil, http_status, body
-	end
-end
-
 function product_api:product_variant_delete(id, product_id, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
@@ -2599,114 +2488,6 @@ function product_api:product_variant_image_delete(product_id, product_variant_id
 			return nil, err3
 		end
 		return openapiclient_attribute_delete_200_response.cast(result), headers
-	else
-		local body, err, errno2 = stream:get_body_as_string()
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		-- return the error message (http body)
-		return nil, http_status, body
-	end
-end
-
-function product_api:product_variant_info(id, store_id, params, exclude)
-	local req = http_request.new_from_uri({
-		scheme = self.default_scheme;
-		host = self.host;
-		port = self.port;
-		path = string.format("%s/product.variant.info.json?id=%s&store_id=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
-	})
-
-	-- set HTTP verb
-	req.headers:upsert(":method", "GET")
-	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json" }
-	req.headers:upsert("content-type", "application/json")
-
-	-- api key in headers 'x-store-key'
-	if self.api_key['x-store-key'] then
-		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
-	end
-	-- api key in headers 'x-api-key'
-	if self.api_key['x-api-key'] then
-		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
-	end
-
-	-- make the HTTP call
-	local headers, stream, errno = req:go()
-	if not headers then
-		return nil, stream, errno
-	end
-	local http_status = headers:get(":status")
-	if http_status:sub(1,1) == "2" then
-		local body, err, errno2 = stream:get_body_as_string()
-		-- exception when getting the HTTP body
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		local result, _, err3 = dkjson.decode(body)
-		-- exception when decoding the HTTP body
-		if result == nil then
-			return nil, err3
-		end
-		return openapiclient_product_info_200_response.cast(result), headers
-	else
-		local body, err, errno2 = stream:get_body_as_string()
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		-- return the error message (http body)
-		return nil, http_status, body
-	end
-end
-
-function product_api:product_variant_list(start, count, product_id, category_id, store_id, created_from, created_to, modified_from, modified_to, params, exclude)
-	local req = http_request.new_from_uri({
-		scheme = self.default_scheme;
-		host = self.host;
-		port = self.port;
-		path = string.format("%s/product.variant.list.json?start=%s&count=%s&product_id=%s&category_id=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
-	})
-
-	-- set HTTP verb
-	req.headers:upsert(":method", "GET")
-	-- TODO: create a function to select proper content-type
-	--local var_accept = { "application/json" }
-	req.headers:upsert("content-type", "application/json")
-
-	-- api key in headers 'x-store-key'
-	if self.api_key['x-store-key'] then
-		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
-	end
-	-- api key in headers 'x-api-key'
-	if self.api_key['x-api-key'] then
-		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
-	end
-
-	-- make the HTTP call
-	local headers, stream, errno = req:go()
-	if not headers then
-		return nil, stream, errno
-	end
-	local http_status = headers:get(":status")
-	if http_status:sub(1,1) == "2" then
-		local body, err, errno2 = stream:get_body_as_string()
-		-- exception when getting the HTTP body
-		if not body then
-			return nil, err, errno2
-		end
-		stream:shutdown()
-		local result, _, err3 = dkjson.decode(body)
-		-- exception when decoding the HTTP body
-		if result == nil then
-			return nil, err3
-		end
-		return openapiclient_product_variant_list_200_response.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
