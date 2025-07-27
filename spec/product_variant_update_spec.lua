@@ -107,6 +107,13 @@ describe("product_variant_update", function()
     end)
   end)
 
+  -- unit tests for the property 'low_stock_threshold'
+  describe("property low_stock_threshold test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'available_for_sale'
   describe("property available_for_sale test", function()
     it("should work", function()

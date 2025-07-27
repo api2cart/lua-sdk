@@ -19,7 +19,7 @@ local function cast_product_variant_update(t)
 	return setmetatable(t, product_variant_update_mt)
 end
 
-local function new_product_variant_update(id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache)
+local function new_product_variant_update(id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, low_stock_threshold, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache)
 	return cast_product_variant_update({
 		["id"] = id;
 		["product_id"] = product_id;
@@ -34,6 +34,7 @@ local function new_product_variant_update(id, product_id, store_id, lang_id, opt
 		["visible"] = visible;
 		["status"] = status;
 		["backorder_status"] = backorder_status;
+		["low_stock_threshold"] = low_stock_threshold;
 		["available_for_sale"] = available_for_sale;
 		["avail"] = avail;
 		["is_default"] = is_default;

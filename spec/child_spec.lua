@@ -240,6 +240,13 @@ describe("child", function()
     end)
   end)
 
+  -- unit tests for the property 'low_stock_threshold'
+  describe("property low_stock_threshold test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'default_qty_in_pack'
   describe("property default_qty_in_pack test", function()
     it("should work", function()
