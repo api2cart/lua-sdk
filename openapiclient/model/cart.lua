@@ -19,11 +19,12 @@ local function cast_cart(t)
 	return setmetatable(t, cart_mt)
 end
 
-local function new_cart(name, url, version, db_prefix, stores_info, warehouses, shipping_zones, additional_fields, custom_fields)
+local function new_cart(name, url, version, bridge_version, db_prefix, stores_info, warehouses, shipping_zones, additional_fields, custom_fields)
 	return cast_cart({
 		["name"] = name;
 		["url"] = url;
 		["version"] = version;
+		["bridge_version"] = bridge_version;
 		["db_prefix"] = db_prefix;
 		["stores_info"] = stores_info;
 		["warehouses"] = warehouses;

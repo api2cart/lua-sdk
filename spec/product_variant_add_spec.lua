@@ -72,6 +72,13 @@ describe("product_variant_add", function()
     end)
   end)
 
+  -- unit tests for the property 'status'
+  describe("property status test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'is_virtual'
   describe("property is_virtual test", function()
     it("should work", function()
@@ -284,6 +291,13 @@ describe("product_variant_add", function()
 
   -- unit tests for the property 'isbn'
   describe("property isbn test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'seo_url'
+  describe("property seo_url test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

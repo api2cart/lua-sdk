@@ -19,7 +19,7 @@ local function cast_product_variant_add(t)
 	return setmetatable(t, product_variant_add_mt)
 end
 
-local function new_product_variant_add(product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, quantity, warehouse_id, in_stock, backorder_status, manage_stock, low_stock_threshold, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, marketplace_item_properties, clear_cache)
+local function new_product_variant_add(product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, status, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, quantity, warehouse_id, in_stock, backorder_status, manage_stock, low_stock_threshold, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, seo_url, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, marketplace_item_properties, clear_cache)
 	return cast_product_variant_add({
 		["product_id"] = product_id;
 		["attributes"] = attributes;
@@ -29,6 +29,7 @@ local function new_product_variant_add(product_id, attributes, name, model, desc
 		["short_description"] = short_description;
 		["available_for_view"] = available_for_view;
 		["available_for_sale"] = available_for_sale;
+		["status"] = status;
 		["is_virtual"] = is_virtual;
 		["is_default"] = is_default;
 		["store_id"] = store_id;
@@ -60,6 +61,7 @@ local function new_product_variant_add(product_id, attributes, name, model, desc
 		["ean"] = ean;
 		["mpn"] = mpn;
 		["isbn"] = isbn;
+		["seo_url"] = seo_url;
 		["manufacturer"] = manufacturer;
 		["created_at"] = created_at;
 		["meta_title"] = meta_title;

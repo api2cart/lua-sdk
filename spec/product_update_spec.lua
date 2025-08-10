@@ -618,4 +618,18 @@ describe("product_update", function()
     end)
   end)
 
+  -- unit tests for the property 'marketplace_item_properties'
+  describe("property marketplace_item_properties test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'min_order_quantity'
+  describe("property min_order_quantity test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)

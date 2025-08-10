@@ -37,6 +37,13 @@ describe("cart", function()
     end)
   end)
 
+  -- unit tests for the property 'bridge_version'
+  describe("property bridge_version test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'db_prefix'
   describe("property db_prefix test", function()
     it("should work", function()
