@@ -380,6 +380,13 @@ describe("product_add", function()
     end)
   end)
 
+  -- unit tests for the property 'external_product_link'
+  describe("property external_product_link test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'harmonized_system_code'
   describe("property harmonized_system_code test", function()
     it("should work", function()

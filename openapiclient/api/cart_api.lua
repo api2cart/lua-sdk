@@ -394,13 +394,13 @@ function cart_api:cart_coupon_delete(id, store_id)
 	end
 end
 
-function cart_api:cart_coupon_list(start, count, page_cursor, coupons_ids, store_id, lang_id, avail, date_start_from, date_start_to, date_end_from, date_end_to, response_fields, params, exclude)
+function cart_api:cart_coupon_list(start, count, page_cursor, coupons_ids, store_id, lang_id, avail, status, date_start_from, date_start_to, date_end_from, date_end_to, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.coupon.list.json?start=%s&count=%s&page_cursor=%s&coupons_ids=%s&store_id=%s&lang_id=%s&avail=%s&date_start_from=%s&date_start_to=%s&date_end_from=%s&date_end_to=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(coupons_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(date_start_from), http_util.encodeURIComponent(date_start_to), http_util.encodeURIComponent(date_end_from), http_util.encodeURIComponent(date_end_to), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.coupon.list.json?start=%s&count=%s&page_cursor=%s&coupons_ids=%s&store_id=%s&lang_id=%s&avail=%s&status=%s&date_start_from=%s&date_start_to=%s&date_end_from=%s&date_end_to=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(coupons_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(status), http_util.encodeURIComponent(date_start_from), http_util.encodeURIComponent(date_start_to), http_util.encodeURIComponent(date_end_from), http_util.encodeURIComponent(date_end_to), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb

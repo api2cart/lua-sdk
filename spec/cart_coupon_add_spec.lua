@@ -142,4 +142,11 @@ describe("cart_coupon_add", function()
     end)
   end)
 
+  -- unit tests for the property 'customer_id'
+  describe("property customer_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)
