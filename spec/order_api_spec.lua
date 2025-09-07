@@ -29,6 +29,13 @@ describe("order_api", function()
     end)
   end)
 
+  -- unit tests for order_calculate
+  describe("order_calculate test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for order_count
   describe("order_count test", function()
     it("should work", function()

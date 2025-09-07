@@ -19,7 +19,7 @@ local function cast_product_add_batch_payload_inner(t)
 	return setmetatable(t, product_add_batch_payload_inner_mt)
 end
 
-local function new_product_add_batch_payload_inner(name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, advanced_prices, fixed_cost_shipping_price, quantity, manage_stock, product_type, marketplace_item_properties, is_free_shipping, taxable, status, condition, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, manufacturer, manufacturer_id, backorder_status, images, tags, files)
+local function new_product_add_batch_payload_inner(name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, advanced_prices, fixed_cost_shipping_price, quantity, manage_stock, product_type, marketplace_item_properties, specifics, is_free_shipping, taxable, status, condition, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, external_product_link, manufacturer, manufacturer_id, backorder_status, images, tags, files)
 	return cast_product_add_batch_payload_inner({
 		["name"] = name;
 		["description"] = description;
@@ -44,6 +44,7 @@ local function new_product_add_batch_payload_inner(name, description, short_desc
 		["manage_stock"] = manage_stock;
 		["product_type"] = product_type;
 		["marketplace_item_properties"] = marketplace_item_properties;
+		["specifics"] = specifics;
 		["is_free_shipping"] = is_free_shipping;
 		["taxable"] = taxable;
 		["status"] = status;
@@ -78,6 +79,7 @@ local function new_product_add_batch_payload_inner(name, description, short_desc
 		["harmonized_system_code"] = harmonized_system_code;
 		["url"] = url;
 		["seo_url"] = seo_url;
+		["external_product_link"] = external_product_link;
 		["manufacturer"] = manufacturer;
 		["manufacturer_id"] = manufacturer_id;
 		["backorder_status"] = backorder_status;

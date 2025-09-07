@@ -177,6 +177,13 @@ describe("product_add_batch_payload_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'specifics'
+  describe("property specifics test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'is_free_shipping'
   describe("property is_free_shipping test", function()
     it("should work", function()
@@ -410,6 +417,13 @@ describe("product_add_batch_payload_inner", function()
 
   -- unit tests for the property 'seo_url'
   describe("property seo_url test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'external_product_link'
+  describe("property external_product_link test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

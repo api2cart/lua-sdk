@@ -19,7 +19,7 @@ local function cast_product_review(t)
 	return setmetatable(t, product_review_mt)
 end
 
-local function new_product_review(id, product_id, customer_id, nick_name, email, summary, message, rating, ratings, status, created_time, medias, additional_fields, custom_fields)
+local function new_product_review(id, product_id, customer_id, nick_name, email, summary, message, rating, ratings, status, created_time, modified_time, medias, additional_fields, custom_fields)
 	return cast_product_review({
 		["id"] = id;
 		["product_id"] = product_id;
@@ -32,6 +32,7 @@ local function new_product_review(id, product_id, customer_id, nick_name, email,
 		["ratings"] = ratings;
 		["status"] = status;
 		["created_time"] = created_time;
+		["modified_time"] = modified_time;
 		["medias"] = medias;
 		["additional_fields"] = additional_fields;
 		["custom_fields"] = custom_fields;

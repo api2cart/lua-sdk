@@ -1197,13 +1197,13 @@ function product_api:product_list(start, count, page_cursor, product_ids, since_
 	end
 end
 
-function product_api:product_manufacturer_add(product_id, manufacturer, store_id)
+function product_api:product_manufacturer_add(product_id, manufacturer, store_id, meta_title, meta_keywords, meta_description, search_keywords, image_url, seo_url)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.manufacturer.add.json?product_id=%s&manufacturer=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(manufacturer), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.manufacturer.add.json?product_id=%s&manufacturer=%s&store_id=%s&meta_title=%s&meta_keywords=%s&meta_description=%s&search_keywords=%s&image_url=%s&seo_url=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(manufacturer), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(search_keywords), http_util.encodeURIComponent(image_url), http_util.encodeURIComponent(seo_url));
 	})
 
 	-- set HTTP verb
@@ -1863,13 +1863,13 @@ function product_api:product_price_update(product_price_update)
 	end
 end
 
-function product_api:product_review_list(product_id, start, count, page_cursor, ids, store_id, status, response_fields, params, exclude)
+function product_api:product_review_list(product_id, start, count, page_cursor, ids, store_id, lang_id, status, created_from, created_to, customer_id, sort_by, sort_direction, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.review.list.json?start=%s&count=%s&page_cursor=%s&product_id=%s&ids=%s&store_id=%s&status=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(status), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/product.review.list.json?start=%s&count=%s&page_cursor=%s&product_id=%s&ids=%s&store_id=%s&lang_id=%s&status=%s&created_from=%s&created_to=%s&customer_id=%s&sort_by=%s&sort_direction=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(status), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
