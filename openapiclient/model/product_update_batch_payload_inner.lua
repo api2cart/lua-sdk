@@ -19,7 +19,7 @@ local function cast_product_update_batch_payload_inner(t)
 	return setmetatable(t, product_update_batch_payload_inner_mt)
 end
 
-local function new_product_update_batch_payload_inner(id, name, description, short_description, sku, model, price, special_price, sprice_create, sprice_expire, cost_price, old_price, fixed_cost_shipping_price, advanced_prices, quantity, increase_quantity, reduce_quantity, reserve_quantity, store_id, lang_id, status, type, condition, visible, available_for_view, available_for_sale, avail_from, weight, length, width, height, dimensions_unit, weight_unit, manage_stock, in_stock, backorder_status, is_free_shipping, is_virtual, taxable, downloadable, warehouse_id, tax_class_id, categories_ids, meta_title, meta_description, meta_keywords, url, seo_url, manufacturer, manufacturer_id, mpn, gtin, upc, isbn, ean, barcode, images, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tags, search_keywords, harmonized_system_code)
+local function new_product_update_batch_payload_inner(id, name, description, short_description, sku, model, price, special_price, sprice_create, sprice_expire, cost_price, old_price, fixed_cost_shipping_price, advanced_prices, quantity, increase_quantity, reduce_quantity, reserve_quantity, store_id, lang_id, status, type, condition, condition_description, visible, available_for_view, available_for_sale, avail_from, weight, length, width, height, dimensions_unit, weight_unit, manage_stock, in_stock, backorder_status, is_free_shipping, is_virtual, taxable, downloadable, warehouse_id, tax_class_id, categories_ids, meta_title, meta_description, meta_keywords, url, seo_url, manufacturer, manufacturer_id, mpn, gtin, upc, isbn, ean, barcode, images, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tags, search_keywords, harmonized_system_code)
 	return cast_product_update_batch_payload_inner({
 		["id"] = id;
 		["name"] = name;
@@ -44,6 +44,7 @@ local function new_product_update_batch_payload_inner(id, name, description, sho
 		["status"] = status;
 		["type"] = type;
 		["condition"] = condition;
+		["condition_description"] = condition_description;
 		["visible"] = visible;
 		["available_for_view"] = available_for_view;
 		["available_for_sale"] = available_for_sale;

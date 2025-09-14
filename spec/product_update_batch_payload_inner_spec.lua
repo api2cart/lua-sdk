@@ -177,6 +177,13 @@ describe("product_update_batch_payload_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'condition_description'
+  describe("property condition_description test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'visible'
   describe("property visible test", function()
     it("should work", function()
