@@ -667,6 +667,13 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'unas_api_key'
+  describe("property unas_api_key test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'shopware_api_key'
   describe("property shopware_api_key test", function()
     it("should work", function()

@@ -380,6 +380,13 @@ describe("product_variant_update", function()
     end)
   end)
 
+  -- unit tests for the property 'manufacturer'
+  describe("property manufacturer test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'reindex'
   describe("property reindex test", function()
     it("should work", function()
