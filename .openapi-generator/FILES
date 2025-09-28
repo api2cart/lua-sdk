@@ -208,6 +208,7 @@ openapiclient/model/order_add_order_item_inner_order_item_option_inner.lua
 openapiclient/model/order_add_order_item_inner_order_item_property_inner.lua
 openapiclient/model/order_calculate.lua
 openapiclient/model/order_calculate_200_response.lua
+openapiclient/model/order_calculate_bundle.lua
 openapiclient/model/order_calculate_discount.lua
 openapiclient/model/order_calculate_item.lua
 openapiclient/model/order_calculate_order_item_inner.lua
@@ -276,6 +277,7 @@ openapiclient/model/product_add_batch.lua
 openapiclient/model/product_add_batch_payload_inner.lua
 openapiclient/model/product_add_batch_payload_inner_advanced_prices_inner.lua
 openapiclient/model/product_add_batch_payload_inner_images_inner.lua
+openapiclient/model/product_add_batch_payload_inner_sales_tax.lua
 openapiclient/model/product_add_best_offer.lua
 openapiclient/model/product_add_certifications_inner.lua
 openapiclient/model/product_add_certifications_inner_files_inner.lua
@@ -644,6 +646,7 @@ spec/order_add_order_item_inner_spec.lua
 spec/order_add_spec.lua
 spec/order_api_spec.lua
 spec/order_calculate_200_response_spec.lua
+spec/order_calculate_bundle_spec.lua
 spec/order_calculate_discount_spec.lua
 spec/order_calculate_item_spec.lua
 spec/order_calculate_order_item_inner_order_item_option_inner_spec.lua
@@ -710,6 +713,7 @@ spec/product_add_200_response_result_spec.lua
 spec/product_add_200_response_spec.lua
 spec/product_add_batch_payload_inner_advanced_prices_inner_spec.lua
 spec/product_add_batch_payload_inner_images_inner_spec.lua
+spec/product_add_batch_payload_inner_sales_tax_spec.lua
 spec/product_add_batch_payload_inner_spec.lua
 spec/product_add_batch_spec.lua
 spec/product_add_best_offer_spec.lua

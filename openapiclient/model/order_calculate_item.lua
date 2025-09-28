@@ -19,7 +19,7 @@ local function cast_order_calculate_item(t)
 	return setmetatable(t, order_calculate_item_mt)
 end
 
-local function new_order_calculate_item(product_id, sku, name, quantity, price, price_inc_tax, tax_rate, unit_discount, weight, weight_unit, barcode, variant_id, options, additional_fields, custom_fields)
+local function new_order_calculate_item(product_id, sku, name, quantity, price, price_inc_tax, tax_rate, unit_discount, weight, weight_unit, barcode, variant_id, bundle_product_id, options, additional_fields, custom_fields)
 	return cast_order_calculate_item({
 		["product_id"] = product_id;
 		["sku"] = sku;
@@ -33,6 +33,7 @@ local function new_order_calculate_item(product_id, sku, name, quantity, price, 
 		["weight_unit"] = weight_unit;
 		["barcode"] = barcode;
 		["variant_id"] = variant_id;
+		["bundle_product_id"] = bundle_product_id;
 		["options"] = options;
 		["additional_fields"] = additional_fields;
 		["custom_fields"] = custom_fields;

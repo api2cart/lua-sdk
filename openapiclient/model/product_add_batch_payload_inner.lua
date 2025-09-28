@@ -19,7 +19,7 @@ local function cast_product_add_batch_payload_inner(t)
 	return setmetatable(t, product_add_batch_payload_inner_mt)
 end
 
-local function new_product_add_batch_payload_inner(name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, advanced_prices, fixed_cost_shipping_price, quantity, manage_stock, product_type, marketplace_item_properties, specifics, is_free_shipping, taxable, status, condition, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, external_product_link, manufacturer, manufacturer_id, backorder_status, images, tags, files)
+local function new_product_add_batch_payload_inner(name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, isbn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, avail_from, advanced_prices, fixed_cost_shipping_price, buyitnow_price, reserve_price, best_offer, quantity, manage_stock, product_type, marketplace_item_properties, specifics, is_free_shipping, taxable, status, condition, condition_description, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, listing_type, listing_duration, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, sales_tax, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, external_product_link, manufacturer, manufacturer_id, backorder_status, images, tags, files)
 	return cast_product_add_batch_payload_inner({
 		["name"] = name;
 		["description"] = description;
@@ -31,6 +31,7 @@ local function new_product_add_batch_payload_inner(name, description, short_desc
 		["ean"] = ean;
 		["gtin"] = gtin;
 		["mpn"] = mpn;
+		["isbn"] = isbn;
 		["barcode"] = barcode;
 		["price"] = price;
 		["old_price"] = old_price;
@@ -38,8 +39,12 @@ local function new_product_add_batch_payload_inner(name, description, short_desc
 		["special_price"] = special_price;
 		["sprice_create"] = sprice_create;
 		["sprice_expire"] = sprice_expire;
+		["avail_from"] = avail_from;
 		["advanced_prices"] = advanced_prices;
 		["fixed_cost_shipping_price"] = fixed_cost_shipping_price;
+		["buyitnow_price"] = buyitnow_price;
+		["reserve_price"] = reserve_price;
+		["best_offer"] = best_offer;
 		["quantity"] = quantity;
 		["manage_stock"] = manage_stock;
 		["product_type"] = product_type;
@@ -49,12 +54,15 @@ local function new_product_add_batch_payload_inner(name, description, short_desc
 		["taxable"] = taxable;
 		["status"] = status;
 		["condition"] = condition;
+		["condition_description"] = condition_description;
 		["visible"] = visible;
 		["available_for_view"] = available_for_view;
 		["available_for_sale"] = available_for_sale;
 		["is_virtual"] = is_virtual;
 		["in_stock"] = in_stock;
 		["type"] = type;
+		["listing_type"] = listing_type;
+		["listing_duration"] = listing_duration;
 		["downloadable"] = downloadable;
 		["weight"] = weight;
 		["length"] = length;
@@ -72,6 +80,7 @@ local function new_product_add_batch_payload_inner(name, description, short_desc
 		["cross_sell_products_ids"] = cross_sell_products_ids;
 		["stores_ids"] = stores_ids;
 		["tax_class_id"] = tax_class_id;
+		["sales_tax"] = sales_tax;
 		["meta_title"] = meta_title;
 		["meta_description"] = meta_description;
 		["meta_keywords"] = meta_keywords;

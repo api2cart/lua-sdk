@@ -86,6 +86,13 @@ describe("product_add_batch_payload_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'isbn'
+  describe("property isbn test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'barcode'
   describe("property barcode test", function()
     it("should work", function()
@@ -135,6 +142,13 @@ describe("product_add_batch_payload_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'avail_from'
+  describe("property avail_from test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'advanced_prices'
   describe("property advanced_prices test", function()
     it("should work", function()
@@ -144,6 +158,27 @@ describe("product_add_batch_payload_inner", function()
 
   -- unit tests for the property 'fixed_cost_shipping_price'
   describe("property fixed_cost_shipping_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'buyitnow_price'
+  describe("property buyitnow_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'reserve_price'
+  describe("property reserve_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'best_offer'
+  describe("property best_offer test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -212,6 +247,13 @@ describe("product_add_batch_payload_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'condition_description'
+  describe("property condition_description test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'visible'
   describe("property visible test", function()
     it("should work", function()
@@ -249,6 +291,20 @@ describe("product_add_batch_payload_inner", function()
 
   -- unit tests for the property 'type'
   describe("property type test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'listing_type'
+  describe("property listing_type test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'listing_duration'
+  describe("property listing_duration test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -368,6 +424,13 @@ describe("product_add_batch_payload_inner", function()
 
   -- unit tests for the property 'tax_class_id'
   describe("property tax_class_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'sales_tax'
+  describe("property sales_tax test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

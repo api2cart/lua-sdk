@@ -19,11 +19,13 @@ local function cast_order_calculate_order_item_inner(t)
 	return setmetatable(t, order_calculate_order_item_inner_mt)
 end
 
-local function new_order_calculate_order_item_inner(order_item_id, order_item_quantity, order_item_variant_id, order_item_option)
+local function new_order_calculate_order_item_inner(order_item_id, order_item_quantity, order_item_variant_id, order_item_parent, order_item_parent_option_name, order_item_option)
 	return cast_order_calculate_order_item_inner({
 		["order_item_id"] = order_item_id;
 		["order_item_quantity"] = order_item_quantity;
 		["order_item_variant_id"] = order_item_variant_id;
+		["order_item_parent"] = order_item_parent;
+		["order_item_parent_option_name"] = order_item_parent_option_name;
 		["order_item_option"] = order_item_option;
 	})
 end
