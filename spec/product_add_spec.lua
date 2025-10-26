@@ -681,6 +681,13 @@ describe("product_add", function()
     end)
   end)
 
+  -- unit tests for the property 'processing_profile_id'
+  describe("property processing_profile_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'shipping_details'
   describe("property shipping_details test", function()
     it("should work", function()
