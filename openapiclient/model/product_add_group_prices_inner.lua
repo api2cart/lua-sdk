@@ -19,10 +19,11 @@ local function cast_product_add_group_prices_inner(t)
 	return setmetatable(t, product_add_group_prices_inner_mt)
 end
 
-local function new_product_add_group_prices_inner(group_id, price)
+local function new_product_add_group_prices_inner(group_id, price, qty)
 	return cast_product_add_group_prices_inner({
 		["group_id"] = group_id;
 		["price"] = price;
+		["qty"] = qty;
 	})
 end
 

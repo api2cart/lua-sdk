@@ -44,6 +44,13 @@ describe("order_calculate", function()
     end)
   end)
 
+  -- unit tests for the property 'rounding_precision'
+  describe("property rounding_precision test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'shipp_first_name'
   describe("property shipp_first_name test", function()
     it("should work", function()

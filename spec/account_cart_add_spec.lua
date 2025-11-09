@@ -191,6 +191,34 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'americommerce_app_id'
+  describe("property americommerce_app_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'americommerce_app_secret'
+  describe("property americommerce_app_secret test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'americommerce_access_token'
+  describe("property americommerce_access_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'americommerce_refresh_token'
+  describe("property americommerce_refresh_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'bigcommerceapi_admin_account'
   describe("property bigcommerceapi_admin_account test", function()
     it("should work", function()
