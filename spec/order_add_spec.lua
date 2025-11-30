@@ -114,6 +114,13 @@ describe("order_add", function()
     end)
   end)
 
+  -- unit tests for the property 'is_guest'
+  describe("property is_guest test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'order_payment_method'
   describe("property order_payment_method test", function()
     it("should work", function()

@@ -1206,4 +1206,39 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'scapi_client_id'
+  describe("property scapi_client_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'scapi_client_secret'
+  describe("property scapi_client_secret test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'scapi_organization_id'
+  describe("property scapi_organization_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'scapi_short_code'
+  describe("property scapi_short_code test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'scapi_scopes'
+  describe("property scapi_scopes test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)

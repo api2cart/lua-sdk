@@ -19,7 +19,7 @@ local function cast_order_add(t)
 	return setmetatable(t, order_add_mt)
 end
 
-local function new_order_add(id, order_id, store_id, channel_id, order_status, fulfillment_status, financial_status, customer_email, customer_first_name, customer_last_name, customer_phone, customer_country, customer_birthday, customer_fax, order_payment_method, transaction_id, currency, date, date_modified, date_finished, bill_first_name, bill_last_name, bill_address_1, bill_address_2, bill_city, bill_postcode, bill_state, bill_country, bill_company, bill_phone, bill_fax, shipp_first_name, shipp_last_name, shipp_address_1, shipp_address_2, shipp_city, shipp_postcode, shipp_state, shipp_country, shipp_company, shipp_phone, shipp_fax, subtotal_price, tax_price, total_price, total_paid, total_weight, prices_inc_tax, shipping_price, shipping_tax, discount, coupon_discount, gift_certificate_discount, order_shipping_method, carrier_id, warehouse_id, coupons, tags, comment, admin_comment, admin_private_comment, send_notifications, send_admin_notifications, external_source, inventory_behaviour, create_invoice, note_attributes, clear_cache, origin, fee_price, order_item)
+local function new_order_add(id, order_id, store_id, channel_id, order_status, fulfillment_status, financial_status, customer_email, customer_first_name, customer_last_name, customer_phone, customer_country, customer_birthday, customer_fax, is_guest, order_payment_method, transaction_id, currency, date, date_modified, date_finished, bill_first_name, bill_last_name, bill_address_1, bill_address_2, bill_city, bill_postcode, bill_state, bill_country, bill_company, bill_phone, bill_fax, shipp_first_name, shipp_last_name, shipp_address_1, shipp_address_2, shipp_city, shipp_postcode, shipp_state, shipp_country, shipp_company, shipp_phone, shipp_fax, subtotal_price, tax_price, total_price, total_paid, total_weight, prices_inc_tax, shipping_price, shipping_tax, discount, coupon_discount, gift_certificate_discount, order_shipping_method, carrier_id, warehouse_id, coupons, tags, comment, admin_comment, admin_private_comment, send_notifications, send_admin_notifications, external_source, inventory_behaviour, create_invoice, note_attributes, clear_cache, origin, fee_price, order_item)
 	return cast_order_add({
 		["id"] = id;
 		["order_id"] = order_id;
@@ -35,6 +35,7 @@ local function new_order_add(id, order_id, store_id, channel_id, order_status, f
 		["customer_country"] = customer_country;
 		["customer_birthday"] = customer_birthday;
 		["customer_fax"] = customer_fax;
+		["is_guest"] = is_guest;
 		["order_payment_method"] = order_payment_method;
 		["transaction_id"] = transaction_id;
 		["currency"] = currency;
