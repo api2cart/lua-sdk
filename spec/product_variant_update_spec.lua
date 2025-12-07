@@ -401,4 +401,11 @@ describe("product_variant_update", function()
     end)
   end)
 
+  -- unit tests for the property 'processing_profile_id'
+  describe("property processing_profile_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)

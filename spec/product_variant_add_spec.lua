@@ -387,6 +387,13 @@ describe("product_variant_add", function()
     end)
   end)
 
+  -- unit tests for the property 'processing_profile_id'
+  describe("property processing_profile_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'marketplace_item_properties'
   describe("property marketplace_item_properties test", function()
     it("should work", function()
