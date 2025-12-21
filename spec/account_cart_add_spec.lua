@@ -611,6 +611,13 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'shopify_client_id'
+  describe("property shopify_client_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'shopify_api_key'
   describe("property shopify_api_key test", function()
     it("should work", function()
