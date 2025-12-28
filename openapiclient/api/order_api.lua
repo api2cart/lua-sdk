@@ -410,13 +410,13 @@ function order_api:order_fulfillment_status_list(action)
 	end
 end
 
-function order_api:order_info(id, order_id, store_id, params, response_fields, exclude, enable_cache, use_latest_api_version, rounding_precision)
+function order_api:order_info(id, order_id, store_id, params, response_fields, exclude, enable_cache, use_latest_api_version, rounding_precision, allow_user_defined_order_statuses)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/order.info.json?id=%s&order_id=%s&store_id=%s&params=%s&response_fields=%s&exclude=%s&enable_cache=%s&use_latest_api_version=%s&rounding_precision=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(enable_cache), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(rounding_precision));
+		path = string.format("%s/order.info.json?id=%s&order_id=%s&store_id=%s&params=%s&response_fields=%s&exclude=%s&enable_cache=%s&use_latest_api_version=%s&rounding_precision=%s&allow_user_defined_order_statuses=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(enable_cache), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(rounding_precision), http_util.encodeURIComponent(allow_user_defined_order_statuses));
 	})
 
 	-- set HTTP verb
@@ -464,13 +464,13 @@ function order_api:order_info(id, order_id, store_id, params, response_fields, e
 	end
 end
 
-function order_api:order_list(start, count, page_cursor, ids, order_ids, since_id, store_id, customer_id, customer_email, basket_id, currency_id, phone, order_status, order_status_ids, ebay_order_status, financial_status, financial_status_ids, fulfillment_status, return_status, fulfillment_channel, shipping_method, skip_order_ids, is_deleted, shipping_country_iso3, delivery_method, ship_node_type, created_to, created_from, modified_to, modified_from, tags, sort_by, sort_direction, params, response_fields, exclude, enable_cache, use_latest_api_version, rounding_precision)
+function order_api:order_list(start, count, page_cursor, ids, order_ids, since_id, store_id, customer_id, customer_email, basket_id, currency_id, phone, order_status, order_status_ids, ebay_order_status, financial_status, financial_status_ids, fulfillment_status, return_status, fulfillment_channel, shipping_method, skip_order_ids, is_deleted, shipping_country_iso3, delivery_method, ship_node_type, created_to, created_from, modified_to, modified_from, tags, sort_by, sort_direction, params, response_fields, exclude, enable_cache, use_latest_api_version, rounding_precision, allow_user_defined_order_statuses)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/order.list.json?start=%s&count=%s&page_cursor=%s&ids=%s&order_ids=%s&since_id=%s&store_id=%s&customer_id=%s&customer_email=%s&basket_id=%s&currency_id=%s&phone=%s&order_status=%s&order_status_ids=%s&ebay_order_status=%s&financial_status=%s&financial_status_ids=%s&fulfillment_status=%s&return_status=%s&fulfillment_channel=%s&shipping_method=%s&skip_order_ids=%s&is_deleted=%s&shipping_country_iso3=%s&delivery_method=%s&ship_node_type=%s&created_to=%s&created_from=%s&modified_to=%s&modified_from=%s&tags=%s&sort_by=%s&sort_direction=%s&params=%s&response_fields=%s&exclude=%s&enable_cache=%s&use_latest_api_version=%s&rounding_precision=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(order_ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(customer_email), http_util.encodeURIComponent(basket_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(phone), http_util.encodeURIComponent(order_status), http_util.encodeURIComponent(order_status_ids), http_util.encodeURIComponent(ebay_order_status), http_util.encodeURIComponent(financial_status), http_util.encodeURIComponent(financial_status_ids), http_util.encodeURIComponent(fulfillment_status), http_util.encodeURIComponent(return_status), http_util.encodeURIComponent(fulfillment_channel), http_util.encodeURIComponent(shipping_method), http_util.encodeURIComponent(skip_order_ids), http_util.encodeURIComponent(is_deleted), http_util.encodeURIComponent(shipping_country_iso3), http_util.encodeURIComponent(delivery_method), http_util.encodeURIComponent(ship_node_type), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(tags), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(enable_cache), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(rounding_precision));
+		path = string.format("%s/order.list.json?start=%s&count=%s&page_cursor=%s&ids=%s&order_ids=%s&since_id=%s&store_id=%s&customer_id=%s&customer_email=%s&basket_id=%s&currency_id=%s&phone=%s&order_status=%s&order_status_ids=%s&ebay_order_status=%s&financial_status=%s&financial_status_ids=%s&fulfillment_status=%s&return_status=%s&fulfillment_channel=%s&shipping_method=%s&skip_order_ids=%s&is_deleted=%s&shipping_country_iso3=%s&delivery_method=%s&ship_node_type=%s&created_to=%s&created_from=%s&modified_to=%s&modified_from=%s&tags=%s&sort_by=%s&sort_direction=%s&params=%s&response_fields=%s&exclude=%s&enable_cache=%s&use_latest_api_version=%s&rounding_precision=%s&allow_user_defined_order_statuses=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(ids), http_util.encodeURIComponent(order_ids), http_util.encodeURIComponent(since_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(customer_email), http_util.encodeURIComponent(basket_id), http_util.encodeURIComponent(currency_id), http_util.encodeURIComponent(phone), http_util.encodeURIComponent(order_status), http_util.encodeURIComponent(order_status_ids), http_util.encodeURIComponent(ebay_order_status), http_util.encodeURIComponent(financial_status), http_util.encodeURIComponent(financial_status_ids), http_util.encodeURIComponent(fulfillment_status), http_util.encodeURIComponent(return_status), http_util.encodeURIComponent(fulfillment_channel), http_util.encodeURIComponent(shipping_method), http_util.encodeURIComponent(skip_order_ids), http_util.encodeURIComponent(is_deleted), http_util.encodeURIComponent(shipping_country_iso3), http_util.encodeURIComponent(delivery_method), http_util.encodeURIComponent(ship_node_type), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(tags), http_util.encodeURIComponent(sort_by), http_util.encodeURIComponent(sort_direction), http_util.encodeURIComponent(params), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(enable_cache), http_util.encodeURIComponent(use_latest_api_version), http_util.encodeURIComponent(rounding_precision), http_util.encodeURIComponent(allow_user_defined_order_statuses));
 	})
 
 	-- set HTTP verb
@@ -1214,13 +1214,13 @@ function order_api:order_shipment_update(order_shipment_update)
 	end
 end
 
-function order_api:order_status_list(store_id, action, response_fields)
+function order_api:order_status_list(store_id, action, allow_user_defined_order_statuses, response_fields)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/order.status.list.json?store_id=%s&action=%s&response_fields=%s",
-			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(action), http_util.encodeURIComponent(response_fields));
+		path = string.format("%s/order.status.list.json?store_id=%s&action=%s&allow_user_defined_order_statuses=%s&response_fields=%s",
+			self.basePath, http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(action), http_util.encodeURIComponent(allow_user_defined_order_statuses), http_util.encodeURIComponent(response_fields));
 	})
 
 	-- set HTTP verb
