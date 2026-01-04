@@ -219,6 +219,20 @@ describe("product_update", function()
     end)
   end)
 
+  -- unit tests for the property 'measure_unit'
+  describe("property measure_unit test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'unit_price'
+  describe("property unit_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'stores_ids'
   describe("property stores_ids test", function()
     it("should work", function()

@@ -156,6 +156,20 @@ describe("child", function()
     end)
   end)
 
+  -- unit tests for the property 'unit_price'
+  describe("property unit_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'measure_unit'
+  describe("property measure_unit test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'list_price'
   describe("property list_price test", function()
     it("should work", function()

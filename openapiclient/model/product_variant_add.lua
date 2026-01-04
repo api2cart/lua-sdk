@@ -19,7 +19,7 @@ local function cast_product_variant_add(t)
 	return setmetatable(t, product_variant_add_mt)
 end
 
-local function new_product_variant_add(product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, status, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, quantity, warehouse_id, in_stock, backorder_status, manage_stock, low_stock_threshold, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, seo_url, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, processing_profile_id, marketplace_item_properties, clear_cache)
+local function new_product_variant_add(product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, status, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, measure_unit, unit_price, quantity, warehouse_id, in_stock, backorder_status, manage_stock, low_stock_threshold, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, seo_url, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, processing_profile_id, marketplace_item_properties, clear_cache)
 	return cast_product_variant_add({
 		["product_id"] = product_id;
 		["attributes"] = attributes;
@@ -43,6 +43,8 @@ local function new_product_variant_add(product_id, attributes, name, model, desc
 		["sprice_modified"] = sprice_modified;
 		["sprice_expire"] = sprice_expire;
 		["tier_prices"] = tier_prices;
+		["measure_unit"] = measure_unit;
+		["unit_price"] = unit_price;
 		["quantity"] = quantity;
 		["warehouse_id"] = warehouse_id;
 		["in_stock"] = in_stock;

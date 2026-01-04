@@ -19,7 +19,7 @@ local function cast_child(t)
 	return setmetatable(t, child_mt)
 end
 
-local function new_child(id, parent_id, sku, upc, ean, mpn, gtin, isbn, url, seo_url, sort_order, created_time, modified_time, name, short_description, full_description, images, combination, default_price, cost_price, list_price, wholesale_price, advanced_price, tax_class_id, avail_for_sale, allow_backorders, in_stock, on_sale, manage_stock, inventory_level, inventory, min_quantity, low_stock_threshold, default_qty_in_pack, is_qty_in_pack_fixed, weight_unit, weight, dimensions_unit, width, height, length, meta_title, meta_description, meta_keywords, discounts, is_virtual, additional_fields, custom_fields)
+local function new_child(id, parent_id, sku, upc, ean, mpn, gtin, isbn, url, seo_url, sort_order, created_time, modified_time, name, short_description, full_description, images, combination, default_price, cost_price, unit_price, measure_unit, list_price, wholesale_price, advanced_price, tax_class_id, avail_for_sale, allow_backorders, in_stock, on_sale, manage_stock, inventory_level, inventory, min_quantity, low_stock_threshold, default_qty_in_pack, is_qty_in_pack_fixed, weight_unit, weight, dimensions_unit, width, height, length, meta_title, meta_description, meta_keywords, discounts, is_virtual, additional_fields, custom_fields)
 	return cast_child({
 		["id"] = id;
 		["parent_id"] = parent_id;
@@ -41,6 +41,8 @@ local function new_child(id, parent_id, sku, upc, ean, mpn, gtin, isbn, url, seo
 		["combination"] = combination;
 		["default_price"] = default_price;
 		["cost_price"] = cost_price;
+		["unit_price"] = unit_price;
+		["measure_unit"] = measure_unit;
 		["list_price"] = list_price;
 		["wholesale_price"] = wholesale_price;
 		["advanced_price"] = advanced_price;

@@ -19,7 +19,7 @@ local function cast_product(t)
 	return setmetatable(t, product_mt)
 end
 
-local function new_product(id, type, u_model, u_sku, name, description, short_description, price, advanced_price, cost_price, quantity, inventory, group_items, u_brand_id, u_brand, categories_ids, stores_ids, url, seo_url, meta_title, meta_keywords, meta_description, avail_sale, avail_view, is_virtual, is_downloadable, weight, weight_unit, sort_order, in_stock, backorders, manage_stock, is_stock_managed, on_sale, create_at, modified_at, tax_class_id, special_price, tier_price, group_price, images, product_options, u_upc, u_mpn, u_gtin, u_isbn, u_ean, related_products_ids, up_sell_products_ids, cross_sell_products_ids, dimensions_unit, width, height, length, discounts, additional_fields, custom_fields)
+local function new_product(id, type, u_model, u_sku, name, description, short_description, price, advanced_price, cost_price, unit_price, measure_unit, quantity, inventory, group_items, u_brand_id, u_brand, categories_ids, stores_ids, url, seo_url, meta_title, meta_keywords, meta_description, avail_sale, avail_view, is_virtual, is_downloadable, weight, weight_unit, sort_order, in_stock, backorders, manage_stock, is_stock_managed, on_sale, create_at, modified_at, tax_class_id, special_price, tier_price, group_price, images, product_options, u_upc, u_mpn, u_gtin, u_isbn, u_ean, related_products_ids, up_sell_products_ids, cross_sell_products_ids, dimensions_unit, width, height, length, discounts, additional_fields, custom_fields)
 	return cast_product({
 		["id"] = id;
 		["type"] = type;
@@ -31,6 +31,8 @@ local function new_product(id, type, u_model, u_sku, name, description, short_de
 		["price"] = price;
 		["advanced_price"] = advanced_price;
 		["cost_price"] = cost_price;
+		["unit_price"] = unit_price;
+		["measure_unit"] = measure_unit;
 		["quantity"] = quantity;
 		["inventory"] = inventory;
 		["group_items"] = group_items;
