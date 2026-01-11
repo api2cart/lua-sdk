@@ -19,7 +19,7 @@ local function cast_cart_coupon_add(t)
 	return setmetatable(t, cart_coupon_add_mt)
 end
 
-local function new_cart_coupon_add(code, action_type, action_apply_to, action_scope, action_amount, codes, name, date_start, date_end, usage_limit, usage_limit_per_customer, action_condition_entity, action_condition_key, action_condition_operator, action_condition_value, include_tax, store_id, free_cash_on_delivery, customer_id)
+local function new_cart_coupon_add(code, action_type, action_apply_to, action_scope, action_amount, codes, name, date_start, date_end, usage_limit, usage_limit_per_customer, action_condition_entity, action_condition_key, action_condition_operator, action_condition_value, include_tax, store_id, free_cash_on_delivery, customer_id, idempotency_key)
 	return cast_cart_coupon_add({
 		["code"] = code;
 		["action_type"] = action_type;
@@ -40,6 +40,7 @@ local function new_cart_coupon_add(code, action_type, action_apply_to, action_sc
 		["store_id"] = store_id;
 		["free_cash_on_delivery"] = free_cash_on_delivery;
 		["customer_id"] = customer_id;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

@@ -19,7 +19,7 @@ local function cast_order_preestimate_shipping_list(t)
 	return setmetatable(t, order_preestimate_shipping_list_mt)
 end
 
-local function new_order_preestimate_shipping_list(warehouse_id, customer_id, customer_email, store_id, shipp_address_1, shipp_city, shipp_postcode, shipp_state, shipp_country, params, exclude, order_item)
+local function new_order_preestimate_shipping_list(warehouse_id, customer_id, customer_email, store_id, shipp_address_1, shipp_city, shipp_postcode, shipp_state, shipp_country, params, exclude, idempotency_key, order_item)
 	return cast_order_preestimate_shipping_list({
 		["warehouse_id"] = warehouse_id;
 		["customer_id"] = customer_id;
@@ -32,6 +32,7 @@ local function new_order_preestimate_shipping_list(warehouse_id, customer_id, cu
 		["shipp_country"] = shipp_country;
 		["params"] = params;
 		["exclude"] = exclude;
+		["idempotency_key"] = idempotency_key;
 		["order_item"] = order_item;
 	})
 end

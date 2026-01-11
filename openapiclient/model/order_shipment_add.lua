@@ -19,7 +19,7 @@ local function cast_order_shipment_add(t)
 	return setmetatable(t, order_shipment_add_mt)
 end
 
-local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, tracking_provider, use_latest_api_version)
+local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, tracking_provider, use_latest_api_version, idempotency_key)
 	return cast_order_shipment_add({
 		["order_id"] = order_id;
 		["warehouse_id"] = warehouse_id;
@@ -36,6 +36,7 @@ local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment
 		["check_process_status"] = check_process_status;
 		["tracking_provider"] = tracking_provider;
 		["use_latest_api_version"] = use_latest_api_version;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

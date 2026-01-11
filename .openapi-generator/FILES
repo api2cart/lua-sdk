@@ -117,6 +117,8 @@ openapiclient/model/category_count_200_response.lua
 openapiclient/model/category_count_200_response_result.lua
 openapiclient/model/category_delete_200_response.lua
 openapiclient/model/category_delete_200_response_result.lua
+openapiclient/model/category_delete_batch.lua
+openapiclient/model/category_delete_batch_payload_inner.lua
 openapiclient/model/category_find_200_response.lua
 openapiclient/model/category_find_200_response_result.lua
 openapiclient/model/category_find_200_response_result_category_inner.lua
@@ -553,6 +555,8 @@ spec/category_count_200_response_result_spec.lua
 spec/category_count_200_response_spec.lua
 spec/category_delete_200_response_result_spec.lua
 spec/category_delete_200_response_spec.lua
+spec/category_delete_batch_payload_inner_spec.lua
+spec/category_delete_batch_spec.lua
 spec/category_find_200_response_result_category_inner_spec.lua
 spec/category_find_200_response_result_spec.lua
 spec/category_find_200_response_spec.lua

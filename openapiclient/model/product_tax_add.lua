@@ -19,11 +19,12 @@ local function cast_product_tax_add(t)
 	return setmetatable(t, product_tax_add_mt)
 end
 
-local function new_product_tax_add(product_id, name, tax_rates)
+local function new_product_tax_add(product_id, name, tax_rates, idempotency_key)
 	return cast_product_tax_add({
 		["product_id"] = product_id;
 		["name"] = name;
 		["tax_rates"] = tax_rates;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

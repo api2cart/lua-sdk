@@ -55,13 +55,13 @@ local function new_attribute_api(authority, basePath, schemes)
 	}, attribute_api_mt)
 end
 
-function attribute_api:attribute_add(type, name, code, store_id, lang_id, visible, required, position, attribute_group_id, is_global, is_searchable, is_filterable, is_comparable, is_html_allowed_on_front, is_filterable_in_search, is_configurable, is_visible_in_advanced_search, is_used_for_promo_rules, used_in_product_listing, used_for_sort_by, apply_to)
+function attribute_api:attribute_add(type, name, code, store_id, lang_id, visible, required, position, attribute_group_id, is_global, is_searchable, is_filterable, is_comparable, is_html_allowed_on_front, is_filterable_in_search, is_configurable, is_visible_in_advanced_search, is_used_for_promo_rules, used_in_product_listing, used_for_sort_by, apply_to, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.add.json?type=%s&name=%s&code=%s&store_id=%s&lang_id=%s&visible=%s&required=%s&position=%s&attribute_group_id=%s&is_global=%s&is_searchable=%s&is_filterable=%s&is_comparable=%s&is_html_allowed_on_front=%s&is_filterable_in_search=%s&is_configurable=%s&is_visible_in_advanced_search=%s&is_used_for_promo_rules=%s&used_in_product_listing=%s&used_for_sort_by=%s&apply_to=%s",
-			self.basePath, http_util.encodeURIComponent(type), http_util.encodeURIComponent(name), http_util.encodeURIComponent(code), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(position), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(is_global), http_util.encodeURIComponent(is_searchable), http_util.encodeURIComponent(is_filterable), http_util.encodeURIComponent(is_comparable), http_util.encodeURIComponent(is_html_allowed_on_front), http_util.encodeURIComponent(is_filterable_in_search), http_util.encodeURIComponent(is_configurable), http_util.encodeURIComponent(is_visible_in_advanced_search), http_util.encodeURIComponent(is_used_for_promo_rules), http_util.encodeURIComponent(used_in_product_listing), http_util.encodeURIComponent(used_for_sort_by), http_util.encodeURIComponent(apply_to));
+		path = string.format("%s/attribute.add.json?type=%s&name=%s&code=%s&store_id=%s&lang_id=%s&visible=%s&required=%s&position=%s&attribute_group_id=%s&is_global=%s&is_searchable=%s&is_filterable=%s&is_comparable=%s&is_html_allowed_on_front=%s&is_filterable_in_search=%s&is_configurable=%s&is_visible_in_advanced_search=%s&is_used_for_promo_rules=%s&used_in_product_listing=%s&used_for_sort_by=%s&apply_to=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(type), http_util.encodeURIComponent(name), http_util.encodeURIComponent(code), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(position), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(is_global), http_util.encodeURIComponent(is_searchable), http_util.encodeURIComponent(is_filterable), http_util.encodeURIComponent(is_comparable), http_util.encodeURIComponent(is_html_allowed_on_front), http_util.encodeURIComponent(is_filterable_in_search), http_util.encodeURIComponent(is_configurable), http_util.encodeURIComponent(is_visible_in_advanced_search), http_util.encodeURIComponent(is_used_for_promo_rules), http_util.encodeURIComponent(used_in_product_listing), http_util.encodeURIComponent(used_for_sort_by), http_util.encodeURIComponent(apply_to), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -109,13 +109,13 @@ function attribute_api:attribute_add(type, name, code, store_id, lang_id, visibl
 	end
 end
 
-function attribute_api:attribute_assign_group(id, group_id, attribute_set_id)
+function attribute_api:attribute_assign_group(id, group_id, attribute_set_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.assign.group.json?id=%s&group_id=%s&attribute_set_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(attribute_set_id));
+		path = string.format("%s/attribute.assign.group.json?id=%s&group_id=%s&attribute_set_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -163,13 +163,13 @@ function attribute_api:attribute_assign_group(id, group_id, attribute_set_id)
 	end
 end
 
-function attribute_api:attribute_assign_set(id, attribute_set_id, group_id)
+function attribute_api:attribute_assign_set(id, attribute_set_id, group_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.assign.set.json?id=%s&group_id=%s&attribute_set_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(attribute_set_id));
+		path = string.format("%s/attribute.assign.set.json?id=%s&group_id=%s&attribute_set_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -595,13 +595,13 @@ function attribute_api:attribute_type_list()
 	end
 end
 
-function attribute_api:attribute_unassign_group(id, group_id)
+function attribute_api:attribute_unassign_group(id, group_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.unassign.group.json?id=%s&group_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(group_id));
+		path = string.format("%s/attribute.unassign.group.json?id=%s&group_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(group_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -649,13 +649,13 @@ function attribute_api:attribute_unassign_group(id, group_id)
 	end
 end
 
-function attribute_api:attribute_unassign_set(id, attribute_set_id)
+function attribute_api:attribute_unassign_set(id, attribute_set_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.unassign.set.json?id=%s&attribute_set_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(attribute_set_id));
+		path = string.format("%s/attribute.unassign.set.json?id=%s&attribute_set_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -703,13 +703,13 @@ function attribute_api:attribute_unassign_set(id, attribute_set_id)
 	end
 end
 
-function attribute_api:attribute_update(id, name, store_id, lang_id)
+function attribute_api:attribute_update(id, name, store_id, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.update.json?id=%s&name=%s&store_id=%s&lang_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id));
+		path = string.format("%s/attribute.update.json?id=%s&name=%s&store_id=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -757,13 +757,13 @@ function attribute_api:attribute_update(id, name, store_id, lang_id)
 	end
 end
 
-function attribute_api:attribute_value_add(attribute_id, name, code, description, store_id, lang_id)
+function attribute_api:attribute_value_add(attribute_id, name, code, description, store_id, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.value.add.json?attribute_id=%s&name=%s&code=%s&description=%s&store_id=%s&lang_id=%s",
-			self.basePath, http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(code), http_util.encodeURIComponent(description), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id));
+		path = string.format("%s/attribute.value.add.json?attribute_id=%s&name=%s&code=%s&description=%s&store_id=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(code), http_util.encodeURIComponent(description), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -865,13 +865,13 @@ function attribute_api:attribute_value_delete(id, attribute_id, store_id)
 	end
 end
 
-function attribute_api:attribute_value_update(id, attribute_id, name, description, code, store_id, lang_id)
+function attribute_api:attribute_value_update(id, attribute_id, name, description, code, store_id, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.value.update.json?id=%s&attribute_id=%s&name=%s&description=%s&code=%s&store_id=%s&lang_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(code), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id));
+		path = string.format("%s/attribute.value.update.json?id=%s&attribute_id=%s&name=%s&description=%s&code=%s&store_id=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(code), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

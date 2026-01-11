@@ -286,13 +286,13 @@ function customer_api:customer_count(ids, since_id, customer_list_id, group_id, 
 	end
 end
 
-function customer_api:customer_delete(id)
+function customer_api:customer_delete(id, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/customer.delete.json?id=%s",
-			self.basePath, http_util.encodeURIComponent(id));
+		path = string.format("%s/customer.delete.json?id=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -394,13 +394,13 @@ function customer_api:customer_find(find_value, find_where, find_params, store_i
 	end
 end
 
-function customer_api:customer_group_add(name, store_id, stores_ids)
+function customer_api:customer_group_add(name, store_id, stores_ids, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/customer.group.add.json?name=%s&store_id=%s&stores_ids=%s",
-			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids));
+		path = string.format("%s/customer.group.add.json?name=%s&store_id=%s&stores_ids=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

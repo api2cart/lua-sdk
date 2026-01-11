@@ -232,13 +232,13 @@ function cart_api:cart_coupon_add(cart_coupon_add)
 	end
 end
 
-function cart_api:cart_coupon_condition_add(coupon_id, entity, key, operator, value, target, include_tax, include_shipping, store_id)
+function cart_api:cart_coupon_condition_add(coupon_id, entity, key, operator, value, target, include_tax, include_shipping, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.coupon.condition.add.json?coupon_id=%s&entity=%s&key=%s&operator=%s&value=%s&target=%s&include_tax=%s&include_shipping=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(coupon_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(key), http_util.encodeURIComponent(operator), http_util.encodeURIComponent(value), http_util.encodeURIComponent(target), http_util.encodeURIComponent(include_tax), http_util.encodeURIComponent(include_shipping), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/cart.coupon.condition.add.json?coupon_id=%s&entity=%s&key=%s&operator=%s&value=%s&target=%s&include_tax=%s&include_shipping=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(coupon_id), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(key), http_util.encodeURIComponent(operator), http_util.encodeURIComponent(value), http_util.encodeURIComponent(target), http_util.encodeURIComponent(include_tax), http_util.encodeURIComponent(include_shipping), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -502,13 +502,13 @@ function cart_api:cart_delete(delete_bridge)
 	end
 end
 
-function cart_api:cart_giftcard_add(amount, code, owner_email, recipient_email, recipient_name, owner_name)
+function cart_api:cart_giftcard_add(amount, code, owner_email, recipient_email, recipient_name, owner_name, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.giftcard.add.json?amount=%s&code=%s&owner_email=%s&recipient_email=%s&recipient_name=%s&owner_name=%s",
-			self.basePath, http_util.encodeURIComponent(amount), http_util.encodeURIComponent(code), http_util.encodeURIComponent(owner_email), http_util.encodeURIComponent(recipient_email), http_util.encodeURIComponent(recipient_name), http_util.encodeURIComponent(owner_name));
+		path = string.format("%s/cart.giftcard.add.json?amount=%s&code=%s&owner_email=%s&recipient_email=%s&recipient_name=%s&owner_name=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(amount), http_util.encodeURIComponent(code), http_util.encodeURIComponent(owner_email), http_util.encodeURIComponent(recipient_email), http_util.encodeURIComponent(recipient_name), http_util.encodeURIComponent(owner_name), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -826,13 +826,13 @@ function cart_api:cart_meta_data_list(entity_id, count, page_cursor, entity, sto
 	end
 end
 
-function cart_api:cart_meta_data_set(entity_id, key, value, namespace, entity, store_id, lang_id)
+function cart_api:cart_meta_data_set(entity_id, key, value, namespace, entity, store_id, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.meta_data.set.json?entity_id=%s&key=%s&value=%s&namespace=%s&entity=%s&store_id=%s&lang_id=%s",
-			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(value), http_util.encodeURIComponent(namespace), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id));
+		path = string.format("%s/cart.meta_data.set.json?entity_id=%s&key=%s&value=%s&namespace=%s&entity=%s&store_id=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(entity_id), http_util.encodeURIComponent(key), http_util.encodeURIComponent(value), http_util.encodeURIComponent(namespace), http_util.encodeURIComponent(entity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1042,13 +1042,13 @@ function cart_api:cart_plugin_list(start, count, store_id)
 	end
 end
 
-function cart_api:cart_script_add(name, description, html, src, load_method, scope, events, store_id)
+function cart_api:cart_script_add(name, description, html, src, load_method, scope, events, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.script.add.json?name=%s&description=%s&html=%s&src=%s&load_method=%s&scope=%s&events=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(html), http_util.encodeURIComponent(src), http_util.encodeURIComponent(load_method), http_util.encodeURIComponent(scope), http_util.encodeURIComponent(events), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/cart.script.add.json?name=%s&description=%s&html=%s&src=%s&load_method=%s&scope=%s&events=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(html), http_util.encodeURIComponent(src), http_util.encodeURIComponent(load_method), http_util.encodeURIComponent(scope), http_util.encodeURIComponent(events), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

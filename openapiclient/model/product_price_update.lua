@@ -19,10 +19,11 @@ local function cast_product_price_update(t)
 	return setmetatable(t, product_price_update_mt)
 end
 
-local function new_product_price_update(product_id, group_prices)
+local function new_product_price_update(product_id, group_prices, idempotency_key)
 	return cast_product_price_update({
 		["product_id"] = product_id;
 		["group_prices"] = group_prices;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

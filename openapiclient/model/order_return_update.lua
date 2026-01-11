@@ -19,7 +19,7 @@ local function cast_order_return_update(t)
 	return setmetatable(t, order_return_update_mt)
 end
 
-local function new_order_return_update(return_id, order_id, store_id, item_restock, return_status_id, staff_note, comment, send_notifications, reject_reason, order_products)
+local function new_order_return_update(return_id, order_id, store_id, item_restock, return_status_id, staff_note, comment, send_notifications, reject_reason, idempotency_key, order_products)
 	return cast_order_return_update({
 		["return_id"] = return_id;
 		["order_id"] = order_id;
@@ -30,6 +30,7 @@ local function new_order_return_update(return_id, order_id, store_id, item_resto
 		["comment"] = comment;
 		["send_notifications"] = send_notifications;
 		["reject_reason"] = reject_reason;
+		["idempotency_key"] = idempotency_key;
 		["order_products"] = order_products;
 	})
 end

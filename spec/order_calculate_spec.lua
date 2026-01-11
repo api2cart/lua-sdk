@@ -198,6 +198,13 @@ describe("order_calculate", function()
     end)
   end)
 
+  -- unit tests for the property 'idempotency_key'
+  describe("property idempotency_key test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'order_item'
   describe("property order_item test", function()
     it("should work", function()

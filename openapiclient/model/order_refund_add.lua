@@ -19,7 +19,7 @@ local function cast_order_refund_add(t)
 	return setmetatable(t, order_refund_add_mt)
 end
 
-local function new_order_refund_add(order_id, items, total_price, shipping_price, fee_price, message, item_restock, send_notifications, date, is_online)
+local function new_order_refund_add(order_id, items, total_price, shipping_price, fee_price, message, item_restock, send_notifications, date, is_online, idempotency_key)
 	return cast_order_refund_add({
 		["order_id"] = order_id;
 		["items"] = items;
@@ -31,6 +31,7 @@ local function new_order_refund_add(order_id, items, total_price, shipping_price
 		["send_notifications"] = send_notifications;
 		["date"] = date;
 		["is_online"] = is_online;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

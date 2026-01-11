@@ -19,7 +19,7 @@ local function cast_customer_address_add(t)
 	return setmetatable(t, customer_address_add_mt)
 end
 
-local function new_customer_address_add(customer_id, store_id, first_name, last_name, company, address1, address2, city, country, state, postcode, identification_number, types, default, phone, phone_mobile, fax, website, gender, tax_id, alias)
+local function new_customer_address_add(customer_id, store_id, first_name, last_name, company, address1, address2, city, country, state, postcode, identification_number, types, default, phone, phone_mobile, fax, website, gender, tax_id, alias, idempotency_key)
 	return cast_customer_address_add({
 		["customer_id"] = customer_id;
 		["store_id"] = store_id;
@@ -42,6 +42,7 @@ local function new_customer_address_add(customer_id, store_id, first_name, last_
 		["gender"] = gender;
 		["tax_id"] = tax_id;
 		["alias"] = alias;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

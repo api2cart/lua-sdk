@@ -19,12 +19,13 @@ local function cast_product_update_batch(t)
 	return setmetatable(t, product_update_batch_mt)
 end
 
-local function new_product_update_batch(nested_items_update_behaviour, clear_cache, reindex, payload)
+local function new_product_update_batch(nested_items_update_behaviour, clear_cache, reindex, payload, idempotency_key)
 	return cast_product_update_batch({
 		["nested_items_update_behaviour"] = nested_items_update_behaviour;
 		["clear_cache"] = clear_cache;
 		["reindex"] = reindex;
 		["payload"] = payload;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

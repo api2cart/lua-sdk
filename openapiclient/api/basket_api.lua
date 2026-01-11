@@ -102,13 +102,13 @@ function basket_api:basket_info(id, store_id, response_fields, params, exclude)
 	end
 end
 
-function basket_api:basket_item_add(customer_id, product_id, variant_id, quantity, store_id)
+function basket_api:basket_item_add(customer_id, product_id, variant_id, quantity, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/basket.item.add.json?customer_id=%s&product_id=%s&variant_id=%s&quantity=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(variant_id), http_util.encodeURIComponent(quantity), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/basket.item.add.json?customer_id=%s&product_id=%s&variant_id=%s&quantity=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(variant_id), http_util.encodeURIComponent(quantity), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -156,13 +156,13 @@ function basket_api:basket_item_add(customer_id, product_id, variant_id, quantit
 	end
 end
 
-function basket_api:basket_live_shipping_service_create(name, callback, store_id)
+function basket_api:basket_live_shipping_service_create(name, callback, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/basket.live_shipping_service.create.json?name=%s&callback=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/basket.live_shipping_service.create.json?name=%s&callback=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

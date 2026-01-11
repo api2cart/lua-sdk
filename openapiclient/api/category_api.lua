@@ -28,6 +28,7 @@ local openapiclient_category_image_add_200_response = require "openapiclient.mod
 local openapiclient_category_info_200_response = require "openapiclient.model.category_info_200_response"
 local openapiclient_model_response_category_list = require "openapiclient.model.model_response_category_list"
 local openapiclient_category_add_batch = require "openapiclient.model.category_add_batch"
+local openapiclient_category_delete_batch = require "openapiclient.model.category_delete_batch"
 
 local category_api = {}
 local category_api_mt = {
@@ -55,13 +56,13 @@ local function new_category_api(authority, basePath, schemes)
 	}, category_api_mt)
 end
 
-function category_api:category_add(name, description, short_description, parent_id, avail, created_time, modified_time, sort_order, meta_title, meta_description, meta_keywords, seo_url, store_id, stores_ids, lang_id)
+function category_api:category_add(name, description, short_description, parent_id, avail, created_time, modified_time, sort_order, meta_title, meta_description, meta_keywords, seo_url, store_id, stores_ids, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.add.json?name=%s&description=%s&short_description=%s&parent_id=%s&avail=%s&created_time=%s&modified_time=%s&sort_order=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&store_id=%s&stores_ids=%s&lang_id=%s",
-			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(created_time), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(lang_id));
+		path = string.format("%s/category.add.json?name=%s&description=%s&short_description=%s&parent_id=%s&avail=%s&created_time=%s&modified_time=%s&sort_order=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&store_id=%s&stores_ids=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(created_time), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -169,13 +170,13 @@ function category_api:category_add_batch(category_add_batch)
 	end
 end
 
-function category_api:category_assign(category_id, product_id, store_id)
+function category_api:category_assign(category_id, product_id, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.assign.json?category_id=%s&product_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/category.assign.json?category_id=%s&product_id=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -331,6 +332,66 @@ function category_api:category_delete(id, store_id)
 	end
 end
 
+function category_api:category_delete_batch(category_delete_batch)
+	local req = http_request.new_from_uri({
+		scheme = self.default_scheme;
+		host = self.host;
+		port = self.port;
+		path = string.format("%s/category.delete.batch.json",
+			self.basePath);
+	})
+
+	-- set HTTP verb
+	req.headers:upsert(":method", "POST")
+	-- TODO: create a function to select proper accept
+	--local var_content_type = { "application/json" }
+	req.headers:upsert("accept", "application/json")
+
+	-- TODO: create a function to select proper content-type
+	--local var_accept = { "application/json" }
+	req.headers:upsert("content-type", "application/json")
+
+	req:set_body(dkjson.encode(category_delete_batch))
+
+	-- api key in headers 'x-store-key'
+	if self.api_key['x-store-key'] then
+		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
+	end
+	-- api key in headers 'x-api-key'
+	if self.api_key['x-api-key'] then
+		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
+	end
+
+	-- make the HTTP call
+	local headers, stream, errno = req:go()
+	if not headers then
+		return nil, stream, errno
+	end
+	local http_status = headers:get(":status")
+	if http_status:sub(1,1) == "2" then
+		local body, err, errno2 = stream:get_body_as_string()
+		-- exception when getting the HTTP body
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		local result, _, err3 = dkjson.decode(body)
+		-- exception when decoding the HTTP body
+		if result == nil then
+			return nil, err3
+		end
+		return openapiclient_category_add_batch_200_response.cast(result), headers
+	else
+		local body, err, errno2 = stream:get_body_as_string()
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		-- return the error message (http body)
+		return nil, http_status, body
+	end
+end
+
 function category_api:category_find(find_value, find_where, find_params, store_id, lang_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
@@ -385,13 +446,13 @@ function category_api:category_find(find_value, find_where, find_params, store_i
 	end
 end
 
-function category_api:category_image_add(category_id, image_name, url, type, store_id, label, mime, position)
+function category_api:category_image_add(category_id, image_name, url, type, store_id, label, mime, position, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.image.add.json?category_id=%s&image_name=%s&url=%s&type=%s&store_id=%s&label=%s&mime=%s&position=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(url), http_util.encodeURIComponent(type), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(label), http_util.encodeURIComponent(mime), http_util.encodeURIComponent(position));
+		path = string.format("%s/category.image.add.json?category_id=%s&image_name=%s&url=%s&type=%s&store_id=%s&label=%s&mime=%s&position=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(url), http_util.encodeURIComponent(type), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(label), http_util.encodeURIComponent(mime), http_util.encodeURIComponent(position), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -601,13 +662,13 @@ function category_api:category_list(start, count, page_cursor, store_id, lang_id
 	end
 end
 
-function category_api:category_unassign(category_id, product_id, store_id)
+function category_api:category_unassign(category_id, product_id, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.unassign.json?category_id=%s&product_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/category.unassign.json?category_id=%s&product_id=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -655,13 +716,13 @@ function category_api:category_unassign(category_id, product_id, store_id)
 	end
 end
 
-function category_api:category_update(id, name, description, short_description, parent_id, avail, sort_order, modified_time, meta_title, meta_description, meta_keywords, seo_url, store_id, stores_ids, lang_id)
+function category_api:category_update(id, name, description, short_description, parent_id, avail, sort_order, modified_time, meta_title, meta_description, meta_keywords, seo_url, store_id, stores_ids, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.update.json?id=%s&name=%s&description=%s&short_description=%s&parent_id=%s&avail=%s&sort_order=%s&modified_time=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&store_id=%s&stores_ids=%s&lang_id=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(lang_id));
+		path = string.format("%s/category.update.json?id=%s&name=%s&description=%s&short_description=%s&parent_id=%s&avail=%s&sort_order=%s&modified_time=%s&meta_title=%s&meta_description=%s&meta_keywords=%s&seo_url=%s&store_id=%s&stores_ids=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(description), http_util.encodeURIComponent(short_description), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(modified_time), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(stores_ids), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

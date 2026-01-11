@@ -267,13 +267,13 @@ function product_api:product_attribute_list(product_id, start, count, page_curso
 	end
 end
 
-function product_api:product_attribute_value_set(product_id, attribute_id, attribute_group_id, attribute_name, value, value_id, lang_id, store_id)
+function product_api:product_attribute_value_set(product_id, attribute_id, attribute_group_id, attribute_name, value, value_id, lang_id, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.attribute.value.set.json?product_id=%s&attribute_id=%s&attribute_group_id=%s&attribute_name=%s&value=%s&value_id=%s&lang_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(attribute_name), http_util.encodeURIComponent(value), http_util.encodeURIComponent(value_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.attribute.value.set.json?product_id=%s&attribute_id=%s&attribute_group_id=%s&attribute_name=%s&value=%s&value_id=%s&lang_id=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(attribute_group_id), http_util.encodeURIComponent(attribute_name), http_util.encodeURIComponent(value), http_util.encodeURIComponent(value_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -321,13 +321,13 @@ function product_api:product_attribute_value_set(product_id, attribute_id, attri
 	end
 end
 
-function product_api:product_attribute_value_unset(product_id, attribute_id, store_id, include_default, reindex, clear_cache)
+function product_api:product_attribute_value_unset(product_id, attribute_id, store_id, include_default, reindex, clear_cache, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.attribute.value.unset.json?product_id=%s&attribute_id=%s&store_id=%s&include_default=%s&reindex=%s&clear_cache=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(include_default), http_util.encodeURIComponent(reindex), http_util.encodeURIComponent(clear_cache));
+		path = string.format("%s/product.attribute.value.unset.json?product_id=%s&attribute_id=%s&store_id=%s&include_default=%s&reindex=%s&clear_cache=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(attribute_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(include_default), http_util.encodeURIComponent(reindex), http_util.encodeURIComponent(clear_cache), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -645,13 +645,13 @@ function product_api:product_count(sku, product_ids, since_id, categories_ids, c
 	end
 end
 
-function product_api:product_currency_add(iso3, rate, name, avail, symbol_left, symbol_right, default)
+function product_api:product_currency_add(iso3, rate, name, avail, symbol_left, symbol_right, default, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.currency.add.json?iso3=%s&rate=%s&name=%s&avail=%s&symbol_left=%s&symbol_right=%s&default=%s",
-			self.basePath, http_util.encodeURIComponent(iso3), http_util.encodeURIComponent(rate), http_util.encodeURIComponent(name), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(symbol_left), http_util.encodeURIComponent(symbol_right), http_util.encodeURIComponent(default));
+		path = string.format("%s/product.currency.add.json?iso3=%s&rate=%s&name=%s&avail=%s&symbol_left=%s&symbol_right=%s&default=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(iso3), http_util.encodeURIComponent(rate), http_util.encodeURIComponent(name), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(symbol_left), http_util.encodeURIComponent(symbol_right), http_util.encodeURIComponent(default), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1035,13 +1035,13 @@ function product_api:product_image_delete(product_id, id, store_id)
 	end
 end
 
-function product_api:product_image_update(product_id, id, variant_ids, store_id, lang_id, image_name, type, label, position, hidden)
+function product_api:product_image_update(product_id, id, variant_ids, store_id, lang_id, image_name, type, label, position, hidden, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.image.update.json?product_id=%s&id=%s&variant_ids=%s&store_id=%s&lang_id=%s&image_name=%s&type=%s&label=%s&position=%s&hidden=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(id), http_util.encodeURIComponent(variant_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(type), http_util.encodeURIComponent(label), http_util.encodeURIComponent(position), http_util.encodeURIComponent(hidden));
+		path = string.format("%s/product.image.update.json?product_id=%s&id=%s&variant_ids=%s&store_id=%s&lang_id=%s&image_name=%s&type=%s&label=%s&position=%s&hidden=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(id), http_util.encodeURIComponent(variant_ids), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(type), http_util.encodeURIComponent(label), http_util.encodeURIComponent(position), http_util.encodeURIComponent(hidden), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1197,13 +1197,13 @@ function product_api:product_list(start, count, page_cursor, product_ids, since_
 	end
 end
 
-function product_api:product_manufacturer_add(product_id, manufacturer, store_id, meta_title, meta_keywords, meta_description, search_keywords, image_url, seo_url)
+function product_api:product_manufacturer_add(product_id, manufacturer, store_id, meta_title, meta_keywords, meta_description, search_keywords, image_url, seo_url, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.manufacturer.add.json?product_id=%s&manufacturer=%s&store_id=%s&meta_title=%s&meta_keywords=%s&meta_description=%s&search_keywords=%s&image_url=%s&seo_url=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(manufacturer), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(search_keywords), http_util.encodeURIComponent(image_url), http_util.encodeURIComponent(seo_url));
+		path = string.format("%s/product.manufacturer.add.json?product_id=%s&manufacturer=%s&store_id=%s&meta_title=%s&meta_keywords=%s&meta_description=%s&search_keywords=%s&image_url=%s&seo_url=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(manufacturer), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(search_keywords), http_util.encodeURIComponent(image_url), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1311,13 +1311,13 @@ function product_api:product_option_add(product_option_add)
 	end
 end
 
-function product_api:product_option_assign(product_id, option_id, required, sort_order, option_values, clear_cache)
+function product_api:product_option_assign(product_id, option_id, required, sort_order, option_values, clear_cache, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.option.assign.json?product_id=%s&option_id=%s&required=%s&sort_order=%s&option_values=%s&clear_cache=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(option_id), http_util.encodeURIComponent(required), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(option_values), http_util.encodeURIComponent(clear_cache));
+		path = string.format("%s/product.option.assign.json?product_id=%s&option_id=%s&required=%s&sort_order=%s&option_values=%s&clear_cache=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(option_id), http_util.encodeURIComponent(required), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(option_values), http_util.encodeURIComponent(clear_cache), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1473,13 +1473,13 @@ function product_api:product_option_list(start, count, product_id, lang_id, stor
 	end
 end
 
-function product_api:product_option_value_add(product_id, option_id, option_value, sort_order, display_value, is_default, clear_cache)
+function product_api:product_option_value_add(product_id, option_id, option_value, sort_order, display_value, is_default, clear_cache, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.option.value.add.json?product_id=%s&option_id=%s&option_value=%s&sort_order=%s&display_value=%s&is_default=%s&clear_cache=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(option_id), http_util.encodeURIComponent(option_value), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(display_value), http_util.encodeURIComponent(is_default), http_util.encodeURIComponent(clear_cache));
+		path = string.format("%s/product.option.value.add.json?product_id=%s&option_id=%s&option_value=%s&sort_order=%s&display_value=%s&is_default=%s&clear_cache=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(option_id), http_util.encodeURIComponent(option_value), http_util.encodeURIComponent(sort_order), http_util.encodeURIComponent(display_value), http_util.encodeURIComponent(is_default), http_util.encodeURIComponent(clear_cache), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1527,13 +1527,13 @@ function product_api:product_option_value_add(product_id, option_id, option_valu
 	end
 end
 
-function product_api:product_option_value_assign(product_option_id, option_value_id, clear_cache)
+function product_api:product_option_value_assign(product_option_id, option_value_id, clear_cache, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.option.value.assign.json?product_option_id=%s&option_value_id=%s&clear_cache=%s",
-			self.basePath, http_util.encodeURIComponent(product_option_id), http_util.encodeURIComponent(option_value_id), http_util.encodeURIComponent(clear_cache));
+		path = string.format("%s/product.option.value.assign.json?product_option_id=%s&option_value_id=%s&clear_cache=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_option_id), http_util.encodeURIComponent(option_value_id), http_util.encodeURIComponent(clear_cache), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1635,13 +1635,13 @@ function product_api:product_option_value_delete(option_id, option_value_id, pro
 	end
 end
 
-function product_api:product_option_value_update(product_id, option_id, option_value_id, option_value, price, quantity, display_value, clear_cache)
+function product_api:product_option_value_update(product_id, option_id, option_value_id, option_value, price, quantity, display_value, clear_cache, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.option.value.update.json?product_id=%s&option_id=%s&option_value_id=%s&option_value=%s&price=%s&quantity=%s&display_value=%s&clear_cache=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(option_id), http_util.encodeURIComponent(option_value_id), http_util.encodeURIComponent(option_value), http_util.encodeURIComponent(price), http_util.encodeURIComponent(quantity), http_util.encodeURIComponent(display_value), http_util.encodeURIComponent(clear_cache));
+		path = string.format("%s/product.option.value.update.json?product_id=%s&option_id=%s&option_value_id=%s&option_value=%s&price=%s&quantity=%s&display_value=%s&clear_cache=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(option_id), http_util.encodeURIComponent(option_value_id), http_util.encodeURIComponent(option_value), http_util.encodeURIComponent(price), http_util.encodeURIComponent(quantity), http_util.encodeURIComponent(display_value), http_util.encodeURIComponent(clear_cache), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -1917,13 +1917,13 @@ function product_api:product_review_list(product_id, start, count, page_cursor, 
 	end
 end
 
-function product_api:product_store_assign(product_id, store_id)
+function product_api:product_store_assign(product_id, store_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.store.assign.json?product_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/product.store.assign.json?product_id=%s&store_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

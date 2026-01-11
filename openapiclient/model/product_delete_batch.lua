@@ -19,9 +19,10 @@ local function cast_product_delete_batch(t)
 	return setmetatable(t, product_delete_batch_mt)
 end
 
-local function new_product_delete_batch(payload)
+local function new_product_delete_batch(payload, idempotency_key)
 	return cast_product_delete_batch({
 		["payload"] = payload;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

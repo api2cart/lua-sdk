@@ -19,7 +19,7 @@ local function cast_product_option_add(t)
 	return setmetatable(t, product_option_add_mt)
 end
 
-local function new_product_option_add(name, type, product_id, default_option_value, option_values, description, avail, sort_order, required, values, clear_cache)
+local function new_product_option_add(name, type, product_id, default_option_value, option_values, description, avail, sort_order, required, values, clear_cache, idempotency_key)
 	return cast_product_option_add({
 		["name"] = name;
 		["type"] = type;
@@ -32,6 +32,7 @@ local function new_product_option_add(name, type, product_id, default_option_val
 		["required"] = required;
 		["values"] = values;
 		["clear_cache"] = clear_cache;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

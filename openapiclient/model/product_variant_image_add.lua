@@ -19,7 +19,7 @@ local function cast_product_variant_image_add(t)
 	return setmetatable(t, product_variant_image_add_mt)
 end
 
-local function new_product_variant_image_add(product_id, product_variant_id, store_id, image_name, type, url, content, label, mime, position, option_id)
+local function new_product_variant_image_add(product_id, product_variant_id, store_id, image_name, type, url, content, label, mime, position, option_id, idempotency_key)
 	return cast_product_variant_image_add({
 		["product_id"] = product_id;
 		["product_variant_id"] = product_variant_id;
@@ -32,6 +32,7 @@ local function new_product_variant_image_add(product_id, product_variant_id, sto
 		["mime"] = mime;
 		["position"] = position;
 		["option_id"] = option_id;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

@@ -19,7 +19,7 @@ local function cast_order_calculate(t)
 	return setmetatable(t, order_calculate_mt)
 end
 
-local function new_order_calculate(customer_email, currency_id, store_id, coupons, rounding_precision, shipp_first_name, shipp_last_name, shipp_address_1, shipp_address_2, shipp_city, shipp_postcode, shipp_state, shipp_country, shipp_company, shipp_phone, bill_first_name, bill_last_name, bill_address_1, bill_address_2, bill_city, bill_postcode, bill_state, bill_country, bill_company, bill_phone, response_fields, order_item)
+local function new_order_calculate(customer_email, currency_id, store_id, coupons, rounding_precision, shipp_first_name, shipp_last_name, shipp_address_1, shipp_address_2, shipp_city, shipp_postcode, shipp_state, shipp_country, shipp_company, shipp_phone, bill_first_name, bill_last_name, bill_address_1, bill_address_2, bill_city, bill_postcode, bill_state, bill_country, bill_company, bill_phone, response_fields, idempotency_key, order_item)
 	return cast_order_calculate({
 		["customer_email"] = customer_email;
 		["currency_id"] = currency_id;
@@ -47,6 +47,7 @@ local function new_order_calculate(customer_email, currency_id, store_id, coupon
 		["bill_company"] = bill_company;
 		["bill_phone"] = bill_phone;
 		["response_fields"] = response_fields;
+		["idempotency_key"] = idempotency_key;
 		["order_item"] = order_item;
 	})
 end

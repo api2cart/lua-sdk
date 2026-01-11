@@ -19,11 +19,12 @@ local function cast_product_price_add(t)
 	return setmetatable(t, product_price_add_mt)
 end
 
-local function new_product_price_add(product_id, group_prices, store_id)
+local function new_product_price_add(product_id, group_prices, store_id, idempotency_key)
 	return cast_product_price_add({
 		["product_id"] = product_id;
 		["group_prices"] = group_prices;
 		["store_id"] = store_id;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

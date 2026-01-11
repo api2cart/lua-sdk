@@ -19,9 +19,10 @@ local function cast_order_shipment_add_batch(t)
 	return setmetatable(t, order_shipment_add_batch_mt)
 end
 
-local function new_order_shipment_add_batch(payload)
+local function new_order_shipment_add_batch(payload, idempotency_key)
 	return cast_order_shipment_add_batch({
 		["payload"] = payload;
+		["idempotency_key"] = idempotency_key;
 	})
 end
 

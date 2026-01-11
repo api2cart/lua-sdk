@@ -50,6 +50,13 @@ describe("category_api", function()
     end)
   end)
 
+  -- unit tests for category_delete_batch
+  describe("category_delete_batch test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for category_find
   describe("category_find test", function()
     it("should work", function()
