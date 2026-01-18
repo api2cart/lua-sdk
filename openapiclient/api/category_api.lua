@@ -554,13 +554,13 @@ function category_api:category_image_delete(category_id, image_id, store_id)
 	end
 end
 
-function category_api:category_info(id, store_id, lang_id, schema_type, response_fields, params, exclude, report_request_id, disable_report_cache)
+function category_api:category_info(id, store_id, lang_id, schema_type, response_fields, params, exclude, report_request_id, disable_report_cache, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.info.json?id=%s&store_id=%s&lang_id=%s&schema_type=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(schema_type), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache));
+		path = string.format("%s/category.info.json?id=%s&store_id=%s&lang_id=%s&schema_type=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(schema_type), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
@@ -608,13 +608,13 @@ function category_api:category_info(id, store_id, lang_id, schema_type, response
 	end
 end
 
-function category_api:category_list(start, count, page_cursor, store_id, lang_id, parent_id, avail, product_type, created_from, created_to, modified_from, modified_to, find_value, find_where, response_fields, params, exclude, report_request_id, disable_report_cache, disable_cache)
+function category_api:category_list(start, count, page_cursor, store_id, lang_id, parent_id, avail, product_type, created_from, created_to, modified_from, modified_to, find_value, find_where, response_fields, params, exclude, report_request_id, disable_report_cache, disable_cache, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.list.json?start=%s&count=%s&page_cursor=%s&store_id=%s&lang_id=%s&parent_id=%s&avail=%s&product_type=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&find_value=%s&find_where=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s&disable_cache=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(product_type), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(disable_cache));
+		path = string.format("%s/category.list.json?start=%s&count=%s&page_cursor=%s&store_id=%s&lang_id=%s&parent_id=%s&avail=%s&product_type=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&find_value=%s&find_where=%s&response_fields=%s&params=%s&exclude=%s&report_request_id=%s&disable_report_cache=%s&disable_cache=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(parent_id), http_util.encodeURIComponent(avail), http_util.encodeURIComponent(product_type), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(find_value), http_util.encodeURIComponent(find_where), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(report_request_id), http_util.encodeURIComponent(disable_report_cache), http_util.encodeURIComponent(disable_cache), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb

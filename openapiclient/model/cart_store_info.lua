@@ -19,7 +19,7 @@ local function cast_cart_store_info(t)
 	return setmetatable(t, cart_store_info_mt)
 end
 
-local function new_cart_store_info(store_id, name, language, store_languages, currency, store_currencies, timezone, country, root_category_id, multi_store_url, active, weight_unit, dimension_unit, prices_include_tax, carrier_info, store_owner_info, default_warehouse_id, channels, additional_fields, custom_fields)
+local function new_cart_store_info(store_id, name, language, store_languages, currency, store_currencies, timezone, country, root_category_id, multi_store_url, active, weight_unit, dimension_unit, prices_include_tax, carrier_info, store_owner_info, default_warehouse_id, channels, pickup_locations, additional_fields, custom_fields)
 	return cast_cart_store_info({
 		["store_id"] = store_id;
 		["name"] = name;
@@ -39,6 +39,7 @@ local function new_cart_store_info(store_id, name, language, store_languages, cu
 		["store_owner_info"] = store_owner_info;
 		["default_warehouse_id"] = default_warehouse_id;
 		["channels"] = channels;
+		["pickup_locations"] = pickup_locations;
 		["additional_fields"] = additional_fields;
 		["custom_fields"] = custom_fields;
 	})

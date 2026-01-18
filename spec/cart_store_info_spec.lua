@@ -142,6 +142,13 @@ describe("cart_store_info", function()
     end)
   end)
 
+  -- unit tests for the property 'pickup_locations'
+  describe("property pickup_locations test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'additional_fields'
   describe("property additional_fields test", function()
     it("should work", function()

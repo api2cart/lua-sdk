@@ -111,6 +111,7 @@ build = {
 		["openapiclient.model.cart_meta_data"] = "openapiclient/model/cart_meta_data.lua";
 		["openapiclient.model.cart_methods_200_response"] = "openapiclient/model/cart_methods_200_response.lua";
 		["openapiclient.model.cart_methods_200_response_result"] = "openapiclient/model/cart_methods_200_response_result.lua";
+		["openapiclient.model.cart_pickup_location"] = "openapiclient/model/cart_pickup_location.lua";
 		["openapiclient.model.cart_plugin_list_200_response"] = "openapiclient/model/cart_plugin_list_200_response.lua";
 		["openapiclient.model.cart_plugin_list_200_response_result"] = "openapiclient/model/cart_plugin_list_200_response_result.lua";
 		["openapiclient.model.cart_script_add_200_response"] = "openapiclient/model/cart_script_add_200_response.lua";
