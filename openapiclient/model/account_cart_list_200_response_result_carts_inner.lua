@@ -19,12 +19,14 @@ local function cast_account_cart_list_200_response_result_carts_inner(t)
 	return setmetatable(t, account_cart_list_200_response_result_carts_inner_mt)
 end
 
-local function new_account_cart_list_200_response_result_carts_inner(id, url, store_key, cart_id, total_calls)
+local function new_account_cart_list_200_response_result_carts_inner(id, url, store_key, cart_id, custom_label, bridge_version, total_calls)
 	return cast_account_cart_list_200_response_result_carts_inner({
 		["id"] = id;
 		["url"] = url;
 		["store_key"] = store_key;
 		["cart_id"] = cart_id;
+		["custom_label"] = custom_label;
+		["bridge_version"] = bridge_version;
 		["total_calls"] = total_calls;
 	})
 end

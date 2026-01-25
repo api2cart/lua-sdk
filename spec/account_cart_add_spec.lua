@@ -51,6 +51,20 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'label'
+  describe("property label test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'custom_label'
+  describe("property custom_label test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'validate_version'
   describe("property validate_version test", function()
     it("should work", function()
@@ -1005,6 +1019,41 @@ describe("account_cart_add", function()
 
   -- unit tests for the property 'zid_refresh_token'
   describe("property zid_refresh_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'jumpseller_client_id'
+  describe("property jumpseller_client_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'jumpseller_client_secret'
+  describe("property jumpseller_client_secret test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'jumpseller_refresh_token'
+  describe("property jumpseller_refresh_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'jumpseller_login'
+  describe("property jumpseller_login test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'jumpseller_authtoken'
+  describe("property jumpseller_authtoken test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

@@ -44,6 +44,20 @@ describe("account_cart_list_200_response_result_carts_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'custom_label'
+  describe("property custom_label test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'bridge_version'
+  describe("property bridge_version test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'total_calls'
   describe("property total_calls test", function()
     it("should work", function()
