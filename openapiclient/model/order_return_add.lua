@@ -19,13 +19,14 @@ local function cast_order_return_add(t)
 	return setmetatable(t, order_return_add_mt)
 end
 
-local function new_order_return_add(order_id, store_id, return_status_id, return_action_id, return_reason_id, return_reason, item_restock, staff_note, comment, send_notifications, reject_reason, idempotency_key, order_products)
+local function new_order_return_add(order_id, store_id, return_status_id, return_action_id, return_reason_id, return_action, return_reason, item_restock, staff_note, comment, send_notifications, reject_reason, idempotency_key, order_products)
 	return cast_order_return_add({
 		["order_id"] = order_id;
 		["store_id"] = store_id;
 		["return_status_id"] = return_status_id;
 		["return_action_id"] = return_action_id;
 		["return_reason_id"] = return_reason_id;
+		["return_action"] = return_action;
 		["return_reason"] = return_reason;
 		["item_restock"] = item_restock;
 		["staff_note"] = staff_note;

@@ -79,6 +79,20 @@ describe("order_return_update", function()
     end)
   end)
 
+  -- unit tests for the property 'return_action'
+  describe("property return_action test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'return_reason'
+  describe("property return_reason test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'idempotency_key'
   describe("property idempotency_key test", function()
     it("should work", function()
