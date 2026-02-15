@@ -184,6 +184,13 @@ describe("product_variant_add", function()
     end)
   end)
 
+  -- unit tests for the property 'prices_inc_tax'
+  describe("property prices_inc_tax test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'quantity'
   describe("property quantity test", function()
     it("should work", function()
