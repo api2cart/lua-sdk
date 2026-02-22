@@ -446,13 +446,13 @@ function category_api:category_find(find_value, find_where, find_params, store_i
 	end
 end
 
-function category_api:category_image_add(category_id, image_name, url, type, store_id, label, mime, position, idempotency_key)
+function category_api:category_image_add(category_id, image_name, url, type, store_id, label, mime, position, apply_to_translations, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.image.add.json?category_id=%s&image_name=%s&url=%s&type=%s&store_id=%s&label=%s&mime=%s&position=%s&idempotency_key=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(url), http_util.encodeURIComponent(type), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(label), http_util.encodeURIComponent(mime), http_util.encodeURIComponent(position), http_util.encodeURIComponent(idempotency_key));
+		path = string.format("%s/category.image.add.json?category_id=%s&image_name=%s&url=%s&type=%s&store_id=%s&label=%s&mime=%s&position=%s&apply_to_translations=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_name), http_util.encodeURIComponent(url), http_util.encodeURIComponent(type), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(label), http_util.encodeURIComponent(mime), http_util.encodeURIComponent(position), http_util.encodeURIComponent(apply_to_translations), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -500,13 +500,13 @@ function category_api:category_image_add(category_id, image_name, url, type, sto
 	end
 end
 
-function category_api:category_image_delete(category_id, image_id, store_id)
+function category_api:category_image_delete(category_id, image_id, store_id, apply_to_translations)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/category.image.delete.json?category_id=%s&image_id=%s&store_id=%s",
-			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_id), http_util.encodeURIComponent(store_id));
+		path = string.format("%s/category.image.delete.json?category_id=%s&image_id=%s&store_id=%s&apply_to_translations=%s",
+			self.basePath, http_util.encodeURIComponent(category_id), http_util.encodeURIComponent(image_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(apply_to_translations));
 	})
 
 	-- set HTTP verb

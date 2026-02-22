@@ -121,6 +121,13 @@ describe("customer_update", function()
     end)
   end)
 
+  -- unit tests for the property 'password'
+  describe("property password test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'store_id'
   describe("property store_id test", function()
     it("should work", function()

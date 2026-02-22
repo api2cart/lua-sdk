@@ -178,13 +178,13 @@ function customer_api:customer_address_add(customer_address_add)
 	end
 end
 
-function customer_api:customer_attribute_list(customer_id, count, page_cursor, store_id, lang_id, response_fields, params, exclude)
+function customer_api:customer_attribute_list(customer_id, start, count, page_cursor, store_id, lang_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/customer.attribute.list.json?count=%s&page_cursor=%s&customer_id=%s&store_id=%s&lang_id=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/customer.attribute.list.json?start=%s&count=%s&page_cursor=%s&customer_id=%s&store_id=%s&lang_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
