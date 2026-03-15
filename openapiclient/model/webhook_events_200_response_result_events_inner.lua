@@ -19,11 +19,12 @@ local function cast_webhook_events_200_response_result_events_inner(t)
 	return setmetatable(t, webhook_events_200_response_result_events_inner_mt)
 end
 
-local function new_webhook_events_200_response_result_events_inner(webhook_name, entity, action)
+local function new_webhook_events_200_response_result_events_inner(webhook_name, entity, action, filterable_fields)
 	return cast_webhook_events_200_response_result_events_inner({
 		["webhook_name"] = webhook_name;
 		["entity"] = entity;
 		["action"] = action;
+		["filterable_fields"] = filterable_fields;
 	})
 end
 

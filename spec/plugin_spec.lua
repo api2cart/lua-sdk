@@ -23,6 +23,13 @@ describe("plugin", function()
     end)
   end)
 
+  -- unit tests for the property 'code'
+  describe("property code test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'active'
   describe("property active test", function()
     it("should work", function()

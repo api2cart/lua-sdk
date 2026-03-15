@@ -19,9 +19,10 @@ local function cast_plugin(t)
 	return setmetatable(t, plugin_mt)
 end
 
-local function new_plugin(name, active, additional_fields, custom_fields)
+local function new_plugin(name, code, active, additional_fields, custom_fields)
 	return cast_plugin({
 		["name"] = name;
+		["code"] = code;
 		["active"] = active;
 		["additional_fields"] = additional_fields;
 		["custom_fields"] = custom_fields;

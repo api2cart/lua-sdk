@@ -270,6 +270,10 @@ openapiclient/model/order_totals.lua
 openapiclient/model/order_totals_new_discount.lua
 openapiclient/model/order_transaction.lua
 openapiclient/model/pagination.lua
+openapiclient/model/param_definition_filtering_conditions_filter_condition.lua
+openapiclient/model/param_definition_filtering_conditions_filter_group.lua
+openapiclient/model/param_definition_filtering_conditions_filter_rule.lua
+openapiclient/model/param_definition_filtering_conditions_filter_rule_value.lua
 openapiclient/model/plugin.lua
 openapiclient/model/plugin_list.lua
 openapiclient/model/product.lua
@@ -446,11 +450,13 @@ openapiclient/model/tax_class_zip_codes_range.lua
 openapiclient/model/webhook.lua
 openapiclient/model/webhook_count_200_response.lua
 openapiclient/model/webhook_count_200_response_result.lua
+openapiclient/model/webhook_create.lua
 openapiclient/model/webhook_events_200_response.lua
 openapiclient/model/webhook_events_200_response_result.lua
 openapiclient/model/webhook_events_200_response_result_events_inner.lua
 openapiclient/model/webhook_list_200_response.lua
 openapiclient/model/webhook_list_200_response_result.lua
+openapiclient/model/webhook_update.lua
 spec/a2_c_date_time_spec.lua
 spec/account_api_spec.lua
 spec/account_cart_add_200_response_result_spec.lua
@@ -714,6 +720,10 @@ spec/order_totals_new_discount_spec.lua
 spec/order_totals_spec.lua
 spec/order_transaction_spec.lua
 spec/pagination_spec.lua
+spec/param_definition_filtering_conditions_filter_condition_spec.lua
+spec/param_definition_filtering_conditions_filter_group_spec.lua
+spec/param_definition_filtering_conditions_filter_rule_spec.lua
+spec/param_definition_filtering_conditions_filter_rule_value_spec.lua
 spec/plugin_list_spec.lua
 spec/plugin_spec.lua
 spec/product_add_200_response_result_spec.lua
@@ -894,9 +904,11 @@ spec/tax_class_zip_codes_spec.lua
 spec/webhook_api_spec.lua
 spec/webhook_count_200_response_result_spec.lua
 spec/webhook_count_200_response_spec.lua
+spec/webhook_create_spec.lua
 spec/webhook_events_200_response_result_events_inner_spec.lua
 spec/webhook_events_200_response_result_spec.lua
 spec/webhook_events_200_response_spec.lua
 spec/webhook_list_200_response_result_spec.lua
 spec/webhook_list_200_response_spec.lua
 spec/webhook_spec.lua
+spec/webhook_update_spec.lua

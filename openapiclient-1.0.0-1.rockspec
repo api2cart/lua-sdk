@@ -291,6 +291,10 @@ build = {
 		["openapiclient.model.order_totals_new_discount"] = "openapiclient/model/order_totals_new_discount.lua";
 		["openapiclient.model.order_transaction"] = "openapiclient/model/order_transaction.lua";
 		["openapiclient.model.pagination"] = "openapiclient/model/pagination.lua";
+		["openapiclient.model.param_definition_filtering_conditions_filter_condition"] = "openapiclient/model/param_definition_filtering_conditions_filter_condition.lua";
+		["openapiclient.model.param_definition_filtering_conditions_filter_group"] = "openapiclient/model/param_definition_filtering_conditions_filter_group.lua";
+		["openapiclient.model.param_definition_filtering_conditions_filter_rule"] = "openapiclient/model/param_definition_filtering_conditions_filter_rule.lua";
+		["openapiclient.model.param_definition_filtering_conditions_filter_rule_value"] = "openapiclient/model/param_definition_filtering_conditions_filter_rule_value.lua";
 		["openapiclient.model.plugin"] = "openapiclient/model/plugin.lua";
 		["openapiclient.model.plugin_list"] = "openapiclient/model/plugin_list.lua";
 		["openapiclient.model.product"] = "openapiclient/model/product.lua";
@@ -467,10 +471,12 @@ build = {
 		["openapiclient.model.webhook"] = "openapiclient/model/webhook.lua";
 		["openapiclient.model.webhook_count_200_response"] = "openapiclient/model/webhook_count_200_response.lua";
 		["openapiclient.model.webhook_count_200_response_result"] = "openapiclient/model/webhook_count_200_response_result.lua";
+		["openapiclient.model.webhook_create"] = "openapiclient/model/webhook_create.lua";
 		["openapiclient.model.webhook_events_200_response"] = "openapiclient/model/webhook_events_200_response.lua";
 		["openapiclient.model.webhook_events_200_response_result"] = "openapiclient/model/webhook_events_200_response_result.lua";
 		["openapiclient.model.webhook_events_200_response_result_events_inner"] = "openapiclient/model/webhook_events_200_response_result_events_inner.lua";
 		["openapiclient.model.webhook_list_200_response"] = "openapiclient/model/webhook_list_200_response.lua";
 		["openapiclient.model.webhook_list_200_response_result"] = "openapiclient/model/webhook_list_200_response_result.lua";
+		["openapiclient.model.webhook_update"] = "openapiclient/model/webhook_update.lua";
 	}
 }

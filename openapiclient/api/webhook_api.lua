@@ -22,6 +22,8 @@ local openapiclient_product_image_update_200_response = require "openapiclient.m
 local openapiclient_webhook_count_200_response = require "openapiclient.model.webhook_count_200_response"
 local openapiclient_webhook_events_200_response = require "openapiclient.model.webhook_events_200_response"
 local openapiclient_webhook_list_200_response = require "openapiclient.model.webhook_list_200_response"
+local openapiclient_webhook_create = require "openapiclient.model.webhook_create"
+local openapiclient_webhook_update = require "openapiclient.model.webhook_update"
 
 local webhook_api = {}
 local webhook_api_mt = {
@@ -103,20 +105,26 @@ function webhook_api:webhook_count(entity, action, active)
 	end
 end
 
-function webhook_api:webhook_create(entity, action, callback, label, fields, response_fields, active, lang_id, store_id, idempotency_key)
+function webhook_api:webhook_create(webhook_create)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/webhook.create.json?entity=%s&action=%s&callback=%s&label=%s&fields=%s&response_fields=%s&active=%s&lang_id=%s&store_id=%s&idempotency_key=%s",
-			self.basePath, http_util.encodeURIComponent(entity), http_util.encodeURIComponent(action), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(label), http_util.encodeURIComponent(fields), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(active), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(idempotency_key));
+		path = string.format("%s/webhook.create.json",
+			self.basePath);
 	})
 
 	-- set HTTP verb
 	req.headers:upsert(":method", "POST")
+	-- TODO: create a function to select proper accept
+	--local var_content_type = { "application/json" }
+	req.headers:upsert("accept", "application/json")
+
 	-- TODO: create a function to select proper content-type
 	--local var_accept = { "application/json" }
 	req.headers:upsert("content-type", "application/json")
+
+	req:set_body(dkjson.encode(webhook_create))
 
 	-- api key in headers 'x-store-key'
 	if self.api_key['x-store-key'] then
@@ -319,20 +327,26 @@ function webhook_api:webhook_list(start, count, entity, action, active, ids, par
 	end
 end
 
-function webhook_api:webhook_update(id, callback, label, fields, response_fields, active, lang_id, idempotency_key)
+function webhook_api:webhook_update(webhook_update)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/webhook.update.json?id=%s&callback=%s&label=%s&fields=%s&response_fields=%s&active=%s&lang_id=%s&idempotency_key=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(callback), http_util.encodeURIComponent(label), http_util.encodeURIComponent(fields), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(active), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
+		path = string.format("%s/webhook.update.json",
+			self.basePath);
 	})
 
 	-- set HTTP verb
 	req.headers:upsert(":method", "PUT")
+	-- TODO: create a function to select proper accept
+	--local var_content_type = { "application/json" }
+	req.headers:upsert("accept", "application/json")
+
 	-- TODO: create a function to select proper content-type
 	--local var_accept = { "application/json" }
 	req.headers:upsert("content-type", "application/json")
+
+	req:set_body(dkjson.encode(webhook_update))
 
 	-- api key in headers 'x-store-key'
 	if self.api_key['x-store-key'] then

@@ -37,4 +37,11 @@ describe("webhook_events_200_response_result_events_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'filterable_fields'
+  describe("property filterable_fields test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)
