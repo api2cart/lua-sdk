@@ -338,6 +338,13 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'nopcommerce_token'
+  describe("property nopcommerce_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'demandware_client_id'
   describe("property demandware_client_id test", function()
     it("should work", function()
