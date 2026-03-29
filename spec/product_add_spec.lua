@@ -247,6 +247,13 @@ describe("product_add", function()
     end)
   end)
 
+  -- unit tests for the property 'retail_price'
+  describe("property retail_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'quantity'
   describe("property quantity test", function()
     it("should work", function()

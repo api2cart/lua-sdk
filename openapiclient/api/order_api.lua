@@ -74,13 +74,13 @@ local function new_order_api(authority, basePath, schemes)
 	}, order_api_mt)
 end
 
-function order_api:order_abandoned_list(start, count, page_cursor, customer_id, customer_email, store_id, created_from, created_to, modified_from, modified_to, skip_empty_email, response_fields, params, exclude)
+function order_api:order_abandoned_list(start, count, page_cursor, customer_id, customer_email, store_id, created_from, created_to, modified_from, modified_to, skip_empty_email, rounding_precision, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/order.abandoned.list.json?start=%s&count=%s&page_cursor=%s&customer_id=%s&customer_email=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&skip_empty_email=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(customer_email), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(skip_empty_email), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/order.abandoned.list.json?start=%s&count=%s&page_cursor=%s&customer_id=%s&customer_email=%s&store_id=%s&created_from=%s&created_to=%s&modified_from=%s&modified_to=%s&skip_empty_email=%s&rounding_precision=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(customer_id), http_util.encodeURIComponent(customer_email), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(created_from), http_util.encodeURIComponent(created_to), http_util.encodeURIComponent(modified_from), http_util.encodeURIComponent(modified_to), http_util.encodeURIComponent(skip_empty_email), http_util.encodeURIComponent(rounding_precision), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
