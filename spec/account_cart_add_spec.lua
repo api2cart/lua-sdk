@@ -758,6 +758,13 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'mirakl_api_key'
+  describe("property mirakl_api_key test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'tiendanube_user_id'
   describe("property tiendanube_user_id test", function()
     it("should work", function()
