@@ -128,6 +128,27 @@ describe("customer_update", function()
     end)
   end)
 
+  -- unit tests for the property 'currency_id'
+  describe("property currency_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'is_tax_exempt'
+  describe("property is_tax_exempt test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'vendor_id'
+  describe("property vendor_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'store_id'
   describe("property store_id test", function()
     it("should work", function()
