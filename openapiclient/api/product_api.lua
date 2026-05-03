@@ -1197,13 +1197,13 @@ function product_api:product_list(start, count, page_cursor, product_ids, since_
 	end
 end
 
-function product_api:product_manufacturer_add(product_id, manufacturer, store_id, meta_title, meta_keywords, meta_description, search_keywords, image_url, seo_url, idempotency_key)
+function product_api:product_manufacturer_add(product_id, manufacturer, store_id, description, meta_title, meta_keywords, meta_description, search_keywords, image_url, seo_url, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/product.manufacturer.add.json?product_id=%s&manufacturer=%s&store_id=%s&meta_title=%s&meta_keywords=%s&meta_description=%s&search_keywords=%s&image_url=%s&seo_url=%s&idempotency_key=%s",
-			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(manufacturer), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(search_keywords), http_util.encodeURIComponent(image_url), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(idempotency_key));
+		path = string.format("%s/product.manufacturer.add.json?product_id=%s&manufacturer=%s&store_id=%s&description=%s&meta_title=%s&meta_keywords=%s&meta_description=%s&search_keywords=%s&image_url=%s&seo_url=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(product_id), http_util.encodeURIComponent(manufacturer), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(description), http_util.encodeURIComponent(meta_title), http_util.encodeURIComponent(meta_keywords), http_util.encodeURIComponent(meta_description), http_util.encodeURIComponent(search_keywords), http_util.encodeURIComponent(image_url), http_util.encodeURIComponent(seo_url), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

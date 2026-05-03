@@ -19,11 +19,12 @@ local function cast_product_variant_add_attributes_inner(t)
 	return setmetatable(t, product_variant_add_attributes_inner_mt)
 end
 
-local function new_product_variant_add_attributes_inner(attribute_name, attribute_value, attribute_price)
+local function new_product_variant_add_attributes_inner(attribute_name, attribute_value, attribute_price, attribute_weight)
 	return cast_product_variant_add_attributes_inner({
 		["attribute_name"] = attribute_name;
 		["attribute_value"] = attribute_value;
 		["attribute_price"] = attribute_price;
+		["attribute_weight"] = attribute_weight;
 	})
 end
 

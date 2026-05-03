@@ -310,6 +310,20 @@ describe("product_update", function()
     end)
   end)
 
+  -- unit tests for the property 'min_order_quantity'
+  describe("property min_order_quantity test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'max_order_quantity'
+  describe("property max_order_quantity test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'warehouse_id'
   describe("property warehouse_id test", function()
     it("should work", function()
@@ -424,6 +438,13 @@ describe("product_update", function()
 
   -- unit tests for the property 'manufacturer_id'
   describe("property manufacturer_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'vendor_id'
+  describe("property vendor_id test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -669,13 +690,6 @@ describe("product_update", function()
 
   -- unit tests for the property 'marketplace_item_properties'
   describe("property marketplace_item_properties test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for the property 'min_order_quantity'
-  describe("property min_order_quantity test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

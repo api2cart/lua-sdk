@@ -19,7 +19,7 @@ local function cast_customer_update_address_inner(t)
 	return setmetatable(t, customer_update_address_inner_mt)
 end
 
-local function new_customer_update_address_inner(address_book_id, address_book_first_name, address_book_last_name, address_book_company, address_book_fax, address_book_phone, address_book_phone_mobile, address_book_address1, address_book_address2, address_book_city, address_book_country, address_book_state, address_book_postcode, address_book_tax_id, address_book_identification_number, address_book_gender, address_book_alias, address_book_type, address_book_default)
+local function new_customer_update_address_inner(address_book_id, address_book_first_name, address_book_last_name, address_book_company, address_book_fax, address_book_phone, address_book_phone_mobile, address_book_address1, address_book_address2, address_book_city, address_book_country, address_book_state, address_book_postcode, address_book_tax_id, address_book_identification_number, address_book_gender, address_book_region, address_book_alias, address_book_type, address_book_default)
 	return cast_customer_update_address_inner({
 		["address_book_id"] = address_book_id;
 		["address_book_first_name"] = address_book_first_name;
@@ -37,6 +37,7 @@ local function new_customer_update_address_inner(address_book_id, address_book_f
 		["address_book_tax_id"] = address_book_tax_id;
 		["address_book_identification_number"] = address_book_identification_number;
 		["address_book_gender"] = address_book_gender;
+		["address_book_region"] = address_book_region;
 		["address_book_alias"] = address_book_alias;
 		["address_book_type"] = address_book_type;
 		["address_book_default"] = address_book_default;

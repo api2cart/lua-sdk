@@ -128,6 +128,13 @@ describe("customer_update_address_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'address_book_region'
+  describe("property address_book_region test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'address_book_alias'
   describe("property address_book_alias test", function()
     it("should work", function()

@@ -487,13 +487,13 @@ function attribute_api:attribute_info(id, attribute_set_id, store_id, lang_id, r
 	end
 end
 
-function attribute_api:attribute_list(start, count, attribute_ids, attribute_set_id, store_id, lang_id, type, visible, required, system, response_fields, params, exclude)
+function attribute_api:attribute_list(start, count, page_cursor, attribute_ids, attribute_set_id, store_id, lang_id, type, visible, required, system, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.list.json?start=%s&count=%s&attribute_ids=%s&attribute_set_id=%s&store_id=%s&lang_id=%s&type=%s&visible=%s&required=%s&system=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(attribute_ids), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(type), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(system), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/attribute.list.json?start=%s&count=%s&page_cursor=%s&attribute_ids=%s&attribute_set_id=%s&store_id=%s&lang_id=%s&type=%s&visible=%s&required=%s&system=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(attribute_ids), http_util.encodeURIComponent(attribute_set_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(type), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(required), http_util.encodeURIComponent(system), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -703,13 +703,13 @@ function attribute_api:attribute_unassign_set(id, attribute_set_id, idempotency_
 	end
 end
 
-function attribute_api:attribute_update(id, name, store_id, lang_id, idempotency_key)
+function attribute_api:attribute_update(id, name, visible, position, store_id, lang_id, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/attribute.update.json?id=%s&name=%s&store_id=%s&lang_id=%s&idempotency_key=%s",
-			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
+		path = string.format("%s/attribute.update.json?id=%s&name=%s&visible=%s&position=%s&store_id=%s&lang_id=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(name), http_util.encodeURIComponent(visible), http_util.encodeURIComponent(position), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(lang_id), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb

@@ -37,4 +37,11 @@ describe("product_variant_add_attributes_inner", function()
     end)
   end)
 
+  -- unit tests for the property 'attribute_weight'
+  describe("property attribute_weight test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)
