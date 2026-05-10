@@ -127,6 +127,20 @@ describe("order_api", function()
     end)
   end)
 
+  -- unit tests for order_shipment_event_add
+  describe("order_shipment_event_add test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for order_shipment_event_list
+  describe("order_shipment_event_list test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for order_shipment_info
   describe("order_shipment_info test", function()
     it("should work", function()

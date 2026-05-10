@@ -17,11 +17,13 @@ local basexx = require "basexx"
 
 -- model import
 local openapiclient_account_config_update_200_response = require "openapiclient.model.account_config_update_200_response"
+local openapiclient_attribute_add_200_response = require "openapiclient.model.attribute_add_200_response"
 local openapiclient_attribute_value_delete_200_response = require "openapiclient.model.attribute_value_delete_200_response"
 local openapiclient_category_add_batch_200_response = require "openapiclient.model.category_add_batch_200_response"
 local openapiclient_model_response_order_abandoned_list = require "openapiclient.model.model_response_order_abandoned_list"
 local openapiclient_model_response_order_list = require "openapiclient.model.model_response_order_list"
 local openapiclient_model_response_order_preestimate_shipping_list = require "openapiclient.model.model_response_order_preestimate_shipping_list"
+local openapiclient_model_response_order_shipment_event_list = require "openapiclient.model.model_response_order_shipment_event_list"
 local openapiclient_model_response_order_shipment_list = require "openapiclient.model.model_response_order_shipment_list"
 local openapiclient_model_response_order_status_list = require "openapiclient.model.model_response_order_status_list"
 local openapiclient_model_response_order_transaction_list = require "openapiclient.model.model_response_order_transaction_list"
@@ -45,6 +47,7 @@ local openapiclient_order_return_add = require "openapiclient.model.order_return
 local openapiclient_order_return_update = require "openapiclient.model.order_return_update"
 local openapiclient_order_shipment_add = require "openapiclient.model.order_shipment_add"
 local openapiclient_order_shipment_add_batch = require "openapiclient.model.order_shipment_add_batch"
+local openapiclient_order_shipment_event_add = require "openapiclient.model.order_shipment_event_add"
 local openapiclient_order_shipment_tracking_add = require "openapiclient.model.order_shipment_tracking_add"
 local openapiclient_order_shipment_update = require "openapiclient.model.order_shipment_update"
 
@@ -975,6 +978,120 @@ function order_api:order_shipment_delete(shipment_id, order_id, store_id)
 			return nil, err3
 		end
 		return openapiclient_order_shipment_delete_200_response.cast(result), headers
+	else
+		local body, err, errno2 = stream:get_body_as_string()
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		-- return the error message (http body)
+		return nil, http_status, body
+	end
+end
+
+function order_api:order_shipment_event_add(order_shipment_event_add)
+	local req = http_request.new_from_uri({
+		scheme = self.default_scheme;
+		host = self.host;
+		port = self.port;
+		path = string.format("%s/order.shipment.event.add.json",
+			self.basePath);
+	})
+
+	-- set HTTP verb
+	req.headers:upsert(":method", "POST")
+	-- TODO: create a function to select proper accept
+	--local var_content_type = { "application/json" }
+	req.headers:upsert("accept", "application/json")
+
+	-- TODO: create a function to select proper content-type
+	--local var_accept = { "application/json" }
+	req.headers:upsert("content-type", "application/json")
+
+	req:set_body(dkjson.encode(order_shipment_event_add))
+
+	-- api key in headers 'x-store-key'
+	if self.api_key['x-store-key'] then
+		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
+	end
+	-- api key in headers 'x-api-key'
+	if self.api_key['x-api-key'] then
+		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
+	end
+
+	-- make the HTTP call
+	local headers, stream, errno = req:go()
+	if not headers then
+		return nil, stream, errno
+	end
+	local http_status = headers:get(":status")
+	if http_status:sub(1,1) == "2" then
+		local body, err, errno2 = stream:get_body_as_string()
+		-- exception when getting the HTTP body
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		local result, _, err3 = dkjson.decode(body)
+		-- exception when decoding the HTTP body
+		if result == nil then
+			return nil, err3
+		end
+		return openapiclient_attribute_add_200_response.cast(result), headers
+	else
+		local body, err, errno2 = stream:get_body_as_string()
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		-- return the error message (http body)
+		return nil, http_status, body
+	end
+end
+
+function order_api:order_shipment_event_list(shipment_id, order_id, store_id, start, count, page_cursor, response_fields)
+	local req = http_request.new_from_uri({
+		scheme = self.default_scheme;
+		host = self.host;
+		port = self.port;
+		path = string.format("%s/order.shipment.event.list.json?shipment_id=%s&order_id=%s&store_id=%s&start=%s&count=%s&page_cursor=%s&response_fields=%s",
+			self.basePath, http_util.encodeURIComponent(shipment_id), http_util.encodeURIComponent(order_id), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(response_fields));
+	})
+
+	-- set HTTP verb
+	req.headers:upsert(":method", "GET")
+	-- TODO: create a function to select proper content-type
+	--local var_accept = { "application/json" }
+	req.headers:upsert("content-type", "application/json")
+
+	-- api key in headers 'x-store-key'
+	if self.api_key['x-store-key'] then
+		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
+	end
+	-- api key in headers 'x-api-key'
+	if self.api_key['x-api-key'] then
+		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
+	end
+
+	-- make the HTTP call
+	local headers, stream, errno = req:go()
+	if not headers then
+		return nil, stream, errno
+	end
+	local http_status = headers:get(":status")
+	if http_status:sub(1,1) == "2" then
+		local body, err, errno2 = stream:get_body_as_string()
+		-- exception when getting the HTTP body
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		local result, _, err3 = dkjson.decode(body)
+		-- exception when decoding the HTTP body
+		if result == nil then
+			return nil, err3
+		end
+		return openapiclient_model_response_order_shipment_event_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
