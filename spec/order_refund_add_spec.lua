@@ -79,6 +79,13 @@ describe("order_refund_add", function()
     end)
   end)
 
+  -- unit tests for the property 'store_id'
+  describe("property store_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'is_online'
   describe("property is_online test", function()
     it("should work", function()
