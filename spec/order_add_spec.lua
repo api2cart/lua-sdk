@@ -485,6 +485,13 @@ describe("order_add", function()
     end)
   end)
 
+  -- unit tests for the property 'invoice_admin_comment'
+  describe("property invoice_admin_comment test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'note_attributes'
   describe("property note_attributes test", function()
     it("should work", function()

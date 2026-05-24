@@ -86,6 +86,13 @@ describe("order_return_add", function()
     end)
   end)
 
+  -- unit tests for the property 'message'
+  describe("property message test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'send_notifications'
   describe("property send_notifications test", function()
     it("should work", function()
@@ -95,6 +102,27 @@ describe("order_return_add", function()
 
   -- unit tests for the property 'reject_reason'
   describe("property reject_reason test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'is_online'
+  describe("property is_online test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'fee_price'
+  describe("property fee_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shipping_price'
+  describe("property shipping_price test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

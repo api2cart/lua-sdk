@@ -51,6 +51,20 @@ describe("order_return_update", function()
     end)
   end)
 
+  -- unit tests for the property 'return_reason_id'
+  describe("property return_reason_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'return_action_id'
+  describe("property return_action_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'staff_note'
   describe("property staff_note test", function()
     it("should work", function()
@@ -60,6 +74,13 @@ describe("order_return_update", function()
 
   -- unit tests for the property 'comment'
   describe("property comment test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'message'
+  describe("property message test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
@@ -88,6 +109,27 @@ describe("order_return_update", function()
 
   -- unit tests for the property 'return_reason'
   describe("property return_reason test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'is_online'
+  describe("property is_online test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'fee_price'
+  describe("property fee_price test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shipping_price'
+  describe("property shipping_price test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

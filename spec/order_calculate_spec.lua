@@ -23,6 +23,13 @@ describe("order_calculate", function()
     end)
   end)
 
+  -- unit tests for the property 'currency'
+  describe("property currency test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'currency_id'
   describe("property currency_id test", function()
     it("should work", function()

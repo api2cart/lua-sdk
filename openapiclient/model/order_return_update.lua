@@ -19,19 +19,25 @@ local function cast_order_return_update(t)
 	return setmetatable(t, order_return_update_mt)
 end
 
-local function new_order_return_update(return_id, order_id, store_id, item_restock, return_status_id, staff_note, comment, send_notifications, reject_reason, return_action, return_reason, idempotency_key, order_products)
+local function new_order_return_update(return_id, order_id, store_id, item_restock, return_status_id, return_reason_id, return_action_id, staff_note, comment, message, send_notifications, reject_reason, return_action, return_reason, is_online, fee_price, shipping_price, idempotency_key, order_products)
 	return cast_order_return_update({
 		["return_id"] = return_id;
 		["order_id"] = order_id;
 		["store_id"] = store_id;
 		["item_restock"] = item_restock;
 		["return_status_id"] = return_status_id;
+		["return_reason_id"] = return_reason_id;
+		["return_action_id"] = return_action_id;
 		["staff_note"] = staff_note;
 		["comment"] = comment;
+		["message"] = message;
 		["send_notifications"] = send_notifications;
 		["reject_reason"] = reject_reason;
 		["return_action"] = return_action;
 		["return_reason"] = return_reason;
+		["is_online"] = is_online;
+		["fee_price"] = fee_price;
+		["shipping_price"] = shipping_price;
 		["idempotency_key"] = idempotency_key;
 		["order_products"] = order_products;
 	})
