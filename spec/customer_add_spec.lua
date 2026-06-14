@@ -114,6 +114,13 @@ describe("customer_add", function()
     end)
   end)
 
+  -- unit tests for the property 'partner_offers_subscription'
+  describe("property partner_offers_subscription test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'consents'
   describe("property consents test", function()
     it("should work", function()

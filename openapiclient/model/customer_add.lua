@@ -19,7 +19,7 @@ local function cast_customer_add(t)
 	return setmetatable(t, customer_add_mt)
 end
 
-local function new_customer_add(email, first_name, last_name, password, group, group_id, group_ids, status, created_time, modified_time, login, last_login, birth_day, news_letter_subscription, consents, gender, website, fax, company, phone, note, country, currency_id, is_tax_exempt, vendor_id, store_id, idempotency_key, address)
+local function new_customer_add(email, first_name, last_name, password, group, group_id, group_ids, status, created_time, modified_time, login, last_login, birth_day, news_letter_subscription, partner_offers_subscription, consents, gender, website, fax, company, phone, note, country, currency_id, is_tax_exempt, vendor_id, store_id, idempotency_key, address)
 	return cast_customer_add({
 		["email"] = email;
 		["first_name"] = first_name;
@@ -35,6 +35,7 @@ local function new_customer_add(email, first_name, last_name, password, group, g
 		["last_login"] = last_login;
 		["birth_day"] = birth_day;
 		["news_letter_subscription"] = news_letter_subscription;
+		["partner_offers_subscription"] = partner_offers_subscription;
 		["consents"] = consents;
 		["gender"] = gender;
 		["website"] = website;

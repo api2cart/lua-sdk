@@ -86,6 +86,13 @@ describe("customer_update", function()
     end)
   end)
 
+  -- unit tests for the property 'partner_offers_subscription'
+  describe("property partner_offers_subscription test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'consents'
   describe("property consents test", function()
     it("should work", function()
@@ -137,6 +144,13 @@ describe("customer_update", function()
 
   -- unit tests for the property 'company'
   describe("property company test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'website'
+  describe("property website test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

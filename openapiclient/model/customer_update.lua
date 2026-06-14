@@ -19,7 +19,7 @@ local function cast_customer_update(t)
 	return setmetatable(t, customer_update_mt)
 end
 
-local function new_customer_update(id, group_id, group_ids, group, email, phone, first_name, last_name, birth_day, news_letter_subscription, consents, tags, gender, note, status, password, currency_id, company, country, fax, tax_id, is_tax_exempt, vendor_id, store_id, idempotency_key, address)
+local function new_customer_update(id, group_id, group_ids, group, email, phone, first_name, last_name, birth_day, news_letter_subscription, partner_offers_subscription, consents, tags, gender, note, status, password, currency_id, company, website, country, fax, tax_id, is_tax_exempt, vendor_id, store_id, idempotency_key, address)
 	return cast_customer_update({
 		["id"] = id;
 		["group_id"] = group_id;
@@ -31,6 +31,7 @@ local function new_customer_update(id, group_id, group_ids, group, email, phone,
 		["last_name"] = last_name;
 		["birth_day"] = birth_day;
 		["news_letter_subscription"] = news_letter_subscription;
+		["partner_offers_subscription"] = partner_offers_subscription;
 		["consents"] = consents;
 		["tags"] = tags;
 		["gender"] = gender;
@@ -39,6 +40,7 @@ local function new_customer_update(id, group_id, group_ids, group, email, phone,
 		["password"] = password;
 		["currency_id"] = currency_id;
 		["company"] = company;
+		["website"] = website;
 		["country"] = country;
 		["fax"] = fax;
 		["tax_id"] = tax_id;
