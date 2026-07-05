@@ -19,12 +19,12 @@ local basexx = require "basexx"
 local openapiclient_account_config_update_200_response = require "openapiclient.model.account_config_update_200_response"
 local openapiclient_attribute_add_200_response = require "openapiclient.model.attribute_add_200_response"
 local openapiclient_customer_add_200_response = require "openapiclient.model.customer_add_200_response"
-local openapiclient_customer_count_200_response = require "openapiclient.model.customer_count_200_response"
 local openapiclient_customer_delete_200_response = require "openapiclient.model.customer_delete_200_response"
-local openapiclient_customer_find_200_response = require "openapiclient.model.customer_find_200_response"
 local openapiclient_customer_group_add_200_response = require "openapiclient.model.customer_group_add_200_response"
 local openapiclient_customer_info_200_response = require "openapiclient.model.customer_info_200_response"
 local openapiclient_model_response_customer_attribute_list = require "openapiclient.model.model_response_customer_attribute_list"
+local openapiclient_model_response_customer_count = require "openapiclient.model.model_response_customer_count"
+local openapiclient_model_response_customer_find = require "openapiclient.model.model_response_customer_find"
 local openapiclient_model_response_customer_group_list = require "openapiclient.model.model_response_customer_group_list"
 local openapiclient_model_response_customer_list = require "openapiclient.model.model_response_customer_list"
 local openapiclient_model_response_customer_wishlist_list = require "openapiclient.model.model_response_customer_wishlist_list"
@@ -274,7 +274,7 @@ function customer_api:customer_count(ids, since_id, customer_list_id, group_id, 
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_customer_count_200_response.cast(result), headers
+		return openapiclient_model_response_customer_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -382,7 +382,7 @@ function customer_api:customer_find(find_value, find_where, find_params, store_i
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_customer_find_200_response.cast(result), headers
+		return openapiclient_model_response_customer_find.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

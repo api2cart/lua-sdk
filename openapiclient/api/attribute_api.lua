@@ -18,16 +18,16 @@ local basexx = require "basexx"
 -- model import
 local openapiclient_attribute_add_200_response = require "openapiclient.model.attribute_add_200_response"
 local openapiclient_attribute_assign_group_200_response = require "openapiclient.model.attribute_assign_group_200_response"
-local openapiclient_attribute_count_200_response = require "openapiclient.model.attribute_count_200_response"
 local openapiclient_attribute_delete_200_response = require "openapiclient.model.attribute_delete_200_response"
 local openapiclient_attribute_info_200_response = require "openapiclient.model.attribute_info_200_response"
-local openapiclient_attribute_type_list_200_response = require "openapiclient.model.attribute_type_list_200_response"
 local openapiclient_attribute_unassign_group_200_response = require "openapiclient.model.attribute_unassign_group_200_response"
 local openapiclient_attribute_update_200_response = require "openapiclient.model.attribute_update_200_response"
 local openapiclient_attribute_value_delete_200_response = require "openapiclient.model.attribute_value_delete_200_response"
 local openapiclient_model_response_attribute_attributeset_list = require "openapiclient.model.model_response_attribute_attributeset_list"
+local openapiclient_model_response_attribute_count = require "openapiclient.model.model_response_attribute_count"
 local openapiclient_model_response_attribute_group_list = require "openapiclient.model.model_response_attribute_group_list"
 local openapiclient_model_response_attribute_list = require "openapiclient.model.model_response_attribute_list"
+local openapiclient_model_response_attribute_type_list = require "openapiclient.model.model_response_attribute_type_list"
 
 local attribute_api = {}
 local attribute_api_mt = {
@@ -313,7 +313,7 @@ function attribute_api:attribute_count(type, attribute_set_id, store_id, lang_id
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_attribute_count_200_response.cast(result), headers
+		return openapiclient_model_response_attribute_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -583,7 +583,7 @@ function attribute_api:attribute_type_list()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_attribute_type_list_200_response.cast(result), headers
+		return openapiclient_model_response_attribute_type_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

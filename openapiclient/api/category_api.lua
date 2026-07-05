@@ -20,13 +20,14 @@ local openapiclient_account_config_update_200_response = require "openapiclient.
 local openapiclient_attribute_delete_200_response = require "openapiclient.model.attribute_delete_200_response"
 local openapiclient_category_add_batch_200_response = require "openapiclient.model.category_add_batch_200_response"
 local openapiclient_category_add_200_response = require "openapiclient.model.category_add_200_response"
-local openapiclient_category_assign_200_response = require "openapiclient.model.category_assign_200_response"
-local openapiclient_category_count_200_response = require "openapiclient.model.category_count_200_response"
 local openapiclient_category_delete_200_response = require "openapiclient.model.category_delete_200_response"
-local openapiclient_category_find_200_response = require "openapiclient.model.category_find_200_response"
 local openapiclient_category_image_add_200_response = require "openapiclient.model.category_image_add_200_response"
 local openapiclient_category_info_200_response = require "openapiclient.model.category_info_200_response"
+local openapiclient_model_response_category_assign = require "openapiclient.model.model_response_category_assign"
+local openapiclient_model_response_category_count = require "openapiclient.model.model_response_category_count"
+local openapiclient_model_response_category_find = require "openapiclient.model.model_response_category_find"
 local openapiclient_model_response_category_list = require "openapiclient.model.model_response_category_list"
+local openapiclient_model_response_category_unassign = require "openapiclient.model.model_response_category_unassign"
 local openapiclient_category_add_batch = require "openapiclient.model.category_add_batch"
 local openapiclient_category_delete_batch = require "openapiclient.model.category_delete_batch"
 
@@ -212,7 +213,7 @@ function category_api:category_assign(category_id, product_id, store_id, idempot
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_category_assign_200_response.cast(result), headers
+		return openapiclient_model_response_category_assign.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -266,7 +267,7 @@ function category_api:category_count(parent_id, store_id, lang_id, avail, create
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_category_count_200_response.cast(result), headers
+		return openapiclient_model_response_category_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -434,7 +435,7 @@ function category_api:category_find(find_value, find_where, find_params, store_i
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_category_find_200_response.cast(result), headers
+		return openapiclient_model_response_category_find.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -704,7 +705,7 @@ function category_api:category_unassign(category_id, product_id, store_id, idemp
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_category_assign_200_response.cast(result), headers
+		return openapiclient_model_response_category_unassign.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

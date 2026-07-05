@@ -19,21 +19,21 @@ local basexx = require "basexx"
 local openapiclient_attribute_add_200_response = require "openapiclient.model.attribute_add_200_response"
 local openapiclient_attribute_delete_200_response = require "openapiclient.model.attribute_delete_200_response"
 local openapiclient_basket_live_shipping_service_delete_200_response = require "openapiclient.model.basket_live_shipping_service_delete_200_response"
-local openapiclient_cart_catalog_price_rules_count_200_response = require "openapiclient.model.cart_catalog_price_rules_count_200_response"
 local openapiclient_cart_coupon_add_200_response = require "openapiclient.model.cart_coupon_add_200_response"
-local openapiclient_cart_coupon_count_200_response = require "openapiclient.model.cart_coupon_count_200_response"
 local openapiclient_cart_delete_200_response = require "openapiclient.model.cart_delete_200_response"
 local openapiclient_cart_giftcard_add_200_response = require "openapiclient.model.cart_giftcard_add_200_response"
-local openapiclient_cart_giftcard_count_200_response = require "openapiclient.model.cart_giftcard_count_200_response"
 local openapiclient_cart_info_200_response = require "openapiclient.model.cart_info_200_response"
-local openapiclient_cart_methods_200_response = require "openapiclient.model.cart_methods_200_response"
 local openapiclient_cart_plugin_list_200_response = require "openapiclient.model.cart_plugin_list_200_response"
 local openapiclient_cart_script_add_200_response = require "openapiclient.model.cart_script_add_200_response"
 local openapiclient_cart_validate_200_response = require "openapiclient.model.cart_validate_200_response"
+local openapiclient_model_response_cart_catalog_price_rules_count = require "openapiclient.model.model_response_cart_catalog_price_rules_count"
 local openapiclient_model_response_cart_catalog_price_rules_list = require "openapiclient.model.model_response_cart_catalog_price_rules_list"
+local openapiclient_model_response_cart_coupon_count = require "openapiclient.model.model_response_cart_coupon_count"
 local openapiclient_model_response_cart_coupon_list = require "openapiclient.model.model_response_cart_coupon_list"
 local openapiclient_model_response_cart_gift_card_list = require "openapiclient.model.model_response_cart_gift_card_list"
+local openapiclient_model_response_cart_giftcard_count = require "openapiclient.model.model_response_cart_giftcard_count"
 local openapiclient_model_response_cart_meta_data_list = require "openapiclient.model.model_response_cart_meta_data_list"
+local openapiclient_model_response_cart_methods = require "openapiclient.model.model_response_cart_methods"
 local openapiclient_model_response_cart_script_list = require "openapiclient.model.model_response_cart_script_list"
 local openapiclient_model_response_cart_shipping_zones_list = require "openapiclient.model.model_response_cart_shipping_zones_list"
 local openapiclient_cart_coupon_add = require "openapiclient.model.cart_coupon_add"
@@ -106,7 +106,7 @@ function cart_api:cart_catalog_price_rules_count()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_cart_catalog_price_rules_count_200_response.cast(result), headers
+		return openapiclient_model_response_cart_catalog_price_rules_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -328,7 +328,7 @@ function cart_api:cart_coupon_count(store_id, avail, date_start_from, date_start
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_cart_coupon_count_200_response.cast(result), headers
+		return openapiclient_model_response_cart_coupon_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -502,13 +502,13 @@ function cart_api:cart_delete(delete_bridge)
 	end
 end
 
-function cart_api:cart_giftcard_add(amount, code, owner_email, recipient_email, recipient_name, owner_name, idempotency_key)
+function cart_api:cart_giftcard_add(amount, currency, store_id, code, name, owner_email, owner_name, recipient_email, recipient_name, message, idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.giftcard.add.json?amount=%s&code=%s&owner_email=%s&recipient_email=%s&recipient_name=%s&owner_name=%s&idempotency_key=%s",
-			self.basePath, http_util.encodeURIComponent(amount), http_util.encodeURIComponent(code), http_util.encodeURIComponent(owner_email), http_util.encodeURIComponent(recipient_email), http_util.encodeURIComponent(recipient_name), http_util.encodeURIComponent(owner_name), http_util.encodeURIComponent(idempotency_key));
+		path = string.format("%s/cart.giftcard.add.json?amount=%s&currency=%s&store_id=%s&code=%s&name=%s&owner_email=%s&owner_name=%s&recipient_email=%s&recipient_name=%s&message=%s&idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(amount), http_util.encodeURIComponent(currency), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(code), http_util.encodeURIComponent(name), http_util.encodeURIComponent(owner_email), http_util.encodeURIComponent(owner_name), http_util.encodeURIComponent(recipient_email), http_util.encodeURIComponent(recipient_name), http_util.encodeURIComponent(message), http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -598,7 +598,7 @@ function cart_api:cart_giftcard_count(store_id)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_cart_giftcard_count_200_response.cast(result), headers
+		return openapiclient_model_response_cart_giftcard_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -610,13 +610,13 @@ function cart_api:cart_giftcard_count(store_id)
 	end
 end
 
-function cart_api:cart_giftcard_delete(id)
+function cart_api:cart_giftcard_delete(id, store_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.giftcard.delete.json?id=%s",
-			self.basePath, http_util.encodeURIComponent(id));
+		path = string.format("%s/cart.giftcard.delete.json?id=%s&store_id=%s",
+			self.basePath, http_util.encodeURIComponent(id), http_util.encodeURIComponent(store_id));
 	})
 
 	-- set HTTP verb
@@ -664,13 +664,13 @@ function cart_api:cart_giftcard_delete(id)
 	end
 end
 
-function cart_api:cart_giftcard_list(start, count, page_cursor, store_id, response_fields, params, exclude)
+function cart_api:cart_giftcard_list(ids, start, count, page_cursor, store_id, response_fields, params, exclude)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.giftcard.list.json?start=%s&count=%s&page_cursor=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.giftcard.list.json?ids=%s&start=%s&count=%s&page_cursor=%s&store_id=%s&response_fields=%s&params=%s&exclude=%s",
+			self.basePath, http_util.encodeURIComponent(ids), http_util.encodeURIComponent(start), http_util.encodeURIComponent(count), http_util.encodeURIComponent(page_cursor), http_util.encodeURIComponent(store_id), http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
 	})
 
 	-- set HTTP verb
@@ -976,7 +976,7 @@ function cart_api:cart_methods()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_cart_methods_200_response.cast(result), headers
+		return openapiclient_model_response_cart_methods.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

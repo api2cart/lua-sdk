@@ -18,9 +18,9 @@ local basexx = require "basexx"
 -- model import
 local openapiclient_attribute_delete_200_response = require "openapiclient.model.attribute_delete_200_response"
 local openapiclient_basket_live_shipping_service_create_200_response = require "openapiclient.model.basket_live_shipping_service_create_200_response"
+local openapiclient_model_response_webhook_count = require "openapiclient.model.model_response_webhook_count"
+local openapiclient_model_response_webhook_events = require "openapiclient.model.model_response_webhook_events"
 local openapiclient_product_image_update_200_response = require "openapiclient.model.product_image_update_200_response"
-local openapiclient_webhook_count_200_response = require "openapiclient.model.webhook_count_200_response"
-local openapiclient_webhook_events_200_response = require "openapiclient.model.webhook_events_200_response"
 local openapiclient_webhook_list_200_response = require "openapiclient.model.webhook_list_200_response"
 local openapiclient_webhook_create = require "openapiclient.model.webhook_create"
 local openapiclient_webhook_update = require "openapiclient.model.webhook_update"
@@ -93,7 +93,7 @@ function webhook_api:webhook_count(entity, action, active)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_webhook_count_200_response.cast(result), headers
+		return openapiclient_model_response_webhook_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -261,7 +261,7 @@ function webhook_api:webhook_events()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_webhook_events_200_response.cast(result), headers
+		return openapiclient_model_response_webhook_events.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

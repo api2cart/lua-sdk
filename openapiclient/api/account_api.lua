@@ -20,7 +20,7 @@ local openapiclient_account_cart_add_200_response = require "openapiclient.model
 local openapiclient_account_cart_list_200_response = require "openapiclient.model.account_cart_list_200_response"
 local openapiclient_account_config_update_200_response = require "openapiclient.model.account_config_update_200_response"
 local openapiclient_account_failed_webhooks_200_response = require "openapiclient.model.account_failed_webhooks_200_response"
-local openapiclient_account_supported_platforms_200_response = require "openapiclient.model.account_supported_platforms_200_response"
+local openapiclient_model_response_account_supported_platforms = require "openapiclient.model.model_response_account_supported_platforms"
 local openapiclient_account_cart_add = require "openapiclient.model.account_cart_add"
 
 local account_api = {}
@@ -297,7 +297,7 @@ function account_api:account_supported_platforms()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_account_supported_platforms_200_response.cast(result), headers
+		return openapiclient_model_response_account_supported_platforms.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

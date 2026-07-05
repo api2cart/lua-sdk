@@ -24,19 +24,19 @@ local openapiclient_category_add_batch_200_response = require "openapiclient.mod
 local openapiclient_customer_delete_200_response = require "openapiclient.model.customer_delete_200_response"
 local openapiclient_model_response_product_attribute_list = require "openapiclient.model.model_response_product_attribute_list"
 local openapiclient_model_response_product_brand_list = require "openapiclient.model.model_response_product_brand_list"
+local openapiclient_model_response_product_child_item_find = require "openapiclient.model.model_response_product_child_item_find"
 local openapiclient_model_response_product_child_item_list = require "openapiclient.model.model_response_product_child_item_list"
+local openapiclient_model_response_product_count = require "openapiclient.model.model_response_product_count"
 local openapiclient_model_response_product_currency_list = require "openapiclient.model.model_response_product_currency_list"
+local openapiclient_model_response_product_find = require "openapiclient.model.model_response_product_find"
 local openapiclient_model_response_product_list = require "openapiclient.model.model_response_product_list"
 local openapiclient_model_response_product_option_list = require "openapiclient.model.model_response_product_option_list"
 local openapiclient_model_response_product_review_list = require "openapiclient.model.model_response_product_review_list"
 local openapiclient_product_add_200_response = require "openapiclient.model.product_add_200_response"
 local openapiclient_product_attribute_value_set_200_response = require "openapiclient.model.product_attribute_value_set_200_response"
 local openapiclient_product_attribute_value_unset_200_response = require "openapiclient.model.product_attribute_value_unset_200_response"
-local openapiclient_product_child_item_find_200_response = require "openapiclient.model.product_child_item_find_200_response"
 local openapiclient_product_child_item_info_200_response = require "openapiclient.model.product_child_item_info_200_response"
-local openapiclient_product_count_200_response = require "openapiclient.model.product_count_200_response"
 local openapiclient_product_currency_add_200_response = require "openapiclient.model.product_currency_add_200_response"
-local openapiclient_product_find_200_response = require "openapiclient.model.product_find_200_response"
 local openapiclient_product_image_add_200_response = require "openapiclient.model.product_image_add_200_response"
 local openapiclient_product_image_update_200_response = require "openapiclient.model.product_image_update_200_response"
 local openapiclient_product_info_200_response = require "openapiclient.model.product_info_200_response"
@@ -471,7 +471,7 @@ function product_api:product_child_item_find(find_value, find_where, find_params
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_product_child_item_find_200_response.cast(result), headers
+		return openapiclient_model_response_product_child_item_find.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -633,7 +633,7 @@ function product_api:product_count(sku, product_ids, since_id, categories_ids, c
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_product_count_200_response.cast(result), headers
+		return openapiclient_model_response_product_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -909,7 +909,7 @@ function product_api:product_find(find_value, find_where, find_params, find_what
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_product_find_200_response.cast(result), headers
+		return openapiclient_model_response_product_find.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

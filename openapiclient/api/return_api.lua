@@ -16,12 +16,12 @@ local dkjson = require "dkjson"
 local basexx = require "basexx"
 
 -- model import
+local openapiclient_model_response_return_action_list = require "openapiclient.model.model_response_return_action_list"
+local openapiclient_model_response_return_count = require "openapiclient.model.model_response_return_count"
 local openapiclient_model_response_return_list = require "openapiclient.model.model_response_return_list"
-local openapiclient_return_action_list_200_response = require "openapiclient.model.return_action_list_200_response"
-local openapiclient_return_count_200_response = require "openapiclient.model.return_count_200_response"
+local openapiclient_model_response_return_reason_list = require "openapiclient.model.model_response_return_reason_list"
+local openapiclient_model_response_return_status_list = require "openapiclient.model.model_response_return_status_list"
 local openapiclient_return_info_200_response = require "openapiclient.model.return_info_200_response"
-local openapiclient_return_reason_list_200_response = require "openapiclient.model.return_reason_list_200_response"
-local openapiclient_return_status_list_200_response = require "openapiclient.model.return_status_list_200_response"
 
 local return_api = {}
 local return_api_mt = {
@@ -91,7 +91,7 @@ function return_api:return_action_list()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_return_action_list_200_response.cast(result), headers
+		return openapiclient_model_response_return_action_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -145,7 +145,7 @@ function return_api:return_count(order_ids, customer_id, store_id, status, retur
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_return_count_200_response.cast(result), headers
+		return openapiclient_model_response_return_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -307,7 +307,7 @@ function return_api:return_reason_list(store_id)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_return_reason_list_200_response.cast(result), headers
+		return openapiclient_model_response_return_reason_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -361,7 +361,7 @@ function return_api:return_status_list()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_return_status_list_200_response.cast(result), headers
+		return openapiclient_model_response_return_status_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

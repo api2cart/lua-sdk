@@ -21,6 +21,9 @@ local openapiclient_attribute_add_200_response = require "openapiclient.model.at
 local openapiclient_attribute_value_delete_200_response = require "openapiclient.model.attribute_value_delete_200_response"
 local openapiclient_category_add_batch_200_response = require "openapiclient.model.category_add_batch_200_response"
 local openapiclient_model_response_order_abandoned_list = require "openapiclient.model.model_response_order_abandoned_list"
+local openapiclient_model_response_order_count = require "openapiclient.model.model_response_order_count"
+local openapiclient_model_response_order_financial_status_list = require "openapiclient.model.model_response_order_financial_status_list"
+local openapiclient_model_response_order_fulfillment_status_list = require "openapiclient.model.model_response_order_fulfillment_status_list"
 local openapiclient_model_response_order_list = require "openapiclient.model.model_response_order_list"
 local openapiclient_model_response_order_preestimate_shipping_list = require "openapiclient.model.model_response_order_preestimate_shipping_list"
 local openapiclient_model_response_order_shipment_event_list = require "openapiclient.model.model_response_order_shipment_event_list"
@@ -29,9 +32,6 @@ local openapiclient_model_response_order_status_list = require "openapiclient.mo
 local openapiclient_model_response_order_transaction_list = require "openapiclient.model.model_response_order_transaction_list"
 local openapiclient_order_add_200_response = require "openapiclient.model.order_add_200_response"
 local openapiclient_order_calculate_200_response = require "openapiclient.model.order_calculate_200_response"
-local openapiclient_order_count_200_response = require "openapiclient.model.order_count_200_response"
-local openapiclient_order_financial_status_list_200_response = require "openapiclient.model.order_financial_status_list_200_response"
-local openapiclient_order_fulfillment_status_list_200_response = require "openapiclient.model.order_fulfillment_status_list_200_response"
 local openapiclient_order_info_200_response = require "openapiclient.model.order_info_200_response"
 local openapiclient_order_refund_add_200_response = require "openapiclient.model.order_refund_add_200_response"
 local openapiclient_order_return_add_200_response = require "openapiclient.model.order_return_add_200_response"
@@ -293,7 +293,7 @@ function order_api:order_count(order_ids, ids, customer_id, store_id, customer_e
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_order_count_200_response.cast(result), headers
+		return openapiclient_model_response_order_count.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -347,7 +347,7 @@ function order_api:order_financial_status_list()
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_order_financial_status_list_200_response.cast(result), headers
+		return openapiclient_model_response_order_financial_status_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -401,7 +401,7 @@ function order_api:order_fulfillment_status_list(action)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_order_fulfillment_status_list_200_response.cast(result), headers
+		return openapiclient_model_response_order_fulfillment_status_list.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
