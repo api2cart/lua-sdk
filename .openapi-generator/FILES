@@ -3,6 +3,7 @@
 git_push.sh
 openapiclient-1.0.0-1.rockspec
 openapiclient/api/account_api.lua
+openapiclient/api/analytics_api.lua
 openapiclient/api/attribute_api.lua
 openapiclient/api/basket_api.lua
 openapiclient/api/batch_api.lua
@@ -33,6 +34,13 @@ openapiclient/model/account_failed_webhooks_200_response_result_webhook_inner.lu
 openapiclient/model/account_supported_platform.lua
 openapiclient/model/account_supported_platform_params.lua
 openapiclient/model/account_supported_platform_params_required_inner_inner.lua
+openapiclient/model/analytics_customer.lua
+openapiclient/model/analytics_customer_metric.lua
+openapiclient/model/analytics_interval.lua
+openapiclient/model/analytics_metric.lua
+openapiclient/model/analytics_period.lua
+openapiclient/model/analytics_product.lua
+openapiclient/model/analytics_product_metric.lua
 openapiclient/model/attribute_add_200_response.lua
 openapiclient/model/attribute_add_200_response_result.lua
 openapiclient/model/attribute_assign_group_200_response.lua
@@ -373,6 +381,9 @@ openapiclient/model/product_variant_update_batch.lua
 openapiclient/model/product_variant_update_batch_payload_inner.lua
 openapiclient/model/product_variant_update_options_inner.lua
 openapiclient/model/response_account_supported_platforms_result.lua
+openapiclient/model/response_analytics_customer_report_result.lua
+openapiclient/model/response_analytics_product_report_result.lua
+openapiclient/model/response_analytics_report_result.lua
 openapiclient/model/response_attribute_attributeset_list_result.lua
 openapiclient/model/response_attribute_count_result.lua
 openapiclient/model/response_attribute_group_list_result.lua
@@ -478,6 +489,14 @@ spec/account_failed_webhooks_200_response_spec.lua
 spec/account_supported_platform_params_required_inner_inner_spec.lua
 spec/account_supported_platform_params_spec.lua
 spec/account_supported_platform_spec.lua
+spec/analytics_api_spec.lua
+spec/analytics_customer_metric_spec.lua
+spec/analytics_customer_spec.lua
+spec/analytics_interval_spec.lua
+spec/analytics_metric_spec.lua
+spec/analytics_period_spec.lua
+spec/analytics_product_metric_spec.lua
+spec/analytics_product_spec.lua
 spec/attribute_add_200_response_result_spec.lua
 spec/attribute_add_200_response_spec.lua
 spec/attribute_api_spec.lua
@@ -828,6 +847,9 @@ spec/product_variant_update_batch_spec.lua
 spec/product_variant_update_options_inner_spec.lua
 spec/product_variant_update_spec.lua
 spec/response_account_supported_platforms_result_spec.lua
+spec/response_analytics_customer_report_result_spec.lua
+spec/response_analytics_product_report_result_spec.lua
+spec/response_analytics_report_result_spec.lua
 spec/response_attribute_attributeset_list_result_spec.lua
 spec/response_attribute_count_result_spec.lua
 spec/response_attribute_group_list_result_spec.lua
