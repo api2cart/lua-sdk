@@ -259,13 +259,13 @@ function account_api:account_failed_webhooks(start, count, ids)
 	end
 end
 
-function account_api:account_supported_platforms()
+function account_api:account_supported_platforms(cart_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/account.supported_platforms.json",
-			self.basePath);
+		path = string.format("%s/account.supported_platforms.json?cart_id=%s",
+			self.basePath, http_util.encodeURIComponent(cart_id));
 	})
 
 	-- set HTTP verb

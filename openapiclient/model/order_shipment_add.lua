@@ -19,7 +19,7 @@ local function cast_order_shipment_add(t)
 	return setmetatable(t, order_shipment_add_mt)
 end
 
-local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, tracking_provider, use_latest_api_version, admin_comment, idempotency_key)
+local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, check_process_status, tracking_provider, admin_comment, mail_class, ship_date, weight, weight_unit, length, width, height, dimensions_unit, shipping_label_cost, shipping_label_currency, revenue_eligibility, ship_from_country, ship_to_country, incoterm, duty_amount, duty_currency, enable_cache, use_latest_api_version, idempotency_key)
 	return cast_order_shipment_add({
 		["order_id"] = order_id;
 		["warehouse_id"] = warehouse_id;
@@ -32,11 +32,27 @@ local function new_order_shipment_add(order_id, warehouse_id, store_id, shipment
 		["is_shipped"] = is_shipped;
 		["send_notifications"] = send_notifications;
 		["adjust_stock"] = adjust_stock;
-		["enable_cache"] = enable_cache;
 		["check_process_status"] = check_process_status;
 		["tracking_provider"] = tracking_provider;
-		["use_latest_api_version"] = use_latest_api_version;
 		["admin_comment"] = admin_comment;
+		["mail_class"] = mail_class;
+		["ship_date"] = ship_date;
+		["weight"] = weight;
+		["weight_unit"] = weight_unit;
+		["length"] = length;
+		["width"] = width;
+		["height"] = height;
+		["dimensions_unit"] = dimensions_unit;
+		["shipping_label_cost"] = shipping_label_cost;
+		["shipping_label_currency"] = shipping_label_currency;
+		["revenue_eligibility"] = revenue_eligibility;
+		["ship_from_country"] = ship_from_country;
+		["ship_to_country"] = ship_to_country;
+		["incoterm"] = incoterm;
+		["duty_amount"] = duty_amount;
+		["duty_currency"] = duty_currency;
+		["enable_cache"] = enable_cache;
+		["use_latest_api_version"] = use_latest_api_version;
 		["idempotency_key"] = idempotency_key;
 	})
 end
