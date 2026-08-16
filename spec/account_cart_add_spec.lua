@@ -464,6 +464,20 @@ describe("account_cart_add", function()
     end)
   end)
 
+  -- unit tests for the property 'walmart_refresh_token'
+  describe("property walmart_refresh_token test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'walmart_seller_id'
+  describe("property walmart_seller_id test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'ecwid_acess_token'
   describe("property ecwid_acess_token test", function()
     it("should work", function()

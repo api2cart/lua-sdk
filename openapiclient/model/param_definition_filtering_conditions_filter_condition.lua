@@ -19,7 +19,7 @@ local function cast_param_definition_filtering_conditions_filter_condition(t)
 	return setmetatable(t, param_definition_filtering_conditions_filter_condition_mt)
 end
 
-local function new_param_definition_filtering_conditions_filter_condition(And_, Or_, Not_, field, operator, value)
+local function new_param_definition_filtering_conditions_filter_condition(And_, Or_, Not_, field, operator, value, match_items)
 	return cast_param_definition_filtering_conditions_filter_condition({
 		["and"] = And_;
 		["or"] = Or_;
@@ -27,6 +27,7 @@ local function new_param_definition_filtering_conditions_filter_condition(And_, 
 		["field"] = field;
 		["operator"] = operator;
 		["value"] = value;
+		["match_items"] = match_items;
 	})
 end
 

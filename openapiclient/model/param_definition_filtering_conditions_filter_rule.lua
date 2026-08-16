@@ -19,11 +19,12 @@ local function cast_param_definition_filtering_conditions_filter_rule(t)
 	return setmetatable(t, param_definition_filtering_conditions_filter_rule_mt)
 end
 
-local function new_param_definition_filtering_conditions_filter_rule(field, operator, value)
+local function new_param_definition_filtering_conditions_filter_rule(field, operator, value, match_items)
 	return cast_param_definition_filtering_conditions_filter_rule({
 		["field"] = field;
 		["operator"] = operator;
 		["value"] = value;
+		["match_items"] = match_items;
 	})
 end
 

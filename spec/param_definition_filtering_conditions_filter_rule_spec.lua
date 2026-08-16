@@ -37,4 +37,11 @@ describe("param_definition_filtering_conditions_filter_rule", function()
     end)
   end)
 
+  -- unit tests for the property 'match_items'
+  describe("property match_items test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)
