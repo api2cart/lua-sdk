@@ -718,13 +718,13 @@ function cart_api:cart_giftcard_list(ids, start, count, page_cursor, store_id, r
 	end
 end
 
-function cart_api:cart_info(response_fields, params, exclude)
+function cart_api:cart_info(response_fields, params, exclude, use_latest_api_version)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/cart.info.json?response_fields=%s&params=%s&exclude=%s",
-			self.basePath, http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude));
+		path = string.format("%s/cart.info.json?response_fields=%s&params=%s&exclude=%s&use_latest_api_version=%s",
+			self.basePath, http_util.encodeURIComponent(response_fields), http_util.encodeURIComponent(params), http_util.encodeURIComponent(exclude), http_util.encodeURIComponent(use_latest_api_version));
 	})
 
 	-- set HTTP verb
