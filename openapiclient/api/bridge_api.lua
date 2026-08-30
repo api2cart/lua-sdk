@@ -45,13 +45,13 @@ local function new_bridge_api(authority, basePath, schemes)
 	}, bridge_api_mt)
 end
 
-function bridge_api:bridge_delete()
+function bridge_api:bridge_delete(idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/bridge.delete.json",
-			self.basePath);
+		path = string.format("%s/bridge.delete.json?idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
@@ -153,13 +153,13 @@ function bridge_api:bridge_download(whitelabel)
 	end
 end
 
-function bridge_api:bridge_update()
+function bridge_api:bridge_update(idempotency_key)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/bridge.update.json",
-			self.basePath);
+		path = string.format("%s/bridge.update.json?idempotency_key=%s",
+			self.basePath, http_util.encodeURIComponent(idempotency_key));
 	})
 
 	-- set HTTP verb
