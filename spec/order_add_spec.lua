@@ -520,6 +520,27 @@ describe("order_add", function()
     end)
   end)
 
+  -- unit tests for the property 'shipp_national_address'
+  describe("property shipp_national_address test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shipp_building_number'
+  describe("property shipp_building_number test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'shipp_additional_number'
+  describe("property shipp_additional_number test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for the property 'idempotency_key'
   describe("property idempotency_key test", function()
     it("should work", function()
