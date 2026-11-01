@@ -41,6 +41,7 @@ local openapiclient_order_shipment_info_200_response = require "openapiclient.mo
 local openapiclient_order_shipment_tracking_add_200_response = require "openapiclient.model.order_shipment_tracking_add_200_response"
 local openapiclient_order_add = require "openapiclient.model.order_add"
 local openapiclient_order_calculate = require "openapiclient.model.order_calculate"
+local openapiclient_order_invoice_add = require "openapiclient.model.order_invoice_add"
 local openapiclient_order_preestimate_shipping_list = require "openapiclient.model.order_preestimate_shipping_list"
 local openapiclient_order_refund_add = require "openapiclient.model.order_refund_add"
 local openapiclient_order_return_add = require "openapiclient.model.order_return_add"
@@ -456,6 +457,66 @@ function order_api:order_info(id, order_id, store_id, params, response_fields, e
 			return nil, err3
 		end
 		return openapiclient_order_info_200_response.cast(result), headers
+	else
+		local body, err, errno2 = stream:get_body_as_string()
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		-- return the error message (http body)
+		return nil, http_status, body
+	end
+end
+
+function order_api:order_invoice_add(order_invoice_add)
+	local req = http_request.new_from_uri({
+		scheme = self.default_scheme;
+		host = self.host;
+		port = self.port;
+		path = string.format("%s/order.invoice.add.json",
+			self.basePath);
+	})
+
+	-- set HTTP verb
+	req.headers:upsert(":method", "POST")
+	-- TODO: create a function to select proper accept
+	--local var_content_type = { "application/json" }
+	req.headers:upsert("accept", "application/json")
+
+	-- TODO: create a function to select proper content-type
+	--local var_accept = { "application/json" }
+	req.headers:upsert("content-type", "application/json")
+
+	req:set_body(dkjson.encode(order_invoice_add))
+
+	-- api key in headers 'x-store-key'
+	if self.api_key['x-store-key'] then
+		req.headers:upsert("StoreKeyAuth", self.api_key['x-store-key'])
+	end
+	-- api key in headers 'x-api-key'
+	if self.api_key['x-api-key'] then
+		req.headers:upsert("ApiKeyAuth", self.api_key['x-api-key'])
+	end
+
+	-- make the HTTP call
+	local headers, stream, errno = req:go()
+	if not headers then
+		return nil, stream, errno
+	end
+	local http_status = headers:get(":status")
+	if http_status:sub(1,1) == "2" then
+		local body, err, errno2 = stream:get_body_as_string()
+		-- exception when getting the HTTP body
+		if not body then
+			return nil, err, errno2
+		end
+		stream:shutdown()
+		local result, _, err3 = dkjson.decode(body)
+		-- exception when decoding the HTTP body
+		if result == nil then
+			return nil, err3
+		end
+		return openapiclient_attribute_add_200_response.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then

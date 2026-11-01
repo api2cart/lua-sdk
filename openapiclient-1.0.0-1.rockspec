@@ -251,6 +251,7 @@ build = {
 		["openapiclient.model.order_calculate_subtotal"] = "openapiclient/model/order_calculate_subtotal.lua";
 		["openapiclient.model.order_calculate_tax"] = "openapiclient/model/order_calculate_tax.lua";
 		["openapiclient.model.order_info_200_response"] = "openapiclient/model/order_info_200_response.lua";
+		["openapiclient.model.order_invoice_add"] = "openapiclient/model/order_invoice_add.lua";
 		["openapiclient.model.order_item"] = "openapiclient/model/order_item.lua";
 		["openapiclient.model.order_item_option"] = "openapiclient/model/order_item_option.lua";
 		["openapiclient.model.order_payment_method"] = "openapiclient/model/order_payment_method.lua";

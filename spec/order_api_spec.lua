@@ -64,6 +64,13 @@ describe("order_api", function()
     end)
   end)
 
+  -- unit tests for order_invoice_add
+  describe("order_invoice_add test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
   -- unit tests for order_list
   describe("order_list test", function()
     it("should work", function()

@@ -230,6 +230,7 @@ openapiclient/model/order_calculate_shipping_rate.lua
 openapiclient/model/order_calculate_subtotal.lua
 openapiclient/model/order_calculate_tax.lua
 openapiclient/model/order_info_200_response.lua
+openapiclient/model/order_invoice_add.lua
 openapiclient/model/order_item.lua
 openapiclient/model/order_item_option.lua
 openapiclient/model/order_payment_method.lua
@@ -694,6 +695,7 @@ spec/order_calculate_spec.lua
 spec/order_calculate_subtotal_spec.lua
 spec/order_calculate_tax_spec.lua
 spec/order_info_200_response_spec.lua
+spec/order_invoice_add_spec.lua
 spec/order_item_option_spec.lua
 spec/order_item_spec.lua
 spec/order_payment_method_spec.lua
